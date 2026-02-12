@@ -1,0 +1,435 @@
+/* ===== LINUX INSTALLATION GUIDE PAGE ===== */
+
+.guide-body {
+    background: #ffffff;
+    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+.guide-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.guide-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.guide-header h1 {
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+}
+
+.guide-header .subtitle {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin: 0;
+}
+
+/* Sections */
+.guide-section {
+    background: #fafafa;
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    border: 2px solid #e0e0e0;
+}
+
+.guide-section h2 {
+    color: #667eea;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.guide-section h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 25px;
+}
+
+.guide-section h4 {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.guide-section p {
+    font-size: 1.1rem;
+    margin: 12px 0;
+}
+
+.guide-section ul,
+.guide-section ol {
+    font-size: 1.05rem;
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.guide-section li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* Info Boxes */
+.info-box {
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #2196f3;
+    margin: 20px 0;
+}
+
+.info-box h4 {
+    color: #1976d2;
+    margin-top: 0;
+}
+
+.warning-box {
+    background: linear-gradient(135deg, #fff3e0, #ffffff);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #ff9800;
+    margin: 20px 0;
+}
+
+.warning-box.small {
+    padding: 10px 15px;
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.tip-box {
+    background: linear-gradient(135deg, #f1f8e9, #ffffff);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #8bc34a;
+    margin: 20px 0;
+}
+
+.tip-box h4 {
+    color: #689f38;
+    margin-top: 0;
+}
+
+.error-box {
+    background: linear-gradient(135deg, #ffebee, #ffffff);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 5px solid #f44336;
+    margin: 20px 0;
+}
+
+.error-box h3 {
+    color: #d32f2f;
+    margin-top: 0;
+    font-size: 1.3rem;
+}
+
+.error-box h4 {
+    color: #c62828;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+/* Requirements Grid */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.req-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #667eea;
+    text-align: center;
+}
+
+.req-item h4 {
+    color: #667eea;
+    margin: 0 0 15px 0;
+    font-size: 1.3rem;
+}
+
+.req-item p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* Download Cards */
+.download-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #4caf50;
+    margin: 20px 0;
+}
+
+.download-card h3 {
+    color: #4caf50;
+    margin-top: 0;
+}
+
+.download-link {
+    display: inline-block;
+    color: #2196f3;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 12px 20px;
+    background: #e3f2fd;
+    border-radius: 8px;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+}
+
+.download-link:hover {
+    background: #2196f3;
+    color: white;
+    transform: translateX(5px);
+}
+
+.download-note {
+    color: #666;
+    font-style: italic;
+}
+
+.download-details {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.download-details p {
+    margin: 8px 0;
+}
+
+/* Step Sections */
+.step-section {
+    background: white;
+    border-left: 6px solid #667eea;
+}
+
+.step-header {
+    margin-bottom: 20px;
+}
+
+.step-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.step-header h2 {
+    color: #667eea;
+    border: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.step-list {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.step-list li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.substep {
+    background: #f9f9f9;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border-left: 4px solid #9c27b0;
+}
+
+.substep h4 {
+    color: #9c27b0;
+    margin-top: 0;
+}
+
+/* Code Box */
+.code-box {
+    background: #263238;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.code-box code {
+    display: block;
+    color: #4fc3f7;
+    font-family: 'Courier New', monospace;
+    font-size: 1.05rem;
+    margin: 8px 0;
+    padding: 8px;
+    background: rgba(79, 195, 247, 0.1);
+    border-radius: 4px;
+}
+
+code {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+}
+
+/* Troubleshooting Section */
+.troubleshooting-section {
+    background: linear-gradient(135deg, #fff9c4, #ffffff);
+    border: 3px solid #fbc02d;
+}
+
+.troubleshooting-section h2 {
+    color: #f57c00;
+    border-color: #f57c00;
+}
+
+/* Checklist */
+.checklist-section {
+    background: linear-gradient(135deg, #e8f5e9, #ffffff);
+    border: 3px solid #4caf50;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.checklist li {
+    font-size: 1.2rem;
+    padding: 12px 20px;
+    margin: 10px 0;
+    background: white;
+    border-radius: 8px;
+    border-left: 5px solid #4caf50;
+}
+
+/* Next Steps */
+.next-steps-section {
+    background: linear-gradient(135deg, #e1f5fe, #ffffff);
+    border: 3px solid #03a9f4;
+}
+
+.next-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.next-step-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #03a9f4;
+    transition: all 0.3s ease;
+}
+
+.next-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(3, 169, 244, 0.3);
+}
+
+.next-step-card h4 {
+    color: #0277bd;
+    margin-top: 0;
+}
+
+.next-step-card p {
+    color: #666;
+    margin: 10px 0 0 0;
+}
+
+/* Footer */
+.guide-footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.note-text {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .guide-header h1 {
+        font-size: 2rem;
+    }
+
+    .guide-header .subtitle {
+        font-size: 1.1rem;
+    }
+
+    .guide-section {
+        padding: 25px 20px;
+    }
+
+    .guide-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .requirements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .next-steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-number {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .guide-body {
+        padding: 10px;
+    }
+
+    .guide-container {
+        padding: 10px;
+    }
+
+    .guide-header {
+        padding: 30px 20px;
+    }
+
+    .guide-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .guide-section {
+        padding: 20px 15px;
+    }
+}

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 11 Installation Guide - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/linux-guide.css">
+</head>
+
+<body class="guide-body">
+    <div class="guide-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <header class="guide-header" style="background: linear-gradient(135deg, #0078d4 0%, #1e88e5 100%);">
+            <h1>🪟 Windows 11 Installation Guide</h1>
+            <p class="subtitle">Using VirtualBox - Complete Step-by-Step Guide for Students</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="guide-section">
+            <h2>📌 Introduction</h2>
+            <p>This guide will help students install <strong>Windows 11</strong> inside a Virtual Machine using
+                VirtualBox.</p>
+
+            <div class="info-box">
+                <h4>This allows you to:</h4>
+                <ul>
+                    <li>Test Windows safely</li>
+                    <li>Practice OS installation</li>
+                    <li>Learn virtualization</li>
+                    <li>Run multiple operating systems</li>
+                    <li>Create lab environments</li>
+                </ul>
+            </div>
+
+            <div class="tip-box">
+                <strong>⚠️ Important:</strong> This does NOT affect your main computer.
+            </div>
+        </section>
+
+        <!-- System Requirements -->
+        <section class="guide-section">
+            <h2>💻 System Requirements</h2>
+
+            <h3>Minimum (Basic Usage)</h3>
+            <div class="requirements-grid">
+                <div class="req-item">
+                    <h4>RAM</h4>
+                    <p><strong>8GB</strong></p>
+                </div>
+                <div class="req-item">
+                    <h4>Storage</h4>
+                    <p><strong>100GB Free</strong></p>
+                </div>
+                <div class="req-item">
+                    <h4>Processor</h4>
+                    <p>Intel i5 / Ryzen 5+</p>
+                </div>
+                <div class="req-item">
+                    <h4>BIOS</h4>
+                    <p>Virtualization enabled</p>
+                </div>
+            </div>
+
+            <h3>Recommended (Smooth Performance)</h3>
+            <div class="requirements-grid">
+                <div class="req-item">
+                    <h4>RAM</h4>
+                    <p><strong>16GB</strong></p>
+                </div>
+                <div class="req-item">
+                    <h4>Storage</h4>
+                    <p><strong>512GB SSD</strong></p>
+                </div>
+                <div class="req-item">
+                    <h4>CPU Cores</h4>
+                    <p><strong>4+</strong></p>
+                </div>
+                <div class="req-item">
+                    <h4>Virtualization</h4>
+                    <p>Enabled</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Downloads -->
+        <section class="guide-section">
+            <h2>📥 Required Downloads (Official Links Only)</h2>
+
+            <div class="download-card">
+                <h3>1️⃣ VirtualBox</h3>
+                <p><strong>Download from official website:</strong></p>
+                <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" class="download-link">
+                    👉 https://www.virtualbox.org/wiki/Downloads
+                </a>
+                <p class="download-note">Download: <strong>Windows Hosts</strong></p>
+            </div>
+
+            <div class="download-card">
+                <h3>2️⃣ Windows 11 ISO</h3>
+                <p><strong>Download from official Microsoft website:</strong></p>
+                <a href="https://www.microsoft.com/software-download/windows11" target="_blank" class="download-link">
+                    👉 https://www.microsoft.com/software-download/windows11
+                </a>
+                <div class="download-details">
+                    <p>Scroll down → Download <strong>Windows 11 Disk Image (ISO)</strong></p>
+                    <p>File size: ~5–6GB</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 1</span>
+                <h2>🔐 Enable Virtualization</h2>
+            </div>
+
+            <p><strong>Before installing:</strong></p>
+            <ol class="step-list">
+                <li>Press <code>Ctrl + Shift + Esc</code></li>
+                <li>Go to <strong>Performance → CPU</strong></li>
+                <li>Check: <strong>Virtualization</strong></li>
+            </ol>
+
+            <div class="warning-box">
+                <h4>If it shows Disabled:</h4>
+                <ol>
+                    <li>Restart computer</li>
+                    <li>Enter BIOS (<code>F2</code> / <code>F10</code> / <code>DEL</code> depending on system)</li>
+                    <li>Enable:
+                        <ul>
+                            <li><strong>Intel VT-x</strong></li>
+                            <li><strong>SVM Mode</strong> (AMD)</li>
+                        </ul>
+                    </li>
+                    <li>Save & Exit</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 2</span>
+                <h2>🧰 Install VirtualBox</h2>
+            </div>
+            <ol class="step-list">
+                <li>Open downloaded VirtualBox file</li>
+                <li>Click <code>Next → Next → Install</code></li>
+                <li>Allow network driver installation</li>
+                <li>Click <code>Finish</code></li>
+                <li>Restart system if required</li>
+            </ol>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 3</span>
+                <h2>🖥️ Create Windows 11 Virtual Machine</h2>
+            </div>
+
+            <div class="substep">
+                <h4>1. Open VirtualBox</h4>
+                <p>Click <strong>"New"</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>2. Fill details</h4>
+                <ul>
+                    <li><strong>Name:</strong> Windows 11</li>
+                    <li><strong>Type:</strong> Microsoft Windows</li>
+                    <li><strong>Version:</strong> Windows 11 (64-bit)</li>
+                </ul>
+                <p>Click <strong>Next</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>3. Allocate RAM</h4>
+                <ul>
+                    <li><strong>Minimum:</strong> 4GB</li>
+                    <li><strong>Recommended:</strong> 8GB</li>
+                </ul>
+                <div class="warning-box small">
+                    Do not give more than half your total RAM
+                </div>
+                <p>Click <strong>Next</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>4. Allocate CPU</h4>
+                <p>Go to <strong>Processor</strong> tab:</p>
+                <ul>
+                    <li><strong>Minimum:</strong> 2 cores</li>
+                    <li><strong>Recommended:</strong> 4 cores</li>
+                </ul>
+                <p>Click <strong>OK</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>5. Create Virtual Hard Disk</h4>
+                <p>Select:</p>
+                <ul>
+                    <li>Create virtual hard disk now</li>
+                    <li>VDI</li>
+                    <li>Dynamically allocated</li>
+                    <li><strong>Size: 80GB</strong></li>
+                </ul>
+                <p>Click <strong>Finish</strong></p>
+            </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 4</span>
+                <h2>⚙️ Configure Important Settings</h2>
+            </div>
+
+            <p><strong>Before starting VM:</strong></p>
+
+            <div class="substep">
+                <h4>Enable EFI</h4>
+                <p>Settings → System → <strong>Enable EFI</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>Increase Video Memory</h4>
+                <p>Settings → Display →</p>
+                <ul>
+                    <li><strong>Video Memory: 128MB</strong></li>
+                    <li><strong>Enable 3D Acceleration</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 5</span>
+                <h2>📀 Attach Windows ISO</h2>
+            </div>
+            <ol class="step-list">
+                <li>Go to <strong>Settings → Storage</strong></li>
+                <li>Click <strong>Empty</strong></li>
+                <li>Choose Windows 11 ISO file</li>
+                <li>Click <strong>OK</strong></li>
+            </ol>
+        </section>
+
+        <!-- Step 6 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 6</span>
+                <h2>🚀 Install Windows 11</h2>
+            </div>
+            <ol class="step-list">
+                <li>Click <strong>Start</strong></li>
+                <li>Select Language</li>
+                <li>Click <strong>Install Now</strong></li>
+                <li>If asked for product key:
+                    <ul>
+                        <li>Enter key OR</li>
+                        <li>Click <strong>"I don't have a product key"</strong></li>
+                    </ul>
+                </li>
+                <li>Choose version: <strong>Windows 11 Pro</strong></li>
+            </ol>
+
+            <div class="error-box">
+                <h3>⚠️ IMPORTANT: Fix "This PC Can't Run Windows 11"</h3>
+                <p>If you see this error:</p>
+
+                <h4>1. Press: <code>Shift + F10</code></h4>
+                <p>Command prompt opens.</p>
+
+                <h4>2. Type:</h4>
+                <div class="code-box">
+                    <code>regedit</code>
+                </div>
+
+                <h4>3. Navigate to:</h4>
+                <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code>
+
+                <h4>4. Create new key:</h4>
+                <ul>
+                    <li>Right click → New → Key</li>
+                    <li>Name it: <strong>LabConfig</strong></li>
+                </ul>
+
+                <h4>5. Inside LabConfig create 3 DWORD (32-bit) values:</h4>
+                <div class="code-box">
+                    <code>BypassTPMCheck = 1</code>
+                    <code>BypassSecureBootCheck = 1</code>
+                    <code>BypassRAMCheck = 1</code>
+                </div>
+
+                <h4>6. Close Registry Editor</h4>
+                <p>Click <strong>Back</strong> → Install again.</p>
+                <p>Installation will continue. ✅</p>
+            </div>
+
+            <div class="substep">
+                <h4>💾 Disk Selection</h4>
+                <p>Select:</p>
+                <ul>
+                    <li><strong>Unallocated 80GB disk</strong></li>
+                </ul>
+                <p>Click <strong>Next</strong></p>
+            </div>
+
+            <div class="info-box">
+                <p>⏱️ Installation takes <strong>15–25 minutes</strong></p>
+                <p>VM will restart automatically.</p>
+            </div>
+        </section>
+
+        <!-- Step 7 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 7</span>
+                <h2>👤 Initial Setup</h2>
+            </div>
+            <p>Choose:</p>
+            <ul class="step-list">
+                <li>Region</li>
+                <li>Keyboard</li>
+                <li>Internet (optional)</li>
+                <li>Microsoft account or Offline account</li>
+            </ul>
+            <p>Complete setup.</p>
+            <div class="tip-box">
+                <h4>🎉 Windows 11 is now installed!</h4>
+            </div>
+        </section>
+
+        <!-- Step 8 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 8</span>
+                <h2>🛠️ Install Guest Additions (Very Important)</h2>
+            </div>
+
+            <div class="tip-box">
+                <h4>This improves:</h4>
+                <ul>
+                    <li>✔ Full screen mode</li>
+                    <li>✔ Copy/paste between host and VM</li>
+                    <li>✔ Smooth mouse integration</li>
+                    <li>✔ Better graphics performance</li>
+                </ul>
+            </div>
+
+            <ol class="step-list">
+                <li>In VirtualBox menu: <strong>Devices → Insert Guest Additions CD</strong></li>
+                <li>Inside Windows: Open <strong>This PC</strong></li>
+                <li>Run <code>VBoxWindowsAdditions.exe</code></li>
+                <li>Install</li>
+                <li>Restart VM</li>
+            </ol>
+        </section>
+
+        <!-- Network Configuration -->
+        <section class="guide-section">
+            <h2>🌐 Network Configuration</h2>
+            <div class="info-box">
+                <p><strong>Default Mode:</strong> NAT (Recommended)</p>
+            </div>
+            <p>To change:</p>
+            <ol>
+                <li>Settings → Network → Adapter 1</li>
+                <li>Change NAT → <strong>Bridged Adapter</strong></li>
+                <li>Restart VM</li>
+            </ol>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="guide-section troubleshooting-section">
+            <h2>⚠️ TROUBLESHOOTING SECTION</h2>
+
+            <div class="error-box">
+                <h3>❌ 64-bit Option Not Showing</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Enable Virtualization in BIOS</li>
+                    <li>Disable Hyper-V:
+                        <ul>
+                            <li>Control Panel → Programs → Turn Windows features on/off</li>
+                            <li>Uncheck <strong>Hyper-V</strong></li>
+                            <li>Restart PC</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Black Screen After Boot</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Disable EFI</li>
+                    <li>Increase Video Memory</li>
+                    <li>Enable 3D Acceleration</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Very Slow Performance</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Increase RAM allocation</li>
+                    <li>Increase CPU cores</li>
+                    <li>Close background applications</li>
+                    <li>Use SSD instead of HDD</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ No Internet in VM</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Settings → Network → Change to <strong>NAT</strong></li>
+                    <li>Restart VM</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Windows Not Activating</h3>
+                <p>You need valid Windows product key.</p>
+                <p>VM works without activation but with limited personalization.</p>
+            </div>
+        </section>
+
+        <!-- Final Checklist -->
+        <section class="guide-section checklist-section">
+            <h2>📋 Final Checklist</h2>
+            <p>Before starting lab:</p>
+            <ul class="checklist">
+                <li>✔ Windows installed</li>
+                <li>✔ Guest Additions installed</li>
+                <li>✔ Internet working</li>
+                <li>✔ Snapshot created</li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>To create snapshot:</h4>
+                <p>VirtualBox → Machine → Take Snapshot</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="guide-section"
+            style="background: linear-gradient(135deg, #fff9c4, #ffffff); border: 3px solid #fbc02d;">
+            <h2>❓ FAQ Section</h2>
+
+            <div class="substep">
+                <h4>Q1: Will this affect my real Windows?</h4>
+                <p><strong>No.</strong> It runs separately inside VirtualBox.</p>
+            </div>
+
+            <div class="substep">
+                <h4>Q2: Can I delete VM later?</h4>
+                <p><strong>Yes.</strong> Delete from VirtualBox safely.</p>
+            </div>
+
+            <div class="substep">
+                <h4>Q3: Is Windows activation required?</h4>
+                <p><strong>Optional</strong> for learning.</p>
+            </div>
+
+            <div class="substep">
+                <h4>Q4: How much RAM should I give?</h4>
+                <p><strong>Half of your system RAM maximum.</strong></p>
+            </div>
+        </section>
+
+        <footer class="guide-footer">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Linux Installation Guide - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/linux-guide.css">
+</head>
+
+<body class="guide-body">
+    <div class="guide-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <header class="guide-header">
+            <h1>🐉 Kali Linux Installation Guide</h1>
+            <p class="subtitle">Complete Step-by-Step Guide for Students</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="guide-section">
+            <h2>📌 Introduction</h2>
+            <p>This guide will help you install <strong>Kali Linux</strong> inside a Virtual Machine safely using
+                VirtualBox.</p>
+
+            <div class="info-box">
+                <h4>Kali Linux is used for:</h4>
+                <ul>
+                    <li>Ethical Hacking</li>
+                    <li>Cybersecurity Practice</li>
+                    <li>Network Analysis</li>
+                    <li>Penetration Testing</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> Use only for legal and educational purposes.
+            </div>
+        </section>
+
+        <!-- System Requirements -->
+        <section class="guide-section">
+            <h2>💻 System Requirements</h2>
+            <div class="requirements-grid">
+                <div class="req-item">
+                    <h4>RAM</h4>
+                    <p><strong>Minimum:</strong> 8GB</p>
+                    <p><strong>Recommended:</strong> 16GB</p>
+                </div>
+                <div class="req-item">
+                    <h4>Storage</h4>
+                    <p><strong>Free Space:</strong> 100GB</p>
+                </div>
+                <div class="req-item">
+                    <h4>Processor</h4>
+                    <p>Intel i5 / Ryzen 5 or above</p>
+                </div>
+                <div class="req-item">
+                    <h4>BIOS</h4>
+                    <p>Virtualization enabled</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Downloads -->
+        <section class="guide-section">
+            <h2>📥 Required Downloads</h2>
+            <p class="note-text">Download from official websites only:</p>
+
+            <div class="download-card">
+                <h3>1️⃣ VirtualBox</h3>
+                <p><strong>Official Website:</strong></p>
+                <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" class="download-link">
+                    👉 https://www.virtualbox.org/wiki/Downloads
+                </a>
+                <p class="download-note">Download: <strong>Windows Hosts</strong></p>
+            </div>
+
+            <div class="download-card">
+                <h3>2️⃣ Kali Linux ISO</h3>
+                <p><strong>Official Website:</strong></p>
+                <a href="https://www.kali.org/get-kali/" target="_blank" class="download-link">
+                    👉 https://www.kali.org/get-kali/
+                </a>
+                <div class="download-details">
+                    <p>✔ Download: <strong>Installer ISO (64-bit)</strong></p>
+                    <p>✔ File Size: ~4GB</p>
+                    <p>❌ Do NOT download ARM version</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 1 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 1</span>
+                <h2>🔧 Install VirtualBox</h2>
+            </div>
+            <ol class="step-list">
+                <li>Open downloaded file</li>
+                <li>Click <code>Next → Next → Install</code></li>
+                <li>Allow network driver installation</li>
+                <li>Click <code>Finish</code></li>
+                <li>Restart system if required</li>
+            </ol>
+        </section>
+
+        <!-- Step 2 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 2</span>
+                <h2>🔐 Enable Virtualization</h2>
+            </div>
+            <ol class="step-list">
+                <li>Press <code>Ctrl + Shift + Esc</code></li>
+                <li>Go to <strong>Performance → CPU</strong></li>
+                <li>Check "Virtualization"</li>
+            </ol>
+
+            <div class="tip-box">
+                <h4>If Disabled:</h4>
+                <ol>
+                    <li>Restart PC</li>
+                    <li>Enter BIOS (<code>F2</code> / <code>DEL</code> / <code>F10</code>)</li>
+                    <li>Enable <strong>Intel VT-x</strong> or <strong>SVM Mode</strong></li>
+                    <li>Save & Exit</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Step 3 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 3</span>
+                <h2>🖥️ Create Kali Virtual Machine</h2>
+            </div>
+
+            <div class="substep">
+                <h4>1. Open VirtualBox</h4>
+                <p>Click <strong>"New"</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>2. Fill Basic Information</h4>
+                <ul>
+                    <li><strong>Name:</strong> Kali Linux</li>
+                    <li><strong>Type:</strong> Linux</li>
+                    <li><strong>Version:</strong> Debian (64-bit)</li>
+                </ul>
+                <p>Click <strong>Next</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>3. Allocate RAM</h4>
+                <ul>
+                    <li><strong>Minimum:</strong> 4GB</li>
+                    <li><strong>Recommended:</strong> 6GB (if you have 16GB)</li>
+                </ul>
+                <p>Click <strong>Next</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>4. Allocate CPU</h4>
+                <p>Go to <strong>Processor</strong> tab:</p>
+                <ul>
+                    <li><strong>Minimum:</strong> 2 cores</li>
+                    <li><strong>Recommended:</strong> 4 cores</li>
+                </ul>
+                <p>Click <strong>OK</strong></p>
+            </div>
+
+            <div class="substep">
+                <h4>5. Create Virtual Hard Disk</h4>
+                <p>Choose:</p>
+                <ul>
+                    <li>Create new disk</li>
+                    <li>VDI</li>
+                    <li>Dynamically allocated</li>
+                    <li><strong>60GB</strong> size</li>
+                </ul>
+                <p>Click <strong>Finish</strong></p>
+            </div>
+        </section>
+
+        <!-- Step 4 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 4</span>
+                <h2>📀 Attach Kali ISO</h2>
+            </div>
+            <ol class="step-list">
+                <li>Go to <strong>Settings → Storage</strong></li>
+                <li>Click <strong>Empty</strong></li>
+                <li>Choose Kali ISO file</li>
+                <li>Click <strong>OK</strong></li>
+            </ol>
+        </section>
+
+        <!-- Step 5 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 5</span>
+                <h2>🚀 Install Kali Linux</h2>
+            </div>
+            <ol class="step-list">
+                <li>Click <strong>Start</strong></li>
+                <li>Choose <strong>Graphical Install</strong></li>
+                <li>Select Language</li>
+                <li>Select Location</li>
+                <li>Select Keyboard</li>
+                <li>Create Username & Password
+                    <div class="warning-box small">Remember password carefully!</div>
+                </li>
+            </ol>
+
+            <div class="substep">
+                <h4>Disk Partition</h4>
+                <p>Select:</p>
+                <ul>
+                    <li><strong>Guided – Use Entire Disk</strong></li>
+                    <li>All files in one partition</li>
+                    <li>Finish partitioning</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <p>⏱️ Installation takes approximately <strong>20 minutes</strong></p>
+                <p>After completion:</p>
+                <ul>
+                    <li>Remove ISO</li>
+                    <li>Restart VM</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Step 6 -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 6</span>
+                <h2>🛠️ Install Guest Additions</h2>
+            </div>
+
+            <p>Inside Kali Terminal, run these commands:</p>
+
+            <div class="code-box">
+                <code>sudo apt update</code>
+                <code>sudo apt upgrade -y</code>
+                <code>sudo apt install -y virtualbox-guest-x11</code>
+                <code>sudo reboot</code>
+            </div>
+
+            <div class="tip-box">
+                <h4>This enables:</h4>
+                <ul>
+                    <li>✔ Full screen mode</li>
+                    <li>✔ Smooth mouse integration</li>
+                    <li>✔ Better graphics performance</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Network Settings -->
+        <section class="guide-section">
+            <h2>🌐 Network Settings</h2>
+            <div class="info-box">
+                <p><strong>Default Mode:</strong> NAT (Safe for Beginners)</p>
+            </div>
+            <p>If required:</p>
+            <ul>
+                <li>Settings → Network → Change to <strong>Bridged Adapter</strong></li>
+            </ul>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="guide-section troubleshooting-section">
+            <h2>⚠️ TROUBLESHOOTING SECTION</h2>
+
+            <div class="error-box">
+                <h3>❌ Problem 1: 64-bit option not visible</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Enable Virtualization in BIOS</li>
+                    <li>Disable Hyper-V (in Windows Features)</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Problem 2: Black Screen After Boot</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Increase Video Memory to 128MB</li>
+                    <li>Enable 3D Acceleration</li>
+                    <li>Try disabling EFI</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Problem 3: Very Slow Performance</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Increase RAM allocation</li>
+                    <li>Increase CPU cores</li>
+                    <li>Close background applications</li>
+                    <li>Use SSD instead of HDD</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Problem 4: "Kernel Panic" Error</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Re-download ISO file</li>
+                    <li>Verify ISO checksum from official site</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3>❌ Problem 5: Internet Not Working</h3>
+                <h4>Solution:</h4>
+                <ul>
+                    <li>Settings → Network → Change to <strong>NAT</strong></li>
+                    <li>Restart VM</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Checklist -->
+        <section class="guide-section checklist-section">
+            <h2>📋 FINAL CHECKLIST</h2>
+            <p>Before starting cybersecurity lab:</p>
+            <ul class="checklist">
+                <li>✔ Kali installed successfully</li>
+                <li>✔ Guest Additions installed</li>
+                <li>✔ Internet working</li>
+                <li>✔ Snapshot created</li>
+            </ul>
+
+            <div class="tip-box">
+                <h4>To create snapshot:</h4>
+                <p>VirtualBox → Machine → Take Snapshot</p>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="guide-section next-steps-section">
+            <h2>📚 Recommended Next Steps</h2>
+            <p>After installation:</p>
+            <div class="next-steps-grid">
+                <div class="next-step-card">
+                    <h4>1. Learn Linux Commands</h4>
+                    <p>Master basic terminal operations</p>
+                </div>
+                <div class="next-step-card">
+                    <h4>2. Practice Nmap</h4>
+                    <p>Network scanning fundamentals</p>
+                </div>
+                <div class="next-step-card">
+                    <h4>3. Setup Vulnerable Lab</h4>
+                    <p>Create safe testing environment</p>
+                </div>
+                <div class="next-step-card">
+                    <h4>4. Learn Networking</h4>
+                    <p>Understand TCP/IP basics</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="guide-footer">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+
+</html>

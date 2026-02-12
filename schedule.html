@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Day Workshop Schedule - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/schedule.css">
+</head>
+
+<body class="schedule-body">
+    <div class="schedule-container">
+        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <header class="schedule-header">
+            <h1>🚀 5-Day Workshop Plan</h1>
+            <p class="subtitle">10 Sessions - From Hardware to Real-World Tech Deployment</p>
+        </header>
+
+        <div class="theme-section">
+            <h2>🎯 Overall Theme</h2>
+            <p><strong>From Hardware to Real-World Tech Deployment</strong></p>
+            <p>This 5-day intensive workshop is designed to take students from understanding computer hardware
+                fundamentals to building real-world technical solutions using Linux, Git, IoT, and Web technologies.</p>
+        </div>
+
+        <!-- DAY 1 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h2>🗓️ DAY 1 – PC Hardware & System Understanding</h2>
+            </div>
+
+            <div class="session">
+                <div class="session-header morning">
+                    <h3>🌅 Session 1 (Morning)</h3>
+                    <h4>Understanding Computer Hardware Like an Engineer</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>What is a computer really?</li>
+                            <li>CPU – Cores, threads, and clock speed</li>
+                            <li>RAM – 8GB vs 16GB (real-world impact)</li>
+                            <li>Storage – HDD vs SSD vs NVMe</li>
+                            <li>Motherboard – How components communicate</li>
+                            <li>PSU – Why power quality matters</li>
+                            <li>Cooling system basics</li>
+                        </ul>
+                    </div>
+                    <div class="practical">
+                        <h5>🛠 Practical Activity</h5>
+                        <ul>
+                            <li>Open a CPU cabinet</li>
+                            <li>Identify each hardware component physically</li>
+                        </ul>
+                    </div>
+                    <div class="engagement">
+                        <h5>🎯 Engagement</h5>
+                        <ul>
+                            <li>Quiz: "If RAM fails, what happens?"</li>
+                            <li>Discussion: "Why do gaming systems need a GPU?"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-header evening">
+                    <h3>🌆 Session 2 (Evening)</h3>
+                    <h4>PC Assembly + BIOS + OS Installation</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>Step-by-step PC assembly</li>
+                            <li>Applying thermal paste</li>
+                            <li>Cable management basics</li>
+                            <li>BIOS/UEFI navigation</li>
+                            <li>Boot priority settings</li>
+                            <li>Installing Windows OS</li>
+                            <li>Driver installation basics</li>
+                        </ul>
+                    </div>
+                    <div class="practical">
+                        <h5>🛠 Hands-on Practice</h5>
+                        <ul>
+                            <li>Students explore BIOS settings</li>
+                            <li>Create bootable USB drive</li>
+                            <li>Install Windows in Virtual Machine (safe practice)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h2>🗓️ DAY 2 – Linux Installation & Practical Terminal Skills</h2>
+                <p class="day-note">⚡ Fully practical day – No heavy OS theory.</p>
+            </div>
+
+            <div class="session">
+                <div class="session-header morning">
+                    <h3>🌅 Session 3 (Morning)</h3>
+                    <h4>Installing Ubuntu in Virtual Machine</h4>
+                </div>
+                <div class="session-content">
+                    <div class="objective">
+                        <h5>🎯 Objective</h5>
+                        <p>Students will successfully install Ubuntu Linux safely using a Virtual Machine.</p>
+                    </div>
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>What is a Virtual Machine?</li>
+                            <li>Why use VM instead of direct installation?</li>
+                            <li>What is an ISO file?</li>
+                            <li>RAM allocation basics</li>
+                            <li>Virtual hard disk concept</li>
+                        </ul>
+                    </div>
+                    <div class="practical">
+                        <h5>🛠 Installation Steps</h5>
+                        <ul>
+                            <li>Install VirtualBox</li>
+                            <li>Download Ubuntu ISO</li>
+                            <li>Create new VM (Ubuntu 64-bit)</li>
+                            <li>Allocate: 4GB RAM (recommended), 25GB storage</li>
+                            <li>Attach ISO file</li>
+                            <li>Install Ubuntu</li>
+                            <li>Create username & password</li>
+                        </ul>
+                    </div>
+                    <div class="engagement">
+                        <h5>👀 After Installation</h5>
+                        <ul>
+                            <li>Explore Ubuntu desktop</li>
+                            <li>Open Settings</li>
+                            <li>Navigate file manager</li>
+                            <li>Open Terminal</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-header evening">
+                    <h3>🌆 Session 4 (Evening)</h3>
+                    <h4>Linux Terminal + Windows vs Linux (Practical Comparison)</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📂 Linux File System Overview</h5>
+                        <div class="code-block">
+                            <p><strong>Windows Path:</strong> <code>C:\Users\Username\Documents</code></p>
+                            <p><strong>Linux Path:</strong> <code>/home/username/Documents</code></p>
+                        </div>
+                        <p><strong>Important Directories:</strong> / (Root), /home, /etc, /bin, /usr</p>
+                    </div>
+                    <div class="practical">
+                        <h5>💻 Basic Terminal Commands (Hands-On)</h5>
+                        <div class="command-section">
+                            <p><strong>📌 Navigation</strong></p>
+                            <code>pwd, ls, cd</code>
+                        </div>
+                        <div class="command-section">
+                            <p><strong>📌 Create & Delete</strong></p>
+                            <code>mkdir test, cd test, touch file1.txt, rm file1.txt</code>
+                        </div>
+                        <div class="command-section">
+                            <p><strong>📌 Permissions</strong></p>
+                            <code>chmod 777 file1.txt</code>
+                            <p>(7 = read + write + execute)</p>
+                        </div>
+                        <div class="command-section">
+                            <p><strong>📌 Process Monitoring</strong></p>
+                            <code>ps, top</code>
+                            <p>(Similar to Task Manager in Windows)</p>
+                        </div>
+                    </div>
+                    <div class="engagement">
+                        <h5>📝 Basic Shell Script</h5>
+                        <div class="code-block">
+                            <p>1. Create file: <code>nano hello.sh</code></p>
+                            <p>2. Add: <code>echo "Hello World"</code></p>
+                            <p>3. Run: <code>chmod +x hello.sh</code> then <code>./hello.sh</code></p>
+                        </div>
+                        <h5>🎯 Mini Challenge</h5>
+                        <p><strong>Task 1:</strong> Create Folder Structure</p>
+                        <code>Workshop/Day1/, Workshop/Day2/, Workshop/Day3/</code>
+                        <p><strong>Task 2:</strong> Write a script that prints "Welcome to Linux Workshop"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h2>🗓️ DAY 3 – Troubleshooting + Git + Industry Workflow</h2>
+            </div>
+
+            <div class="session">
+                <div class="session-header morning">
+                    <h3>🌅 Session 5 (Morning)</h3>
+                    <h4>PC & Software Troubleshooting</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>PC not turning ON</li>
+                            <li>No display issue</li>
+                            <li>RAM failure symptoms</li>
+                            <li>Blue Screen errors</li>
+                            <li>Slow system fixes</li>
+                            <li>Virus removal basics</li>
+                            <li>Basic networking issues</li>
+                        </ul>
+                    </div>
+                    <div class="engagement">
+                        <h5>🎯 Interactive Activity</h5>
+                        <p>Students solve real-world problem scenarios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-header evening">
+                    <h3>🌆 Session 6 (Evening)</h3>
+                    <h4>Git & Real Developer Workflow</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>What is Git?</li>
+                            <li>Why companies use Git</li>
+                            <li>Git vs GitHub</li>
+                            <li>clone, commit, push</li>
+                            <li>Branch concept</li>
+                            <li>Pull request workflow</li>
+                        </ul>
+                    </div>
+                    <div class="practical">
+                        <h5>🛠 Hands-On</h5>
+                        <ul>
+                            <li>Create GitHub repository</li>
+                            <li>Push project</li>
+                            <li>Team collaboration exercise</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h2>🗓️ DAY 4 – IoT & Microcontrollers</h2>
+            </div>
+
+            <div class="session">
+                <div class="session-header morning">
+                    <h3>🌅 Session 7 (Morning)</h3>
+                    <h4>Introduction to IoT</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>What is IoT?</li>
+                            <li>Arduino vs ESP32 vs Raspberry Pi</li>
+                            <li>Sensors basics</li>
+                            <li>Digital vs Analog</li>
+                            <li>Communication protocols (I2C, SPI, UART)</li>
+                        </ul>
+                    </div>
+                    <div class="practical">
+                        <h5>🎬 Live Demo</h5>
+                        <ul>
+                            <li>ESP32 board</li>
+                            <li>Arduino board</li>
+                            <li>Basic sensors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-header evening">
+                    <h3>🌆 Session 8 (Evening)</h3>
+                    <h4>Hands-On IoT Project</h4>
+                </div>
+                <div class="session-content">
+                    <div class="practical">
+                        <h5>🛠 Project Example</h5>
+                        <ul>
+                            <li>Temperature sensor with ESP32</li>
+                            <li>Send data to web server</li>
+                            <li>Control LED via WiFi</li>
+                        </ul>
+                    </div>
+                    <div class="objective">
+                        <h5>🎯 Outcome</h5>
+                        <p>Students build and test a real IoT system.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DAY 5 -->
+        <div class="day-card">
+            <div class="day-header">
+                <h2>🗓️ DAY 5 – Web Development & Final Project</h2>
+            </div>
+
+            <div class="session">
+                <div class="session-header morning">
+                    <h3>🌅 Session 9 (Morning)</h3>
+                    <h4>Web Development Basics</h4>
+                </div>
+                <div class="session-content">
+                    <div class="topics">
+                        <h5>📘 Topics Covered</h5>
+                        <ul>
+                            <li>How the Internet works</li>
+                            <li>HTML fundamentals</li>
+                            <li>CSS basics</li>
+                            <li>JavaScript basics</li>
+                            <li>Connecting IoT to webpage</li>
+                        </ul>
+                    </div>
+                    <div class="engagement">
+                        <h5>🎯 Mini Task</h5>
+                        <p>Build a simple webpage.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-header evening">
+                    <h3>🌆 Session 10 (Evening)</h3>
+                    <h4>Final Mini Project & Presentation</h4>
+                </div>
+                <div class="session-content">
+                    <div class="practical">
+                        <h5>🛠 Students choose one:</h5>
+                        <ul>
+                            <li>IoT + Web integrated project</li>
+                            <li>Linux automation script</li>
+                            <li>Git team collaboration project</li>
+                        </ul>
+                    </div>
+                    <div class="objective">
+                        <h5>🎯 Outcome</h5>
+                        <p>Students present their completed projects and demonstrate their learning journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="schedule-footer">
+            <a href="index.html" class="back-btn">← Back to Home</a>
+        </footer>
+    </div>
+</body>
+
+</html>
