@@ -63,7 +63,7 @@ function goToSlide(slideNumber) {
 
     // Trigger animation reset for speed bars (if present)
     resetAnimations();
-    
+
     // Update ARIA for accessibility
     updateSlideAria();
 }
@@ -165,12 +165,6 @@ function attachEventListeners() {
 
     if (nextBtn) {
         nextBtn.addEventListener('click', nextSlide);
-    }
-
-    // Home Button
-    const homeBtn = document.getElementById('homeBtn');
-    if (homeBtn) {
-        homeBtn.addEventListener('click', goToFirstSlide);
     }
 
     // Navigator Button
@@ -609,7 +603,6 @@ console.log('%cKeyboard Controls:',
     'font-size: 14px; font-weight: bold; color: #f093fb;');
 console.log('→ / Space / PageDown: Next slide');
 console.log('← / PageUp: Previous slide');
-console.log('Home: First slide');
 console.log('End: Last slide');
 console.log('F: Toggle fullscreen');
 console.log('Esc: Close overlays / Return to first slide');
