@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 Quiz - Computer Components</title>
+    <meta name="description"
+        content="Interactive presentation-style guide to understanding computer components from an engineering perspective">
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="slide-container">
+
+        <!-- QUIZ INTRO -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content">
+                <h1>Day 1 Quiz Challenge</h1>
+                <h2 class="subtitle">Test Your Engineering Knowledge</h2>
+                <div class="content-card">
+                    <p>Ready to prove what you've learned?</p>
+                    <ul class="big-list">
+                        <li>🧠 20+ Questions</li>
+                        <li>🚀 Practical Scenarios</li>
+                        <li>🔧 Troubleshooting Logic</li>
+                    </ul>
+                </div>
+                <p class="slide-hint">Press → to start</p>
+            </div>
+        </section>
+    
+
+        <!-- QUIZ 1 -->
+        <section class="slide quiz-slide" data-slide="2">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which component do you think makes a computer FAST?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) CPU</div>
+                    <div class="quiz-option">(B) RAM</div>
+                    <div class="quiz-option">(C) SSD</div>
+                    <div class="quiz-option">(D) GPU</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Correct answer: ALL of them</p>
+                    <p class="quiz-explanation">A computer is not fast because of one part. It’s fast because parts work
+                        together.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 2 -->
+        <section class="slide quiz-slide" data-slide="3">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">If I put a very powerful CPU into a very cheap system, will it always be fast?
+                </p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">Cheap motherboard limits CPU, HDD slows everything, and weak PSU causes
+                        instability. Power without support is wasted power.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 3 -->
+        <section class="slide quiz-slide" data-slide="4">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which component is used FIRST when you open a software?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) GPU</div>
+                    <div class="quiz-option">(B) RAM</div>
+                    <div class="quiz-option">(C) CPU</div>
+                    <div class="quiz-option">(D) Storage</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ CPU</p>
+                    <p class="quiz-explanation">CPU decides, RAM holds, Storage supplies, and GPU displays. CPU always
+                        decides first.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 4 -->
+        <section class="slide quiz-slide" data-slide="5">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Does CPU store your files?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">CPU only processes. Storage (SSD/HDD) stores files permanently, and RAM
+                        holds them temporarily. CPU is smart, but it has no memory of yesterday.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 5 -->
+        <section class="slide quiz-slide" data-slide="6">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">You have a very powerful GPU, but your PC still feels slow. Why?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Potential Bottleneck</p>
+                    <p class="quiz-explanation">It could be a CPU bottleneck, slow RAM, or an HDD instead of an SSD. If
+                        the CPU can’t feed the GPU fast enough, the GPU waits.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 6 -->
+        <section class="slide quiz-slide" data-slide="7">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which is better for opening ONE Excel file?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) 8 cores @ 3.0 GHz</div>
+                    <div class="quiz-option">(B) 4 cores @ 4.5 GHz</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) 4 cores @ 4.5 GHz</p>
+                    <p class="quiz-explanation">Single task benefits from higher clock speed. Multiple tasks benefit
+                        from more cores. Speed helps one task, cores help many tasks.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 7 -->
+        <section class="slide quiz-slide" data-slide="8">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Who should choose AMD?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Office user</div>
+                    <div class="quiz-option">(B) Programmer</div>
+                    <div class="quiz-option">(C) Gamer only</div>
+                    <div class="quiz-option">(D) Typing work</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) Programmer</p>
+                    <p class="quiz-explanation">AMD typically offers more cores and better multitasking performance for
+                        the price. Brand doesn't matter; workload matters.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 8 -->
+        <section class="slide quiz-slide" data-slide="9">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which is better?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) i7 7th Gen</div>
+                    <div class="quiz-option">(B) i5 12th Gen</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) i5 12th Gen</p>
+                    <p class="quiz-explanation">Newer architecture and better efficiency mean a modern i5 often beats an
+                        older i7. Generation beats brand tier.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 9 -->
+        <section class="slide quiz-slide" data-slide="10">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">In i5-12400, which number tells the generation?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ 12</p>
+                    <p class="quiz-explanation">The first digits (in this case, 12) represent the generation. For
+                        example, i5-10400 is older (10th Gen) than i5-12400 (12th Gen).</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 10 -->
+        <section class="slide quiz-slide" data-slide="11">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Can you compare Ryzen 5 5600 with Intel i5-5600?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">Different brands use different naming systems. Numbers that look similar
+                        often have completely different meanings. Compare only within the same brand.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 11 -->
+        <section class="slide quiz-slide" data-slide="12">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which user benefits MOST from more CPU cores?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Typing work</div>
+                    <div class="quiz-option">(B) Watching YouTube</div>
+                    <div class="quiz-option">(C) Coding + multiple apps</div>
+                    <div class="quiz-option">(D) Basic browsing</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Coding + multiple apps</p>
+                    <p class="quiz-explanation">Coding and multitasking involve parallel workloads where more cores
+                        significantly help. Cores matter only when you actually use them.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 12 -->
+        <section class="slide quiz-slide" data-slide="13">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Can two PCs with the same CPU perform differently?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Yes</p>
+                    <p class="quiz-explanation">Motherboards affect power delivery, RAM speeds, and thermal management.
+                        The motherboard decides how much the CPU is allowed to shine.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 13 -->
+        <section class="slide quiz-slide" data-slide="14">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What happens if CPU socket doesn't match motherboard?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Slower performance</div>
+                    <div class="quiz-option">(B) PC won’t start</div>
+                    <div class="quiz-option">(C) BIOS error only</div>
+                    <div class="quiz-option">(D) Nothing</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) PC won’t start</p>
+                    <p class="quiz-explanation">Physical and electrical mismatches mean the PC will not boot. Wrong
+                        socket means zero performance.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 14 -->
+        <section class="slide quiz-slide" data-slide="15">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which chipset is best value for most users?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">Intel: H / B / Z</div>
+                    <div class="quiz-option">AMD: A / B / X</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ B-series</p>
+                    <p class="quiz-explanation">B-series motherboards offer the best balance of features, cost, and
+                        future upgradeability. High-end is not smart if you don't use it.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 15 -->
+        <section class="slide quiz-slide" data-slide="16">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What limits CPU performance on cheap motherboards?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) RAM brand</div>
+                    <div class="quiz-option">(B) Case size</div>
+                    <div class="quiz-option">(C) Power delivery (VRMs)</div>
+                    <div class="quiz-option">(D) Monitor</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Power delivery (VRMs)</p>
+                    <p class="quiz-explanation">Weak VRMs lead to thermal throttling and lower performance. CPU
+                        performance depends on how well it is fed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 16 -->
+        <section class="slide quiz-slide" data-slide="17">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What happens to RAM data when power is off?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Saved</div>
+                    <div class="quiz-option">(B) Encrypted</div>
+                    <div class="quiz-option">(C) Deleted</div>
+                    <div class="quiz-option">(D) Moved to storage</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Deleted</p>
+                    <p class="quiz-explanation">RAM is volatile memory. It clears completely when power is gone. CPU
+                        smartness doesn't help with memory that's literally gone.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 17 -->
+        <section class="slide quiz-slide" data-slide="18">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Will adding more RAM always make a PC faster?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">Having enough RAM helps avoid slow storage access, but adding more RAM
+                        than your applications need won't improve speed. Unused RAM is wasted RAM.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 18 -->
+        <section class="slide quiz-slide" data-slide="19">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which RAM matters more?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Only MHz</div>
+                    <div class="quiz-option">(B) Only CL</div>
+                    <div class="quiz-option">(C) Balance of both</div>
+                    <div class="quiz-option">(D) Brand name</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Balance of both</p>
+                    <p class="quiz-explanation">High speed (MHz) with high latency (CL) cancels out. Real-world
+                        performance comes from balancing frequency and response delay. Fast delivery with slow response
+                        is still slow.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 19 -->
+        <section class="slide quiz-slide" data-slide="20">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Can DDR4 RAM fit in DDR5 motherboard?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">DDR4 and DDR5 have different physical layouts (notch position) and
+                        electrical standards. RAM generations are not backward compatible.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 20 -->
+        <section class="slide quiz-slide" data-slide="21">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which setup gives better performance?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) 1×16 GB RAM</div>
+                    <div class="quiz-option">(B) 2×8 GB RAM</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) 2×8 GB RAM</p>
+                    <p class="quiz-explanation">Using two sticks enables dual-channel mode, doubling the bandwidth
+                        between RAM and CPU. Two roads move traffic better than one.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 21 -->
+        <section class="slide quiz-slide" data-slide="22">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why does a GPU have thousands of small cores?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ For Parallel Work</p>
+                    <p class="quiz-explanation">A GPU is designed to do many small tasks at the exact same time. While a
+                        CPU is like a manager making decisions, a GPU is like a factory with thousands of workers doing
+                        repetitive work.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 22 -->
+        <section class="slide quiz-slide" data-slide="23">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which user does NOT need a dedicated GPU?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Video editor</div>
+                    <div class="quiz-option">(B) AI student</div>
+                    <div class="quiz-option">(C) Office + browsing</div>
+                    <div class="quiz-option">(D) 3D designer</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Office + browsing</p>
+                    <p class="quiz-explanation">Integrated GPUs (built into the CPU) are more than enough for basic
+                        tasks. Buying a dedicated GPU you don't use is just wasting money and power.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 23 -->
+        <section class="slide quiz-slide" data-slide="24">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why are workstation GPUs not ideal for gaming?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Different Priorities</p>
+                    <p class="quiz-explanation">Workstation GPUs are optimized for extreme accuracy and have certified
+                        drivers for professional software. They aren't tuned for maximum Frames Per Second (FPS) like
+                        gaming cards.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 24 -->
+        <section class="slide quiz-slide" data-slide="25">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which spec matters MOST for high-resolution textures?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Core count</div>
+                    <div class="quiz-option">(B) VRAM</div>
+                    <div class="quiz-option">(C) Clock speed</div>
+                    <div class="quiz-option">(D) RGB lighting 😄</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) VRAM</p>
+                    <p class="quiz-explanation">High-resolution textures live in the VRAM. If the textures don't fit
+                        into the available VRAM, performance will drop significantly as the system swaps data.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 25 -->
+        <section class="slide quiz-slide" data-slide="26">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What happens if PSU is weak for the GPU?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ System Instability</p>
+                    <p class="quiz-explanation">A weak PSU doesn't just mean the PC won't start; it can lead to random
+                        shutdowns, thermal throttling, and even risk damaging your expensive components. A powerful GPU
+                        is useless without stable power.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 26 -->
+        <section class="slide quiz-slide" data-slide="27">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What is the MOST important job of a PSU?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) High wattage</div>
+                    <div class="quiz-option">(B) RGB</div>
+                    <div class="quiz-option">(C) Clean, stable power</div>
+                    <div class="quiz-option">(D) Silent fan</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Clean, stable power</p>
+                    <p class="quiz-explanation">High wattage doesn't matter if the power is "dirty" or unstable. A PSU's
+                        primary job is to protect your expensive components from electrical damage. It doesn't make
+                        performance; it protects it.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 27 -->
+        <section class="slide quiz-slide" data-slide="28">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Does higher watt PSU increase electricity bill?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">Your PC only draws the power it actually needs from the PSU. A 1000W PSU
+                        doesn't use 1000W of electricity unless the components demand it. Capacity is not consumption.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 28 -->
+        <section class="slide quiz-slide" data-slide="29">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What does 80+ Gold actually mean?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Higher Efficiency</p>
+                    <p class="quiz-explanation">An 80+ Gold rating means the PSU is highly efficient at converting wall
+                        power to PC power. This results in less wasted energy (heat), a longer lifespan, and often
+                        quieter operation. Efficiency saves heat, not performance.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 29 -->
+        <section class="slide quiz-slide" data-slide="30">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Can you mix PSU cables from different brands?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Yes</div>
+                    <div class="quiz-option">(B) No</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">Internal pin layouts on the PSU side are not standardized. Using the
+                        wrong cable can send the wrong voltage to your components and kill your whole PC instantly.
+                        Never mix cables.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 30 -->
+        <section class="slide quiz-slide" data-slide="31">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which upgrade improves boot time the MOST?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) More RAM</div>
+                    <div class="quiz-option">(B) Faster CPU</div>
+                    <div class="quiz-option">(C) SSD instead of HDD</div>
+                    <div class="quiz-option">(D) Better GPU</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) SSD instead of HDD</p>
+                    <p class="quiz-explanation">The Operating System loads directly from your storage device. Replacing
+                        a slow mechanical HDD with a fast SSD is the most impactful upgrade for system responsiveness.
+                        Speed starts where data lives.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 31 -->
+        <section class="slide quiz-slide" data-slide="32">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which storage has NO moving parts?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) HDD</div>
+                    <div class="quiz-option">(B) SATA SSD</div>
+                    <div class="quiz-option">(C) NVMe SSD</div>
+                    <div class="quiz-option">(D) B and C</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (D) B and C</p>
+                    <p class="quiz-explanation">Both SATA and NVMe SSDs are solid-state drives, meaning they use flash
+                        memory and have no moving parts. HDDs are mechanical and have spinning platters. Moving parts
+                        mean waiting.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 32 -->
+        <section class="slide quiz-slide" data-slide="33">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Does faster storage increase FPS in games?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No (mostly)</p>
+                    <p class="quiz-explanation">FPS depends primarily on your CPU and GPU. Storage speed affects how
+                        fast the game and its levels load, but not how fast the game engine renders frames. Storage
+                        decides how fast you start, not how fast you run.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 33 -->
+        <section class="slide quiz-slide" data-slide="34">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">What happens if CPU gets too hot?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Faster performance</div>
+                    <div class="quiz-option">(B) Permanent damage immediately</div>
+                    <div class="quiz-option">(C) Slower performance</div>
+                    <div class="quiz-option">(D) Nothing</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Slower performance</p>
+                    <p class="quiz-explanation">Modern CPUs will reduce their clock speeds (thermal throttling) to
+                        generate less heat and protect themselves from damage. Heat doesn't break performance — it
+                        limits it.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 34 -->
+        <section class="slide quiz-slide" data-slide="35">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Which upgrade changes how smooth the PC feels the MOST?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Bigger monitor</div>
+                    <div class="quiz-option">(B) Higher resolution</div>
+                    <div class="quiz-option">(C) Higher refresh rate</div>
+                    <div class="quiz-option">(D) Curved screen</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Higher refresh rate</p>
+                    <p class="quiz-explanation">A higher refresh rate (e.g., 144Hz vs 60Hz) makes every motion on the
+                        screen look significantly smoother. Your eyes feel the refresh rate even before they notice the
+                        resolution.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 35 -->
+        <section class="slide quiz-slide" data-slide="36">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why do gamers prefer DisplayPort?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Performance Standards</p>
+                    <p class="quiz-explanation">DisplayPort generally supports higher refresh rates and resolutions
+                        compared to older HDMI versions. Your choice of cable can literally limit what your monitor is
+                        capable of displaying.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 36 -->
+        <section class="slide quiz-slide" data-slide="37">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Does USB-C always mean fast data + display?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Yes</div>
+                    <div class="quiz-option">(B) No</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">USB-C is just the physical shape of the connector. The actual capability
+                        (speed, charging, display out) depends on the protocol running behind it (USB 2.0, 3.2,
+                        Thunderbolt, etc.). Shape is not speed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 37 -->
+        <section class="slide quiz-slide" data-slide="38">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Most PC build issues come from?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Faulty CPU</div>
+                    <div class="quiz-option">(B) Bad GPU</div>
+                    <div class="quiz-option">(C) Software bugs</div>
+                    <div class="quiz-option">(D) Loose / wrong cables</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (D) Cables</p>
+                    <p class="quiz-explanation">Front panel connectors, power cables, and fan headers are the most
+                        common points of failure in a new build. Always check your cable connections before panicking
+                        about faulty hardware.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 38 -->
+        <section class="slide quiz-slide" data-slide="39">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Can hardware work without an OS?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Yes (but useless)</p>
+                    <p class="quiz-explanation">Hardware will power on and perform basic POST checks, but without an OS,
+                        the user has no way to interact with the system or run applications. The OS gives the hardware a
+                        functional voice.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 39 -->
+        <section class="slide quiz-slide" data-slide="40">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why does a fresh PC feel slow after OS install?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Missing Drivers</p>
+                    <p class="quiz-explanation">A fresh OS install only has generic drivers. You must install specific
+                        hardware drivers to enable full performance and features. The OS runs the hardware, but drivers
+                        unlock its true potential.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 40 -->
+        <section class="slide quiz-slide" data-slide="41">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why does RAM run slower by default?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Safe Settings</p>
+                    <p class="quiz-explanation">Most high-speed RAM requires enabling XMP (Intel) or EXPO (AMD) in the
+                        BIOS to reach its advertised speed. Default settings are chosen for maximum safety, not maximum
+                        speed.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 41 -->
+        <section class="slide quiz-slide" data-slide="42">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Why can a desktop beat a laptop with same CPU name?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ Power & Cooling</p>
+                    <p class="quiz-explanation">Desktops have much higher power limits and superior cooling solutions.
+                        Even with the "same" chip name, the desktop version has the freedom to run at higher speeds for
+                        longer. Same name, different freedom.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 42 -->
+        <section class="slide quiz-slide" data-slide="43">
+            <div class="slide-content">
+                <h2>🧠 Think Like an Engineer</h2>
+                <p class="quiz-question">Is there a 'best' computer?</p>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">❌ No</p>
+                    <p class="quiz-explanation">There is no single "best" computer—only the right computer for the
+                        specific task at hand. Engineering is all about choosing the right trade-offs for your needs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- QUIZ 43: GRAND FINALE -->
+        <section class="slide quiz-slide" data-slide="44">
+            <div class="slide-content">
+                <h2>🧠 The Final Challenge</h2>
+                <p class="quiz-question">What is the MOST important skill you gained today?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Memorizing specs</div>
+                    <div class="quiz-option">(B) Brand comparison</div>
+                    <div class="quiz-option">(C) Logical system thinking</div>
+                    <div class="quiz-option">(D) Buying expensive parts</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Logical system thinking</p>
+                    <p class="quiz-explanation">You didn't just learn about parts; you learned how to think like an
+                        engineer. Logical system thinking allows you to build, troubleshoot, and optimize any
+                        technology. You've trained your mind, not just your memory.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ CONCLUSION -->
+        <section class="slide" data-slide="45">
+            <div class="slide-content">
+                <h1>Quiz Complete!</h1>
+                <div class="content-card">
+                    <h2>🎉 Great Job!</h2>
+                    <p>You've completed the Day 1 Engineering Challenge.</p>
+                </div>
+                <a href="day1.html" class="nav-btn-link" style="
+                    display: inline-block;
+                    margin-top: 2rem;
+                    padding: 1rem 2rem;
+                    background: var(--color-primary);
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 8px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                ">Back to Presentation</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Navigation Controls -->
+    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous slide" title="Previous slide (←)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button class="nav-btn next-btn" id="nextBtn" aria-label="Next slide" title="Next slide (→)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Slide Navigator -->
+    <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open slide navigator" title="Slide navigator (N)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Slide Navigator Overlay -->
+    <div class="nav-overlay hidden" id="navOverlay">
+        <div class="nav-overlay-header">
+            <h2>Navigate to Slide</h2>
+            <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigator">&times;</button>
+        </div>
+        <div class="nav-overlay-content" id="navOverlayContent">
+            <!-- Slide thumbnails will be generated here -->
+        </div>
+    </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" role="status" aria-live="polite">
+        <span id="currentSlide">1</span> / <span id="totalSlides">45</span>
+    </div>
+
+    <!-- Home Button -->
+    <button class="home-btn" id="homeBtn" aria-label="Go to first slide" title="Go to first slide (Home)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </button>
+
+    <!-- Keyboard Shortcuts Helper -->
+    <button class="help-btn" id="helpBtn" aria-label="Show keyboard shortcuts" title="Keyboard shortcuts (?)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+    </button>
+
+    <!-- Help Overlay -->
+    <div class="help-overlay hidden" id="helpOverlay">
+        <div class="help-overlay-header">
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            <button class="help-close-btn" id="helpCloseBtn" aria-label="Close help">&times;</button>
+        </div>
+        <div class="help-overlay-content">
+            <div class="help-section">
+                <h3>Navigation</h3>
+                <div class="help-item">
+                    <kbd>→</kbd> <kbd>Space</kbd> <kbd>Page Down</kbd>
+                    <span>Next slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>←</kbd> <kbd>Page Up</kbd>
+                    <span>Previous slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>Home</kbd>
+                    <span>First slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>End</kbd>
+                    <span>Last slide</span>
+                </div>
+            </div>
+            <div class="help-section">
+                <h3>Controls</h3>
+                <div class="help-item">
+                    <kbd>N</kbd>
+                    <span>Open slide navigator</span>
+                </div>
+                <div class="help-item">
+                    <kbd>F</kbd>
+                    <span>Toggle fullscreen</span>
+                </div>
+                <div class="help-item">
+                    <kbd>?</kbd>
+                    <span>Show this help</span>
+                </div>
+                <div class="help-item">
+                    <kbd>Esc</kbd>
+                    <span>Close overlays / Return to first slide</span>
+                </div>
+            </div>
+            <div class="help-section">
+                <h3>Other</h3>
+                <div class="help-item">
+                    <span>📱 Swipe left/right on mobile</span>
+                </div>
+                <div class="help-item">
+                    <span> Click agenda items on first slide</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/slides.js"></script>
+</body>
+
+</html>

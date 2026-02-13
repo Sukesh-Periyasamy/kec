@@ -376,6 +376,15 @@ ul {
     margin-top: var(--spacing-sm);
 }
 
+.big-list ul li {
+    font-size: clamp(1rem, 1.4vw, 1.15rem);
+    padding: 0.35rem 0 0.35rem var(--spacing-md);
+}
+
+.big-list ul li::before {
+    content: '•';
+}
+
 .chipset-list li {
     padding: var(--spacing-xs) 0;
 }
@@ -642,6 +651,25 @@ ul {
     color: var(--color-text-muted);
 }
 
+.comparison-card ul {
+    margin-top: var(--spacing-sm);
+}
+
+.comparison-card ul li {
+    padding: 0.45rem 0 0.45rem var(--spacing-md);
+    position: relative;
+    color: var(--color-text-secondary);
+    text-align: left;
+}
+
+.comparison-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
 .highlight-card {
     border: 2px solid var(--color-primary);
     box-shadow: var(--shadow-glow);
@@ -709,6 +737,16 @@ ul {
     color: var(--color-primary);
     font-weight: bold;
     font-size: 1.5em;
+}
+
+.vs-card ul ul {
+    margin-top: var(--spacing-xs);
+    margin-left: var(--spacing-sm);
+}
+
+.vs-card ul ul li {
+    font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+    padding: 0.35rem 0;
 }
 
 .vs-divider {
@@ -1838,4 +1876,113 @@ button:focus-visible {
 
 .progress-fill {
     will-change: width;
+}
+
+/* ========================================
+   INTEL VS AMD ENHANCED STYLING
+   ======================================== */
+
+/* Section divider for better visual separation */
+.content-card h2 {
+    position: relative;
+    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+/* Intel brand colors */
+.vs-card.intel h3 {
+    color: #0071c5 !important;
+}
+
+/* AMD brand colors */
+.vs-card.amd h3 {
+    color: #ed1c24 !important;
+}
+
+/* Enhanced VS container for better mobile responsiveness */
+@media (max-width: 768px) {
+    .vs-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+    
+    .vs-divider {
+        transform: rotate(90deg);
+    }
+}
+
+/* Better list styling within content cards */
+.content-card ul:not(.big-list) li {
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-lg);
+    position: relative;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.content-card ul:not(.big-list) li::before {
+    content: '▸';
+    position: absolute;
+    left: var(--spacing-sm);
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+/* Enhanced comparison table styling */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: var(--spacing-lg) 0;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+table thead {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.3));
+}
+
+table thead th {
+    padding: var(--spacing-md) var(--spacing-lg);
+    text-align: left;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+}
+
+table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background var(--transition-fast);
+}
+
+table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+table tbody tr:last-child {
+    border-bottom: none;
+}
+
+table tbody td {
+    padding: var(--spacing-md) var(--spacing-lg);
+    color: var(--color-text-secondary);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+}
+
+table tbody td:first-child {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+/* Better spacing for subsections */
+.content-card h3:not(:first-child) {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+}
+
+/* Ensure proper spacing between sections */
+.content-card + .content-card {
+    margin-top: var(--spacing-xl);
 }

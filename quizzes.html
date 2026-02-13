@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>KEC Workshop - Quizzes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .quiz-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 16px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .quiz-card.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .quiz-card h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.5rem;
+        }
+
+        .quiz-card p {
+            margin: 0;
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .back-btn:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="home-body">
+
+    <div class="home-container">
+        <h1 class="home-title">Daily Quizzes</h1>
+        <p class="home-subtitle">Test your knowledge from each day of the workshop</p>
+
+        <div class="quiz-grid">
+            <!-- Day 1 Quiz -->
+            <a href="day1-quiz.html" class="quiz-card">
+                <h2>Day 1</h2>
+                <p>Computer Components</p>
+            </a>
+
+            <!-- Day 2 Quiz (Placeholder) -->
+            <div class="quiz-card disabled">
+                <h2>Day 2</h2>
+                <p>Coming Soon</p>
+            </div>
+
+            <!-- Day 3 Quiz (Placeholder) -->
+            <div class="quiz-card disabled">
+                <h2>Day 3</h2>
+                <p>Coming Soon</p>
+            </div>
+
+            <!-- Day 4 Quiz (Placeholder) -->
+            <div class="quiz-card disabled">
+                <h2>Day 4</h2>
+                <p>Coming Soon</p>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-btn">← Back to Home</a>
+    </div>
+
+</body>
+
+</html>
