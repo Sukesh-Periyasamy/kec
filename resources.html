@@ -3,15 +3,152 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Workshop Resources</title>
+    <title>Guides, Links & Documents</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .resources-body {
+            background: #111;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 40px;
+        }
+
+        .resources-container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .resource-section {
+            margin-bottom: 40px;
+        }
+
+        .resource-section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .resource-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-section li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .resource-section li::before {
+            content: '•';
+            color: #4fc3f7;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .resource-section a {
+            color: #4fc3f7;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .resource-section a:hover {
+            color: #fff;
+            text-decoration: underline;
+            padding-left: 5px;
+        }
+
+        .description {
+            color: #888;
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: #4fc3f7;
+            color: black;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #29b6f6;
+        }
+    </style>
 </head>
 
 <body class="resources-body">
 
     <div class="resources-container">
-        <h1>Workshop Resources</h1>
+        <h1>Guides, Links & Documents</h1>
+
+        <div class="resource-section">
+            <h2>🛠️ Installation Guides</h2>
+            <ul>
+                <li><a href="linux-installation.html">Linux Installation Guide</a><span class="description">-
+                        Step-by-step Kali Linux setup</span></li>
+                <li><a href="windows-installation.html">Windows 11 Installation Guide</a><span class="description">-
+                        Clean install & troubleshooting</span></li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>🖥️ OS & Virtualization</h2>
+            <ul>
+                <li><a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">VirtualBox</a><span
+                        class="description">- Free virtualization software</span></li>
+                <li><a href="https://www.kali.org/get-kali/#kali-platforms" target="_blank"
+                        rel="noopener noreferrer">Kali Linux Downloads</a><span class="description">- Security testing
+                        OS</span></li>
+                <li><a href="https://www.microsoft.com/en-in/software-download/windows11?msockid=2ccaf16675d1665534bce010747c6747"
+                        target="_blank" rel="noopener noreferrer">Windows 11 ISO</a><span class="description">- Official
+                        Microsoft download</span></li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>☁️ IoT & Cloud</h2>
+            <ul>
+                <li><a href="https://thingspeak.mathworks.com/" target="_blank"
+                        rel="noopener noreferrer">ThingSpeak</a><span class="description">- IoT analytics
+                        platform</span></li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>💻 Essential Software</h2>
+            <ul>
+                <li><a href="https://code.visualstudio.com/download" target="_blank" rel="noopener noreferrer">Visual
+                        Studio Code</a><span class="description">- Recommended code editor</span></li>
+                <li><a href="https://www.arduino.cc/en/software/" target="_blank" rel="noopener noreferrer">Arduino
+                        IDE</a><span class="description">- For IoT & Esp32 programming</span></li>
+                <li><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener noreferrer">Raspberry
+                        Pi Imager</a><span class="description">- For flashing OS images</span></li>
+                <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a><span
+                        class="description">- Code hosting & collaboration</span></li>
+            </ul>
+        </div>
+
+        <div class="resource-section">
+            <h2>🔧 Hardware Tools</h2>
+            <ul>
+                <li><a href="https://www.coolermaster.com/en-in/power-supply-calculator/" target="_blank"
+                        rel="noopener noreferrer">Cooler Master PSU Calculator</a><span class="description">- Calculate
+                        power needs</span></li>
+                <li><a href="https://pcpartpicker.com/" target="_blank" rel="noopener noreferrer">PC Part
+                        Picker</a><span class="description">- Compatibility checker</span></li>
+            </ul>
+        </div>
 
         <div class="resource-section">
             <h2>📄 Cheat Sheets</h2>
@@ -22,14 +159,13 @@
         </div>
 
         <div class="resource-section">
-            <h2>🔗 Useful Links</h2>
+            <h2>🔗 Official Links</h2>
             <ul>
-                <li><a href="https://pcpartpicker.com/" target="_blank" rel="noopener noreferrer">PC Part Picker</a>
-                </li>
                 <li><a href="https://www.intel.com/" target="_blank" rel="noopener noreferrer">Official Intel
                         Website</a></li>
                 <li><a href="https://www.amd.com/" target="_blank" rel="noopener noreferrer">Official AMD Website</a>
                 </li>
+                <li><a href="https://antigravity.google/" target="_blank" rel="noopener noreferrer">Antigravity</a></li>
             </ul>
         </div>
 
