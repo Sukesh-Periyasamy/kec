@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain & DNS Basics - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/linux-guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="guide-body">
+    <div class="guide-container">
+        <a href="day3.html" class="back-link">← Back to Day 3</a>
+
+        <header class="guide-header" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <h1><i class="fa-solid fa-globe"></i> Domain, DNS & IP Guide</h1>
+            <p class="subtitle">Complete Guide to Connecting Custom Domain to GitHub Pages</p>
+        </header>
+
+        <!-- Part 1: Basic Concepts -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-brain"></i> PART 1 – Basic Concepts (Foundation First)</h2>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> What is an IP Address?</h3>
+                <p class="highlight-text">IP = Internet Protocol Address</p>
+                <p>An IP address is the <strong>real address</strong> of a server on the internet.</p>
+
+                <div class="info-box">
+                    <h4>Example:</h4>
+                    <div class="code-box">142.250.183.14</div>
+                </div>
+
+                <ul>
+                    <li><i class="fa-solid fa-computer"></i> Computers understand IP addresses</li>
+                    <li><i class="fa-solid fa-user"></i> Humans don't remember them easily</li>
+                    <li><i class="fa-solid fa-arrow-right"></i> So we use domain names instead</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> What is a Domain Name?</h3>
+                <p>A domain name is a <strong>human-readable name</strong> for an IP address.</p>
+
+                <div class="info-box">
+                    <h4>Examples:</h4>
+                    <ul>
+                        <li><code>google.com</code></li>
+                        <li><code>iitj.ac.in</code></li>
+                        <li><code>github.com</code></li>
+                    </ul>
+                </div>
+
+                <div class="comparison-table">
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-xmark"></i> Instead of typing:</h4>
+                        <div class="code-box">142.250.183.14</div>
+                    </div>
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-check"></i> We type:</h4>
+                        <div class="code-box">google.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-3"></i> What is DNS?</h3>
+                <p class="highlight-text">DNS = Domain Name System</p>
+                <p><strong>DNS converts:</strong></p>
+                <div class="code-box">google.com → 142.250.183.14</div>
+
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-lightbulb"></i> Think Like This:</h4>
+                    <table style="width: 100%; margin-top: 1rem;">
+                        <thead>
+                            <tr>
+                                <th>Real Life</th>
+                                <th>Internet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Contact Name</td>
+                                <td>Domain</td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>IP Address</td>
+                            </tr>
+                            <tr>
+                                <td>Phonebook</td>
+                                <td>DNS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="callout tip">
+                    <p><strong>DNS is like the internet's phonebook.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 2: TLDs -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-earth-americas"></i> PART 2 – What is .com, .in, .org etc?</h2>
+            <p class="highlight-text">These are called: TLD = Top Level Domain</p>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-store"></i> .com</h3>
+                <ul class="big-list">
+                    <li><strong>Commercial</strong></li>
+                    <li>Most popular worldwide</li>
+                    <li>Globally accepted</li>
+                    <li><strong>Best for portfolio</strong></li>
+                </ul>
+                <div class="info-box">
+                    <p>Example: <code>sukeshdev.com</code></p>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-flag-india"></i> .in</h3>
+                <ul class="big-list">
+                    <li>India-specific</li>
+                    <li>Slightly cheaper sometimes</li>
+                    <li>Good for Indian businesses</li>
+                </ul>
+                <div class="info-box">
+                    <p>Example: <code>sukeshdev.in</code></p>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-handshake"></i> .org</h3>
+                <ul>
+                    <li>Organizations</li>
+                    <li>NGOs</li>
+                    <li>Communities</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-graduation-cap"></i> .edu</h3>
+                <ul>
+                    <li>Educational institutions</li>
+                    <li><strong>Restricted</strong> (not available for public purchase)</li>
+                </ul>
+            </div>
+
+            <div class="callout tip">
+                <h4><i class="fa-solid fa-rocket"></i> Recommendation for Students</h4>
+                <p><strong>If available:</strong></p>
+                <p><i class="fa-solid fa-arrow-right"></i> Buy <strong>.com</strong></p>
+                <p><strong>If not available:</strong></p>
+                <p><i class="fa-solid fa-arrow-right"></i> Buy <strong>.in</strong></p>
+            </div>
+        </section>
+
+        <!-- Part 3: Pricing -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-indian-rupee-sign"></i> PART 3 – How Much Does Domain Cost?</h2>
+
+            <p>Domain prices depend on:</p>
+            <ul>
+                <li>Extension (.com, .in)</li>
+                <li>Availability</li>
+                <li>Offers</li>
+            </ul>
+
+            <div class="content-card">
+                <h3>Approximate Pricing (India)</h3>
+                <table style="width: 100%; margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th>Domain</th>
+                            <th>Price per year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>.com</strong></td>
+                            <td>₹800 – ₹1200</td>
+                        </tr>
+                        <tr>
+                            <td><strong>.in</strong></td>
+                            <td>₹500 – ₹900</td>
+                        </tr>
+                        <tr>
+                            <td><strong>.org</strong></td>
+                            <td>₹900 – ₹1300</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="callout warning">
+                <p><i class="fa-solid fa-triangle-exclamation"></i> First year is cheaper sometimes.</p>
+                <p>Renewal may cost slightly more.</p>
+            </div>
+        </section>
+
+        <!-- Part 4: Where to Buy -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-cart-shopping"></i> PART 4 – Where to Buy Domain?</h2>
+            <p class="subtitle">Popular Domain Registrars:</p>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> GoDaddy</h3>
+                <a href="https://www.godaddy.com" target="_blank" class="download-link">
+                    <i class="fa-solid fa-arrow-right"></i> https://www.godaddy.com
+                </a>
+                <p>Very beginner friendly.</p>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> Namecheap</h3>
+                <a href="https://www.namecheap.com" target="_blank" class="download-link">
+                    <i class="fa-solid fa-arrow-right"></i> https://www.namecheap.com
+                </a>
+                <p>Cheaper than GoDaddy usually.</p>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-3"></i> Google Domains</h3>
+                <p>Simple interface.</p>
+                <p>Easy to manage.</p>
+            </div>
+
+            <div class="callout tip">
+                <h4><i class="fa-solid fa-chalkboard-user"></i> Teaching Tip</h4>
+                <p>For demo, search domain like:</p>
+                <div class="code-box">yournameportfolio.com</div>
+                <p>Show:</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Available</li>
+                    <li><i class="fa-solid fa-xmark"></i> Unavailable</li>
+                    <li><i class="fa-solid fa-lightbulb"></i> Suggested alternatives</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 5: After Buying -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-screwdriver-wrench"></i> PART 5 – What Happens After Buying Domain?</h2>
+
+            <p>After buying domain, you get access to:</p>
+            <ul class="big-list">
+                <li><i class="fa-solid fa-network-wired"></i> DNS Management Panel</li>
+                <li><i class="fa-solid fa-server"></i> Nameservers</li>
+                <li><i class="fa-solid fa-a"></i> A Record</li>
+                <li><i class="fa-solid fa-c"></i> CNAME Record</li>
+                <li><i class="fa-solid fa-envelope"></i> MX Record</li>
+            </ul>
+
+            <div class="callout tip">
+                <p><strong>Students mainly need:</strong></p>
+                <ul>
+                    <li>✔ A Record</li>
+                    <li>✔ CNAME Record</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Part 6: GitHub Pages Connection -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-link"></i> PART 6 – How to Connect Custom Domain to GitHub Pages</h2>
+            <p class="subtitle">Now comes the practical teaching part 🔥</p>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 1</span>
+                    <h3><i class="fa-brands fa-github"></i> Deploy Website to GitHub Pages</h3>
+                </div>
+
+                <ol class="step-list">
+                    <li>Push portfolio to GitHub</li>
+                    <li>Go to: <strong>Repository → Settings → Pages</strong></li>
+                    <li>Select: <strong>Branch: main</strong></li>
+                    <li>Click <strong>Save</strong></li>
+                </ol>
+
+                <div class="info-box">
+                    <p>Now GitHub gives you a link like:</p>
+                    <div class="code-box">https://username.github.io/repository-name</div>
+                </div>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 2</span>
+                    <h3><i class="fa-solid fa-plus"></i> Add Custom Domain in GitHub</h3>
+                </div>
+
+                <ol class="step-list">
+                    <li>Go to: <strong>Repository → Settings → Pages</strong></li>
+                    <li>Under: <strong>Custom Domain</strong></li>
+                    <li>Enter: <code>yourdomain.com</code></li>
+                    <li>Click <strong>Save</strong></li>
+                </ol>
+
+                <div class="tip-box">
+                    <p>GitHub will automatically create a file called: <code>CNAME</code> in your repository.</p>
+                </div>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 3</span>
+                    <h3><i class="fa-solid fa-gear"></i> Go to Domain Provider DNS Settings</h3>
+                </div>
+
+                <p>Example in GoDaddy / Namecheap:</p>
+                <ol>
+                    <li>Open: <strong>DNS Management</strong></li>
+                </ol>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 4</span>
+                    <h3><i class="fa-solid fa-a"></i> Add A Record</h3>
+                </div>
+
+                <p><strong>Add 4 A Records pointing to GitHub IP:</strong></p>
+                <div class="code-box">
+                    185.199.108.153<br>
+                    185.199.109.153<br>
+                    185.199.110.153<br>
+                    185.199.111.153
+                </div>
+
+                <div class="content-card">
+                    <h4>Settings:</h4>
+                    <ul>
+                        <li><strong>Type:</strong> A</li>
+                        <li><strong>Host:</strong> @</li>
+                        <li><strong>Points to:</strong> Above IPs (one record for each)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 5</span>
+                    <h3><i class="fa-solid fa-c"></i> Add CNAME Record</h3>
+                </div>
+
+                <p>If using www version:</p>
+                <div class="content-card">
+                    <ul>
+                        <li><strong>Type:</strong> CNAME</li>
+                        <li><strong>Host:</strong> www</li>
+                        <li><strong>Points to:</strong> <code>username.github.io</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 6</span>
+                    <h3><i class="fa-solid fa-clock"></i> Wait for DNS Propagation</h3>
+                </div>
+
+                <div class="callout warning">
+                    <p><strong>Time: 10 minutes – 24 hours</strong></p>
+                </div>
+
+                <div class="tip-box">
+                    <p>After propagation, your site works as:</p>
+                    <div class="code-box">yourdomain.com</div>
+                </div>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 7</span>
+                    <h3><i class="fa-solid fa-lock"></i> Enable HTTPS</h3>
+                </div>
+
+                <p>In GitHub Pages settings:</p>
+                <div class="info-box">
+                    <p>✔ Enable <strong>"Enforce HTTPS"</strong></p>
+                </div>
+
+                <div class="tip-box">
+                    <h4><i class="fa-solid fa-shield"></i> Now your website is secure!</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Part 7: Conceptual Understanding -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-brain"></i> PART 7 – What Students Must Understand Conceptually</h2>
+
+            <div class="content-card">
+                <h3>Teach them:</h3>
+                <ul class="big-list">
+                    <li>✔ <strong>Domain</strong> = Name (human-readable)</li>
+                    <li>✔ <strong>IP</strong> = Real Address (computer-readable)</li>
+                    <li>✔ <strong>DNS</strong> = Translator (converts domain to IP)</li>
+                    <li>✔ <strong>A Record</strong> = Direct IP linking</li>
+                    <li>✔ <strong>CNAME</strong> = Alias linking</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Diagram -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-diagram-project"></i> Diagram You Can Show in Class</h2>
+
+            <div class="content-card"
+                style="text-align: center; padding: 2rem; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+                <div style="font-size: 1.2rem; line-height: 2.5;">
+                    <p><i class="fa-solid fa-user"></i> <strong>User types:</strong> <code>sukeshdev.com</code></p>
+                    <p style="font-size: 2rem;">↓</p>
+                    <p><i class="fa-solid fa-network-wired"></i> <strong>DNS checks records</strong></p>
+                    <p style="font-size: 2rem;">↓</p>
+                    <p><i class="fa-solid fa-server"></i> <strong>Points to GitHub IP</strong></p>
+                    <p style="font-size: 2rem;">↓</p>
+                    <p><i class="fa-brands fa-github"></i> <strong>GitHub server loads website</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="guide-section troubleshooting-section">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Common Problems & Solutions</h2>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Website Not Opening</h3>
+                <p><strong>Possible Reasons:</strong></p>
+                <ul>
+                    <li>DNS propagation delay (wait longer)</li>
+                    <li>Wrong IP address in A record</li>
+                    <li>CNAME typo</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> HTTPS Not Working</h3>
+                <p><strong>Solutions:</strong></p>
+                <ul>
+                    <li>Wait a few minutes after enabling</li>
+                    <li>Re-check domain spelling in GitHub settings</li>
+                    <li>Ensure DNS propagation is complete</li>
+                </ul>
+            </div>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Only www Works, Not Root Domain</h3>
+                <p><strong>Solution:</strong></p>
+                <ul>
+                    <li>Check A record is properly configured with @ as host</li>
+                    <li>Ensure all 4 GitHub IPs are added</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 2rem; color: #666;">
+            <p><i class="fa-solid fa-circle-info"></i> For more help, visit <a
+                    href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site"
+                    target="_blank">GitHub Pages Custom Domain Documentation</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

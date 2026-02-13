@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Installation Guide - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/linux-guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="guide-body">
+    <div class="guide-container">
+        <a href="day3.html" class="back-link">← Back to Day 3</a>
+
+        <header class="guide-header" style="background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%);">
+            <h1><i class="fa-brands fa-git-alt"></i> Git Installation Guide</h1>
+            <p class="subtitle">Complete Step-by-Step Guide for Windows 11</p>
+        </header>
+
+        <!-- Introduction -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-bullseye"></i> What Students Will Learn</h2>
+            <ul class="big-list">
+                <li>What Git is and why it's important</li>
+                <li>Where to download Git safely</li>
+                <li>How to install Git on Windows 11</li>
+                <li>How to verify successful installation</li>
+                <li>Common installation issues & fixes</li>
+            </ul>
+        </section>
+
+        <!-- Step 1: Download -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 1</span>
+                <h2><i class="fa-solid fa-download"></i> Download Git</h2>
+            </div>
+
+            <div class="download-card">
+                <h3><i class="fa-solid fa-globe"></i> Official Website:</h3>
+                <a href="https://git-scm.com/downloads" target="_blank" class="download-link">
+                    <i class="fa-solid fa-arrow-right"></i> https://git-scm.com/downloads
+                </a>
+                <p class="download-note">Git automatically detects your operating system.</p>
+            </div>
+
+            <div class="info-box">
+                <p><strong>For Windows:</strong></p>
+                <p>Click: <strong>Download for Windows</strong></p>
+                <p>This will download a <code>.exe</code> installer file.</p>
+            </div>
+        </section>
+
+        <!-- Step 2: Install -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 2</span>
+                <h2><i class="fa-solid fa-gear"></i> Install Git on Windows</h2>
+            </div>
+
+            <ol class="step-list">
+                <li>Double-click the <code>.exe</code> file</li>
+                <li>Click <strong>Yes</strong> (if User Account Control appears)</li>
+                <li>Click <strong>Next</strong> on most screens (default settings are recommended)</li>
+            </ol>
+
+            <div class="callout warning">
+                <h3><i class="fa-solid fa-triangle-exclamation"></i> Important Installation Settings</h3>
+                <p>Pay close attention during installation. Students will see multiple configuration options.</p>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> Select Components</h3>
+                <p>Keep default settings. Make sure these are checked:</p>
+                <ul>
+                    <li>✔ Git Bash Here</li>
+                    <li>✔ Git GUI Here</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> Choosing Default Editor</h3>
+                <p>Select:</p>
+                <div class="code-box">
+                    <i class="fa-solid fa-arrow-right"></i> Use Visual Studio Code (if installed)
+                </div>
+                <p class="slide-hint">OR keep default (Vim) if unsure</p>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-3"></i> Adjusting PATH Environment</h3>
+                <div class="callout warning">
+                    <p><strong><i class="fa-solid fa-exclamation"></i> VERY IMPORTANT STEP</strong></p>
+                </div>
+                <p>Select:</p>
+                <div class="code-box">
+                    <i class="fa-solid fa-arrow-right"></i> Git from the command line and also from 3rd-party software
+                </div>
+                <p>This ensures Git works in:</p>
+                <ul>
+                    <li>Command Prompt</li>
+                    <li>PowerShell</li>
+                    <li>VS Code Terminal</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-4"></i> HTTPS Transport Backend</h3>
+                <p>Select:</p>
+                <div class="code-box">
+                    <i class="fa-solid fa-arrow-right"></i> Use OpenSSL (default)
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-5"></i> Line Ending Conversions</h3>
+                <p>Select:</p>
+                <div class="code-box">
+                    <i class="fa-solid fa-arrow-right"></i> Checkout Windows-style, commit Unix-style line endings
+                    (Recommended)
+                </div>
+            </div>
+
+            <div class="info-box">
+                <p>Then:</p>
+                <ul>
+                    <li>Click <strong>Next → Next → Install</strong></li>
+                    <li>Wait for installation to complete</li>
+                    <li>Click <strong>Finish</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Step 3: Verify -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 3</span>
+                <h2><i class="fa-solid fa-check-circle"></i> Verify Git Installation</h2>
+            </div>
+
+            <p>Now we check whether Git is installed correctly.</p>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-laptop"></i> Method 1 – Using Command Prompt</h3>
+                <ol>
+                    <li>Press <kbd>Windows + R</kbd></li>
+                    <li>Type: <code>cmd</code></li>
+                    <li>Press Enter</li>
+                    <li>Type: <code>git --version</code></li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>If installed correctly, output will be like:</strong></p>
+                    <div class="code-box">git version 2.45.1.windows.1</div>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-terminal"></i> Method 2 – Using PowerShell</h3>
+                <ol>
+                    <li>Open PowerShell</li>
+                    <li>Run: <code>git --version</code></li>
+                </ol>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-brands fa-git-alt"></i> Method 3 – Using Git Bash</h3>
+                <ol>
+                    <li>Right-click on Desktop</li>
+                    <li>Click <strong>Git Bash Here</strong></li>
+                    <li>Type: <code>git --version</code></li>
+                </ol>
+            </div>
+
+            <div class="tip-box">
+                <h4><i class="fa-solid fa-circle-check"></i> If You See Version → Installation Successful! 🎉</h4>
+            </div>
+        </section>
+
+        <!-- Troubleshooting -->
+        <section class="guide-section troubleshooting-section">
+            <h2><i class="fa-solid fa-triangle-exclamation"></i> Common Errors & Fixes</h2>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Error 1: "git is not recognized as an internal or external
+                    command"</h3>
+                <p><strong>Reason:</strong> Git was not added to PATH.</p>
+                <p><strong>Solution:</strong></p>
+                <ol>
+                    <li>Reinstall Git</li>
+                    <li>Make sure you select: <strong>"Git from the command line and also from 3rd-party
+                            software"</strong></li>
+                    <li>OR manually add Git to Environment Variables</li>
+                </ol>
+            </div>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Error 2: Antivirus blocking installation</h3>
+                <p><strong>Solution:</strong> Disable antivirus temporarily and install again.</p>
+            </div>
+
+            <div class="error-box">
+                <h3><i class="fa-solid fa-circle-xmark"></i> Error 3: Installed but still not working</h3>
+                <p><strong>Solution:</strong> Restart your system.</p>
+                <p>Sometimes PATH updates require a system restart.</p>
+            </div>
+        </section>
+
+        <!-- Step 4: Configure -->
+        <section class="guide-section step-section">
+            <div class="step-header">
+                <span class="step-number">STEP 4</span>
+                <h2><i class="fa-solid fa-user-gear"></i> Configure Git (Very Important After Installation)</h2>
+            </div>
+
+            <div class="callout warning">
+                <p><strong>Every student must run these commands after installation:</strong></p>
+            </div>
+
+            <div class="code-box">
+                git config --global user.name "Your Full Name"<br>
+                git config --global user.email "your@email.com"
+            </div>
+
+            <div class="info-box">
+                <h4>Example:</h4>
+                <div class="code-box">
+                    git config --global user.name "Sukesh Periyasamy"<br>
+                    git config --global user.email "m24im1007@iitj.ac.in"
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-magnifying-glass"></i> Verify Configuration</h3>
+                <p>Run:</p>
+                <div class="code-box">git config --list</div>
+                <p>It should show your name and email.</p>
+            </div>
+        </section>
+
+        <!-- Important Note -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-graduation-cap"></i> What to Tell Students</h2>
+            <div class="callout tip">
+                <p>Explain clearly:</p>
+                <ul>
+                    <li><strong>Git is not just a tool.</strong></li>
+                    <li>It is a <strong>developer's identity system.</strong></li>
+                    <li>Every commit is recorded with your name and email.</li>
+                    <li>This information appears in the project history forever.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Practice Task -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-brain"></i> Mini Practice Task</h2>
+            <div class="content-card">
+                <p><strong>After installation, students should:</strong></p>
+                <ol class="step-list">
+                    <li>Create a folder named <code>git-test</code></li>
+                    <li>Open terminal inside that folder</li>
+                    <li>Run: <code>git init</code></li>
+                </ol>
+                <div class="tip-box">
+                    <p><strong>If it shows:</strong></p>
+                    <div class="code-box">Initialized empty Git repository</div>
+                    <h4><i class="fa-solid fa-party-horn"></i> Git is working perfectly!</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 2rem; color: #666;">
+            <p><i class="fa-solid fa-circle-info"></i> For more help, visit <a href="https://git-scm.com/doc"
+                    target="_blank">Git Documentation</a></p>
+        </footer>
+    </div>
+</body>
+
+</html>

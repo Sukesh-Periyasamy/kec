@@ -3,17 +3,1156 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Day 4 - Placeholder</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 – Hardware + IoT | KEC Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0e27;
+            --bg-secondary: #151933;
+            --bg-card: #1e2340;
+            --color-primary: #667eea;
+            --color-accent: #f093fb;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            --color-danger: #ef4444;
+            --color-text-primary: #e5e7eb;
+            --color-text-secondary: #9ca3af;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1f3a 100%);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+            border-radius: var(--radius-lg);
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Agenda Grid */
+        .agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .agenda-item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .agenda-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .agenda-item i {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+            display: block;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        section h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--color-primary);
+        }
+
+        section h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+            color: var(--color-accent);
+        }
+
+        section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Content Cards */
+        .content-card {
+            background: var(--bg-card);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Callout Boxes */
+        .callout {
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+            border-left: 4px solid;
+        }
+
+        .callout.tip {
+            background: rgba(16, 185, 129, 0.1);
+            border-color: var(--color-success);
+        }
+
+        .callout.warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--color-warning);
+        }
+
+        .callout.danger {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: var(--color-danger);
+        }
+
+        /* Lists */
+        ul,
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .big-list li {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+        }
+
+        th {
+            background: rgba(102, 126, 234, 0.2);
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        /* Code Blocks */
+        pre {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        code {
+            background: rgba(102, 126, 234, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+        }
+
+        .code-box {
+            background: var(--bg-card);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+
+        /* Grid Layouts */
+        .detail-grid,
+        .comparison-table {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .comparison-item {
+            background: var(--bg-card);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+        }
+
+        /* Utilities */
+        .text-center {
+            text-align: center;
+        }
+
+        .goal-text {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 2rem 0;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+            border-radius: var(--radius-md);
+        }
+
+        .slide-hint {
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(240, 147, 251, 0.1) 100%);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .agenda-grid,
+            .detail-grid,
+            .comparison-table {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling offset for fixed headers if any */
+        html {
+            scroll-padding-top: 2rem;
+        }
+    </style>
 </head>
 
-<body class="placeholder-body">
-    <div class="home-container">
-        <h1 class="home-title">Day 4</h1>
-        <p class="home-subtitle">Content coming soon...</p>
-        <div class="home-buttons">
-            <a href="index.html" class="home-btn secondary">Back to Home</a>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1><i class="fa-solid fa-microchip"></i> DAY 4 – Hardware + IoT</h1>
+            <h2>ESP32, Arduino, Sensors & Live Web Data</h2>
+            <p>Session 7-8: From Embedded Systems to Cloud Integration</p>
+            <div class="agenda-grid">
+                <div class="agenda-item"><i class="fa-solid fa-microchip"></i> Microcontrollers</div>
+                <div class="agenda-item"><i class="fa-solid fa-temperature-half"></i> Sensors</div>
+                <div class="agenda-item"><i class="fa-solid fa-wifi"></i> Communication</div>
+                <div class="agenda-item"><i class="fa-solid fa-cloud"></i> Web Integration</div>
+            </div>
+            <p class="goal-text">Goal: <strong>Build IoT System with Live Data</strong></p>
+        </div>
+
+        <!-- Section 1: Introduction to Embedded Systems -->
+        <section id="embedded-systems">
+            <h1><i class="fa-solid fa-brain"></i> What is Embedded System?</h1>
+            <div class="callout tip">
+                <h3><i class="fa-solid fa-lightbulb"></i> Definition</h3>
+                <p>An embedded system is a <strong>small computer designed to perform a specific task</strong>.</p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list"></i> Examples</h3>
+                <ul class="big-list">
+                    <li><i class="fa-solid fa-wind"></i> Washing machine controller</li>
+                    <li><i class="fa-solid fa-clock"></i> Smartwatch</li>
+                    <li><i class="fa-solid fa-heart-pulse"></i> ECG monitor</li>
+                    <li><i class="fa-solid fa-seedling"></i> Smart irrigation system</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-puzzle-piece"></i> Core Components</h3>
+                <ul>
+                    <li>Microcontroller / Microprocessor</li>
+                    <li>Sensors</li>
+                    <li>Power supply</li>
+                    <li>Communication interface</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 2: Microcontroller -->
+        <section id="microcontroller">
+            <h1><i class="fa-solid fa-microchip"></i> What is a Microcontroller?</h1>
+            <div class="callout tip">
+                <p>A microcontroller is a <strong>small computer on a single chip</strong>.</p>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-item">
+                    <h3><i class="fa-solid fa-check"></i> It Includes:</h3>
+                    <ul class="big-list">
+                        <li>CPU</li>
+                        <li>RAM</li>
+                        <li>Flash memory</li>
+                        <li>GPIO pins</li>
+                        <li>Communication modules</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h3><i class="fa-solid fa-list"></i> Examples:</h3>
+                    <ul class="big-list">
+                        <li><i class="fa-solid fa-microchip"></i> Arduino Uno</li>
+                        <li><i class="fa-solid fa-wifi"></i> ESP32</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: ESP32 -->
+        <section id="esp32">
+            <h1><i class="fa-solid fa-wifi"></i> What is ESP32?</h1>
+            <div class="callout tip">
+                <h3>Definition:</h3>
+                <p>ESP32 is a <strong>powerful microcontroller</strong> with:</p>
+                <ul>
+                    <li><i class="fa-solid fa-wifi"></i> Built-in WiFi</li>
+                    <li><i class="fa-brands fa-bluetooth"></i> Built-in Bluetooth</li>
+                    <li><i class="fa-solid fa-microchip"></i> Dual-core processor</li>
+                    <li><i class="fa-solid fa-plug"></i> Multiple GPIO pins</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-star"></i> Why ESP32?</h3>
+                <ul class="big-list">
+                    <li>No need for external WiFi module</li>
+                    <li>Cheap and powerful</li>
+                    <li>Ideal for IoT projects</li>
+                    <li>Works with Arduino IDE</li>
+                </ul>
+            </div>
+
+            <h2><i class="fa-solid fa-plug"></i> ESP32 Important Pins</h2>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-bolt"></i> 3.3V</h3>
+                    <p>Power output pin</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-ground-circle"></i> GND</h3>
+                    <p>Ground pin</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-plug-circle-check"></i> GPIO</h3>
+                    <p>General purpose I/O</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-arrow-right-arrow-left"></i> TX/RX</h3>
+                    <p>Serial communication</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-plug"></i> VIN</h3>
+                    <p>Voltage input</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Arduino -->
+        <section id="arduino">
+            <h1><i class="fa-solid fa-microchip"></i> What is Arduino?</h1>
+            <div class="callout tip">
+                <h3>Definition:</h3>
+                <p>Arduino is an <strong>easy-to-use microcontroller platform</strong>.</p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-star"></i> Popular Board: Arduino Uno</h3>
+                <h4>Features:</h4>
+                <ul class="big-list">
+                    <li>ATmega328P microcontroller</li>
+                    <li>USB programming</li>
+                    <li>14 Digital Pins</li>
+                    <li>6 Analog Pins</li>
+                    <li>5V logic</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-question"></i> When to Use Arduino?</h3>
+                <ul>
+                    <li>Basic projects</li>
+                    <li>Learning electronics</li>
+                    <li>When WiFi is not required</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 5: Raspberry Pi -->
+        <section id="raspberry-pi">
+            <h1><i class="fa-brands fa-raspberry-pi"></i> What is Raspberry Pi?</h1>
+            <div class="callout warning">
+                <h3>Definition:</h3>
+                <p>Raspberry Pi is a <strong>small computer</strong>.</p>
+                <h4>Key Difference:</h4>
+                <ul>
+                    <li>Arduino/ESP32 = <strong>Microcontroller</strong></li>
+                    <li>Raspberry Pi = <strong>Microcomputer</strong></li>
+                </ul>
+            </div>
+            <div class="comparison-table">
+                <div class="comparison-item">
+                    <h3><i class="fa-solid fa-check"></i> It Can:</h3>
+                    <ul>
+                        <li>Run Linux</li>
+                        <li>Connect keyboard and monitor</li>
+                        <li>Run Python</li>
+                        <li>Host web servers</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Use Cases:</h3>
+                    <ul>
+                        <li>AI projects</li>
+                        <li>Server hosting</li>
+                        <li>Image processing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-scale-balanced"></i> Microcontroller vs Microcomputer</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Arduino / ESP32</th>
+                        <th>Raspberry Pi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>OS</strong></td>
+                        <td>No</td>
+                        <td>Yes (Linux)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Boot time</strong></td>
+                        <td>Instant</td>
+                        <td>Takes time</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Real-time</strong></td>
+                        <td>Yes</td>
+                        <td>Not ideal</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WiFi</strong></td>
+                        <td>Only ESP32</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Power usage</strong></td>
+                        <td>Very low</td>
+                        <td>Higher</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="callout warning">
+                <h3><i class="fa-solid fa-question"></i> Ask Students:</h3>
+                <p>Why should we <strong>not</strong> use Raspberry Pi for simple LED blinking?</p>
+            </div>
+        </section>
+
+        <!-- Section 6: Sensors -->
+        <section id="sensors">
+            <h1><i class="fa-solid fa-gauge"></i> What is a Sensor?</h1>
+            <div class="callout tip">
+                <p>A sensor <strong>converts physical quantity into electrical signal</strong>.</p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list"></i> Examples</h3>
+                <div class="detail-grid">
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-temperature-half"></i> Temperature</h4>
+                    </div>
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Light</h4>
+                    </div>
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-person-running"></i> Motion</h4>
+                    </div>
+                    <div class="comparison-item">
+                        <h4><i class="fa-solid fa-gas-pump"></i> Gas</h4>
+                    </div>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-th-large"></i> Types of Sensors</h2>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-temperature-half"></i> Temperature Sensor</h3>
+                    <ul>
+                        <li>DHT11</li>
+                        <li>LM35</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-sun"></i> Light Sensor</h3>
+                    <ul>
+                        <li>LDR</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-person-running"></i> Motion Sensor</h3>
+                    <ul>
+                        <li>PIR</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-gas-pump"></i> Gas Sensor</h3>
+                    <ul>
+                        <li>MQ series</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-temperature-half"></i> Temperature Sensor with ESP32</h2>
+            <div class="callout tip">
+                <h3>Example: DHT11 + ESP32</h3>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-plug"></i> Connections:</h3>
+                <table>
+                    <tr>
+                        <td><strong>VCC</strong></td>
+                        <td>→</td>
+                        <td>3.3V</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GND</strong></td>
+                        <td>→</td>
+                        <td>GND</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DATA</strong></td>
+                        <td>→</td>
+                        <td>GPIO 4</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-code"></i> Steps:</h3>
+                <ul class="big-list">
+                    <li>Include DHT library</li>
+                    <li>Read temperature</li>
+                    <li>Print value on Serial Monitor</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 7: Communication Protocols -->
+        <section id="protocols">
+            <h1><i class="fa-solid fa-network-wired"></i> Communication Protocols</h1>
+            <div class="callout tip">
+                <p>Protocols are <strong>rules for communication between devices</strong>.</p>
+            </div>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-1"></i> I2C</h3>
+                    <p>Inter-Integrated Circuit</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-2"></i> SPI</h3>
+                    <p>Serial Peripheral Interface</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-3"></i> UART</h3>
+                    <p>Universal Asynchronous Receiver/Transmitter</p>
+                </div>
+            </div>
+
+            <h2><i class="fa-solid fa-1"></i> I2C (Inter-Integrated Circuit)</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-info-circle"></i> Features:</h3>
+                <ul class="big-list">
+                    <li><strong>2 wires</strong> (SDA, SCL)</li>
+                    <li>Master-Slave architecture</li>
+                    <li>Address based</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Used in:</h3>
+                <ul>
+                    <li>OLED display</li>
+                    <li>RTC modules</li>
+                </ul>
+            </div>
+
+            <h2><i class="fa-solid fa-2"></i> SPI (Serial Peripheral Interface)</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-info-circle"></i> Features:</h3>
+                <ul class="big-list">
+                    <li><strong>4 wires</strong> (MISO, MOSI, SCK, CS)</li>
+                    <li>Faster than I2C</li>
+                    <li>Short distance</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Used in:</h3>
+                <ul>
+                    <li>SD card module</li>
+                    <li>TFT display</li>
+                </ul>
+            </div>
+
+            <h2><i class="fa-solid fa-3"></i> UART (Universal Asynchronous Receiver/Transmitter)</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-info-circle"></i> Features:</h3>
+                <ul class="big-list">
+                    <li><strong>TX and RX pins</strong></li>
+                    <li>Serial communication</li>
+                    <li>Used for programming</li>
+                </ul>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-lightbulb"></i> Example:</h3>
+                <ul>
+                    <li>USB to Serial communication</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 8: Web Integration -->
+        <section id="web-integration">
+            <h1><i class="fa-solid fa-cloud-arrow-up"></i> Sending Data to Web Server</h1>
+            <div class="callout tip">
+                <h3>Concept Flow:</h3>
+                <p style="font-size: 1.3rem; text-align: center; line-height: 2.5;">
+                    Sensor → ESP32 → WiFi → Web Server → Website
+                </p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list-check"></i> Steps:</h3>
+                <ol class="big-list">
+                    <li>Connect ESP32 to WiFi</li>
+                    <li>Create simple HTTP request</li>
+                    <li>Send temperature data</li>
+                    <li>Server stores/displays data</li>
+                </ol>
+            </div>
+
+            <h2><i class="fa-solid fa-server"></i> Display Sensor Data on Website</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-1"></i> Method 1: Using Web Server</h3>
+                <p>ESP32 hosts local webpage.</p>
+                <div class="code-box">
+                    Access using: 192.168.x.x
+                </div>
+                <p class="slide-hint">Live temperature updates.</p>
+            </div>
+
+            <div class="content-card">
+                <h3><i class="fa-brands fa-github"></i> Method 2: Using GitHub Pages</h3>
+                <ol class="big-list">
+                    <li>Create GitHub repository</li>
+                    <li>Add HTML file</li>
+                    <li>Enable GitHub Pages</li>
+                    <li>Fetch data from server</li>
+                    <li>Show temperature on webpage</li>
+                </ol>
+            </div>
+
+            <h2><i class="fa-solid fa-rocket"></i> Complete Live Demo Flow</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list-ol"></i> Demo Steps:</h3>
+                <ol class="big-list">
+                    <li>Connect DHT11 to ESP32</li>
+                    <li>Read temperature</li>
+                    <li>Connect ESP32 to WiFi</li>
+                    <li>Send temperature to web server</li>
+                    <li>Open website</li>
+                    <li>Show live updating data</li>
+                </ol>
+            </div>
+            <div class="callout warning">
+                <h3><i class="fa-solid fa-eye"></i> Make Students Observe:</h3>
+                <ul>
+                    <li>Real-time IoT system</li>
+                    <li>Sensor to Cloud flow</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 9: Practical Activities -->
+        <section id="activities">
+            <h1><i class="fa-solid fa-hands-clapping"></i> Practical Activity (1.5–2 Hours)</h1>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-1"></i> Activity 1</h3>
+                    <p><strong>Blink LED using ESP32</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-2"></i> Activity 2</h3>
+                    <p><strong>Read temperature sensor</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-3"></i> Activity 3</h3>
+                    <p><strong>Display data on webpage</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-4"></i> Activity 4</h3>
+                    <p><strong>Modify webpage UI</strong></p>
+                </div>
+            </div>
+            <p class="slide-hint" style="text-align: center; margin-top: 2rem; font-size: 1.1rem;">
+                <i class="fa-solid fa-clock"></i> Students will build complete IoT system from hardware to cloud!
+            </p>
+        </section>
+
+        <!-- Section 10: ThingSpeak Cloud Integration -->
+        <section id="thingspeak">
+            <h1><i class="fa-solid fa-cloud"></i> Building Real Cloud IoT System</h1>
+            <div class="callout tip">
+                <h3><i class="fa-solid fa-rocket"></i> We Will Cover:</h3>
+                <ul class="big-list">
+                    <li>How to program ESP32</li>
+                    <li>How to connect ESP32 to ThingSpeak</li>
+                    <li>How to show live data using GitHub Pages</li>
+                    <li>How to make full system live</li>
+                </ul>
+            </div>
+
+            <h2><i class="fa-solid fa-diagram-project"></i> Complete Architecture</h2>
+            <div class="callout tip">
+                <h3>Flow:</h3>
+                <p style="font-size: 1.3rem; text-align: center; line-height: 3;">
+                    DHT11 → ESP32 → WiFi →<br>
+                    ThingSpeak Cloud → GitHub Website →<br>
+                    Live Dashboard
+                </p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-star"></i> This is a Real Cloud IoT System</h3>
+                <p>Data travels from physical sensor to cloud and displays globally accessible.</p>
+            </div>
+        </section>
+
+        <!-- Section 11: ESP32 Setup -->
+        <section id="esp32-setup">
+            <h1><i class="fa-solid fa-download"></i> Step 1 – Install Arduino IDE</h1>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-1"></i> Install Arduino IDE</h3>
+                <ol class="big-list">
+                    <li>Download from: <code>arduino.cc</code></li>
+                    <li>Install on your computer</li>
+                </ol>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-2"></i> Add ESP32 Board Support</h3>
+                <ol>
+                    <li>File → Preferences</li>
+                    <li>Add Board URL:</li>
+                </ol>
+                <div class="code-box">
+                    https://dl.espressif.com/dl/package_esp32_index.json
+                </div>
+                <ol start="3">
+                    <li>Tools → Board → Board Manager</li>
+                    <li>Install <strong>ESP32</strong></li>
+                </ol>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-3"></i> Select Board</h3>
+                <p>Tools → Board → <strong>ESP32 Dev Module</strong></p>
+            </div>
+
+            <h2><i class="fa-solid fa-book"></i> Step 2 – Install Libraries</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list"></i> Required Libraries:</h3>
+                <ul class="big-list">
+                    <li><i class="fa-solid fa-check"></i> DHT sensor library (Adafruit)</li>
+                    <li><i class="fa-solid fa-check"></i> Adafruit Unified Sensor</li>
+                </ul>
+            </div>
+            <div class="callout tip">
+                <h3>How to Install:</h3>
+                <ol>
+                    <li>Sketch → Include Library → Manage Libraries</li>
+                    <li>Search for each library</li>
+                    <li>Click Install</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Section 12: ThingSpeak Account -->
+        <section id="thingspeak-account">
+            <h1><i class="fa-solid fa-cloud"></i> Step 3 – Create ThingSpeak Account</h1>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list-ol"></i> Steps:</h3>
+                <ol class="big-list">
+                    <li>Login to <strong>ThingSpeak</strong></li>
+                    <li>Click <strong>New Channel</strong></li>
+                    <li>Add Fields:
+                        <ul>
+                            <li>Field 1 → Temperature</li>
+                            <li>Field 2 → Humidity</li>
+                        </ul>
+                    </li>
+                    <li>Save Channel</li>
+                </ol>
+            </div>
+
+            <h2><i class="fa-solid fa-key"></i> Get API Keys</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-arrow-right"></i> Go to API Keys Tab</h3>
+                <p>Copy these values:</p>
+                <ul class="big-list">
+                    <li><i class="fa-solid fa-check"></i> Write API Key</li>
+                    <li><i class="fa-solid fa-check"></i> Read API Key</li>
+                    <li><i class="fa-solid fa-check"></i> Channel ID</li>
+                </ul>
+            </div>
+            <div class="callout warning">
+                <p><strong>Keep these safe!</strong> You'll need them for coding.</p>
+            </div>
+        </section>
+
+        <!-- Section 13: ESP32 Code -->
+        <section id="esp32-code">
+            <h1><i class="fa-solid fa-code"></i> Complete ESP32 Code</h1>
+            <div class="callout warning">
+                <p><strong>Replace:</strong></p>
+                <ul>
+                    <li>YOUR_WIFI</li>
+                    <li>YOUR_PASSWORD</li>
+                    <li>YOUR_WRITE_API_KEY</li>
+                </ul>
+            </div>
+            <pre><code>#include &lt;WiFi.h&gt;
+#include &lt;HTTPClient.h&gt;
+#include "DHT.h"
+
+#define DHTPIN 4
+#define DHTTYPE DHT11
+
+const char* ssid = "YOUR_WIFI";
+const char* password = "YOUR_PASSWORD";
+
+String apiKey = "YOUR_WRITE_API_KEY";
+
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+
+  WiFi.begin(ssid, password);
+  Serial.print("Connecting");
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("\nConnected to WiFi");
+}
+
+void loop() {
+  if (WiFi.status() == WL_CONNECTED) {
+
+    float temp = dht.readTemperature();
+    float hum = dht.readHumidity();
+
+    if (!isnan(temp) && !isnan(hum)) {
+
+      HTTPClient http;
+
+      String url = "http://api.thingspeak.com/update?api_key=" 
+                   + apiKey + "&field1=" + String(temp) 
+                   + "&field2=" + String(hum);
+
+      http.begin(url);
+      int httpCode = http.GET();
+      http.end();
+
+      Serial.println("Data sent to ThingSpeak");
+    }
+  }
+
+  delay(15000);
+}</code></pre>
+
+            <h2><i class="fa-solid fa-upload"></i> Upload to ESP32</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list-ol"></i> Steps:</h3>
+                <ol class="big-list">
+                    <li>Connect ESP32 to USB</li>
+                    <li>Select correct COM port</li>
+                    <li>Click <strong>Upload</strong> button</li>
+                    <li>Wait for upload to complete</li>
+                    <li>Open <strong>Serial Monitor</strong></li>
+                </ol>
+            </div>
+            <div class="callout tip">
+                <h3><i class="fa-solid fa-rocket"></i> Now:</h3>
+                <p>ESP32 → ThingSpeak → Live Graph</p>
+                <p>You can see graph updating every 15 seconds!</p>
+            </div>
+        </section>
+
+        <!-- Section 14: GitHub Dashboard -->
+        <section id="github-dashboard">
+            <h1><i class="fa-brands fa-github"></i> Make GitHub Live Dashboard</h1>
+            <div class="callout tip">
+                <p>Now we will display ThingSpeak data in <strong>your own website</strong>.</p>
+            </div>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-1"></i> Get Read API URL</h3>
+                <p>Your public API format:</p>
+                <div class="code-box" style="word-break: break-all;">
+                    https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/feeds/last.json?api_key=YOUR_READ_API_KEY
+                </div>
+                <p class="slide-hint">Test in browser. You should see JSON.</p>
+            </div>
+
+            <h2><i class="fa-brands fa-github"></i> Create GitHub Website</h2>
+            <div class="content-card">
+                <h3><i class="fa-solid fa-list-ol"></i> Steps:</h3>
+                <ol class="big-list">
+                    <li>Go to GitHub</li>
+                    <li>Create new repository</li>
+                    <li>Name: <code>esp32-dashboard</code></li>
+                    <li>Add file: <code>index.html</code></li>
+                    <li>Paste code (below)</li>
+                    <li>Settings → Pages → Enable</li>
+                    <li>Select branch → <strong>main</strong></li>
+                    <li>Save</li>
+                </ol>
+            </div>
+            <div class="tip-box">
+                <p>GitHub gives you live link!</p>
+            </div>
+
+            <h2><i class="fa-solid fa-code"></i> GitHub Dashboard Code</h2>
+            <div class="callout warning">
+                <p><strong>Replace:</strong> YOUR_CHANNEL_ID, YOUR_READ_API_KEY</p>
+            </div>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Live IoT Dashboard&lt;/title&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+    &lt;style&gt;
+        body {
+            font-family: Arial;
+            background: #0f2027;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .card {
+            background: #1c2b36;
+            padding: 30px;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .value {
+            font-size: 40px;
+            font-weight: bold;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;h1&gt;ESP32 Cloud Dashboard&lt;/h1&gt;
+
+&lt;div class="card"&gt;
+    &lt;h2&gt;Temperature&lt;/h2&gt;
+    &lt;div class="value" id="temp"&gt;--&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card"&gt;
+    &lt;h2&gt;Humidity&lt;/h2&gt;
+    &lt;div class="value" id="hum"&gt;--&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+
+const url = "https://api.thingspeak.com/channels/YOUR_CHANNEL_ID/feeds/last.json?api_key=YOUR_READ_API_KEY";
+
+async function getData() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        document.getElementById("temp").innerText = data.field1 + " °C";
+        document.getElementById("hum").innerText = data.field2 + " %";
+    } catch (error) {
+        console.log("Error fetching data");
+    }
+}
+
+setInterval(getData, 15000);
+getData();
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <!-- Section 15: Final System -->
+        <section id="final-system">
+            <h1><i class="fa-solid fa-globe"></i> Final Live System</h1>
+            <div class="callout tip">
+                <h3>Complete System:</h3>
+                <p style="font-size: 1.2rem; line-height: 2.5; text-align: center;">
+                    ESP32 (Your lab)<br>
+                    ↓<br>
+                    ThingSpeak Cloud<br>
+                    ↓<br>
+                    GitHub Website<br>
+                    ↓<br>
+                    Accessible from Anywhere
+                </p>
+            </div>
+            <div class="content-card">
+                <p style="text-align: center;"><i class="fa-solid fa-mobile"></i> Students can open from mobile also!
+                </p>
+            </div>
+
+            <h2><i class="fa-solid fa-graduation-cap"></i> What Students Learn</h2>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-code"></i> Embedded Coding</h4>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-network-wired"></i> HTTP Request</h4>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-cloud"></i> Cloud API</h4>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-file-code"></i> JSON Handling</h4>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-server"></i> Website Hosting</h4>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-diagram-project"></i> Full IoT Architecture</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 16: Troubleshooting -->
+        <section id="troubleshooting">
+            <h1><i class="fa-solid fa-triangle-exclamation"></i> Common Problems & Solutions</h1>
+            <div class="detail-grid">
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-xmark"></i> Data Not Updating</h4>
+                    <p><i class="fa-solid fa-arrow-right"></i> Wait 15 seconds (ThingSpeak limit)</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-xmark"></i> CORS Error</h4>
+                    <p><i class="fa-solid fa-arrow-right"></i> Make channel public</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-xmark"></i> WiFi Not Connecting</h4>
+                    <p><i class="fa-solid fa-arrow-right"></i> Use 2.4 GHz network</p>
+                </div>
+                <div class="content-card">
+                    <h4><i class="fa-solid fa-xmark"></i> API Not Working</h4>
+                    <p><i class="fa-solid fa-arrow-right"></i> Check Write vs Read API key</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final Call to Action -->
+        <div class="goal-text" style="margin-top: 4rem; margin-bottom: 2rem;">
+            <h2><i class="fa-solid fa-trophy"></i> You've Completed Day 4!</h2>
+            <p>Students now understand the complete IoT stack from hardware to cloud!</p>
         </div>
     </div>
 </body>

@@ -3,19 +3,736 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Day 3 - Placeholder</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3: Git, Portfolio Website & Live Deployment</title>
+    <meta name="description" content="Interactive guide to Git, GitHub, Portfolio Website Creation, and Deployment">
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="placeholder-body">
-    <div class="home-container">
-        <h1 class="home-title">Day 3</h1>
-        <p class="home-subtitle">Content coming soon...</p>
-        <div class="home-buttons">
-            <a href="index.html" class="home-btn secondary">Back to Home</a>
+<body>
+    <div class="slide-container">
+
+        <!-- Slide 1: Navigation Page -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2.5rem; padding: 2rem;">
+                <h1 class="title" style="font-size: 3rem; margin-bottom: 0.5rem;">
+                    <i class="fa-solid fa-rocket"></i> DAY 3 Content
+                </h1>
+                <h2 class="subtitle" style="font-size: 1.5rem; color: #666; margin-bottom: 1rem;">
+                    Git, Portfolio Website & Live Deployment
+                </h2>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; width: 100%; max-width: 800px;">
+                    <!-- Slides Button -->
+                    <button onclick="window.presentation.goToSlide(2)"
+                        style="padding: 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 16px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+                        <i class="fa-solid fa-presentation-screen" style="font-size: 2.5rem;"></i>
+                        <span>Interactive Slides</span>
+                    </button>
+
+                    <!-- Git Installation Button -->
+                    <a href="git-installation.html"
+                        style="padding: 2rem; background: linear-gradient(135deg, #f5576c 0%, #f093fb 100%); color: white; text-decoration: none; border-radius: 16px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 30px rgba(245, 87, 108, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+                        <i class="fa-brands fa-git-alt" style="font-size: 2.5rem;"></i>
+                        <span>Git Installation</span>
+                    </a>
+
+                    <!-- GitHub Account Button -->
+                    <a href="github-account.html"
+                        style="padding: 2rem; background: linear-gradient(135deg, #24292e 0%, #0366d6 100%); color: white; text-decoration: none; border-radius: 16px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 30px rgba(3, 102, 214, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+                        <i class="fa-brands fa-github" style="font-size: 2.5rem;"></i>
+                        <span>GitHub Account</span>
+                    </a>
+
+                    <!-- Domain Basics Button -->
+                    <a href="domain-basics.html"
+                        style="padding: 2rem; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; text-decoration: none; border-radius: 16px; font-size: 1.3rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
+                        <i class="fa-solid fa-globe" style="font-size: 2.5rem;"></i>
+                        <span>Domain Basics</span>
+                    </a>
+                </div>
+
+                <p class="slide-hint" style="margin-top: 1rem; font-size: 1rem; color: #888;">
+                    <i class="fa-solid fa-arrow-right"></i> Click 'Interactive Slides' or use arrow keys to navigate
+                </p>
+            </div>
+        </section>
+
+        <!-- Slide 2: Session 5 Overview -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-sun"></i> Session 5 (Morning) – Git & Developer Workflow</h1>
+                <h2>3 Hours</h2>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-bullseye"></i> Learning Objectives</h3>
+                    <p>By the end of this session, students will:</p>
+                    <ul class="big-list">
+                        <li>Understand version control concepts</li>
+                        <li>Use Git confidently for project management</li>
+                        <li>Push projects to GitHub</li>
+                        <li>Understand industry developer workflow</li>
+                        <li>Learn basic branching strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: What is Version Control? -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-code-branch"></i> What is Version Control?</h1>
+                <div class="callout tip">
+                    <h3><i class="fa-solid fa-lightbulb"></i> Real-Life Example</h3>
+                    <p>Imagine writing your final year project report:</p>
+                    <ul>
+                        <li>You edit it 10 times</li>
+                        <li>Suddenly your file gets corrupted</li>
+                        <li>How will you recover the previous version?</li>
+                    </ul>
+                    <p><strong>That's where Version Control System (VCS) helps!</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3>Definition</h3>
+                    <p class="highlight-text">Version control tracks changes in code and allows you to revert to
+                        previous versions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Why Industry Uses Git -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-building"></i> Why Industry Uses Git?</h1>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li><i class="fa-solid fa-users"></i> <strong>Team Collaboration:</strong> Multiple developers
+                            working simultaneously</li>
+                        <li><i class="fa-solid fa-timeline"></i> <strong>Tracking Changes:</strong> Complete history of
+                            modifications</li>
+                        <li><i class="fa-solid fa-rotate-left"></i> <strong>Undo Mistakes:</strong> Rollback to previous
+                            versions</li>
+                        <li><i class="fa-solid fa-glasses"></i> <strong>Code Review:</strong> Review before merging</li>
+                        <li><i class="fa-solid fa-cloud-arrow-up"></i> <strong>Deployment Automation:</strong> CI/CD
+                            pipelines</li>
+                        <li><i class="fa-solid fa-briefcase"></i> <strong>Internship Requirement:</strong> GitHub
+                            profile matters!</li>
+                    </ul>
+                </div>
+                <div class="callout warning">
+                    <p><strong><i class="fa-solid fa-quote-left"></i> Your GitHub profile is your technical
+                            resume.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: What is Git? -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <h1><i class="fa-brands fa-git-alt"></i> What is Git?</h1>
+                <div class="content-card">
+                    <p class="highlight-text">Git is a distributed version control system</p>
+                    <div class="detail-grid">
+                        <div>
+                            <h4><i class="fa-solid fa-user-tie"></i> Developed By</h4>
+                            <p>Linus Torvalds (Creator of Linux)</p>
+                        </div>
+                        <div>
+                            <h4><i class="fa-solid fa-rocket"></i> Used In</h4>
+                            <ul>
+                                <li>Startups</li>
+                                <li>MNCs (Google, Microsoft, Meta)</li>
+                                <li>Open-source projects</li>
+                                <li>Research labs</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Git vs GitHub -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-code-compare"></i> Difference Between Git and GitHub</h1>
+                <div class="comparison-table">
+                    <div class="comparison-item">
+                        <h3><i class="fa-brands fa-git-alt"></i> Git</h3>
+                        <ul>
+                            <li>Software/Tool</li>
+                            <li>Works locally on your computer</li>
+                            <li>Tracks code changes</li>
+                            <li>Command-line tool</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-item">
+                        <h3><i class="fa-brands fa-github"></i> GitHub</h3>
+                        <ul>
+                            <li>Online platform/Service</li>
+                            <li>Works in the cloud</li>
+                            <li>Stores repositories online</li>
+                            <li>Web-based interface</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="content-card">
+                    <h4>Other Similar Platforms:</h4>
+                    <p><i class="fa-brands fa-gitlab"></i> GitLab • <i class="fa-brands fa-bitbucket"></i> Bitbucket</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Repository Concept -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-folder-tree"></i> Repository Concept</h1>
+                <div class="content-card">
+                    <p class="highlight-text">Repository = Project folder tracked by Git</p>
+                    <h3>Two Types:</h3>
+                    <div class="comparison-table">
+                        <div class="comparison-item">
+                            <h4><i class="fa-solid fa-laptop"></i> Local Repository</h4>
+                            <p>On your computer</p>
+                        </div>
+                        <div class="comparison-item">
+                            <h4><i class="fa-solid fa-cloud"></i> Remote Repository</h4>
+                            <p>On GitHub cloud</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-icon"><i class="fa-solid fa-laptop"></i></div>
+                        <div class="step-text">Local Laptop</div>
+                    </div>
+                    <div class="workflow-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div class="workflow-step">
+                        <div class="step-icon"><i class="fa-solid fa-cloud"></i></div>
+                        <div class="step-text">GitHub Cloud</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Basic Git Commands - Part 1 -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-screwdriver-wrench"></i> PART 2 – Basic Git Commands</h1>
+                <h2>Live Demo Time!</h2>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-check-circle"></i> Step 1 – Git Installation Check</h3>
+                    <div class="code-text">git --version</div>
+                    <p class="slide-hint">If not installed: Download from <strong>git-scm.com</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-user-gear"></i> Step 2 – Configure Git (VERY IMPORTANT)</h3>
+                    <div class="code-text">git config --global user.name "Your Name"</div>
+                    <div class="code-text">git config --global user.email "your@email.com"</div>
+                    <div class="callout warning">
+                        <p><strong>This identifies who made the commit!</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Basic Git Commands - Part 2 -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-terminal"></i> Git Commands (Continued)</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-folder-plus"></i> Step 3 – Initialize Repository</h3>
+                    <div class="code-text">git init</div>
+                    <p>Creates hidden <code>.git</code> folder</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-plus"></i> Step 4 – Add Files (Staging)</h3>
+                    <div class="code-text">git add .</div>
+                    <p>Adds files to <strong>staging area</strong></p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-floppy-disk"></i> Step 5 – Commit (Save Point)</h3>
+                    <div class="code-text">git commit -m "Initial commit"</div>
+                    <p>Commit = <strong>Checkpoint/Save point</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Push to GitHub -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <h1><i class="fa-brands fa-github"></i> Connecting to GitHub</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-link"></i> Step 6 – Connect to GitHub</h3>
+                    <div class="code-text">git remote add origin &lt;repo_link&gt;</div>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-upload"></i> Step 7 – Push to GitHub</h3>
+                    <div class="code-text">git push -u origin main</div>
+                    <p>Uploads your code to GitHub cloud!</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-download"></i> Step 8 – Clone Repository</h3>
+                    <div class="code-text">git clone &lt;repo_link&gt;</div>
+                    <div class="callout tip">
+                        <p><strong>Real-life scenario:</strong> If you join a company → First thing you do is clone the
+                            project</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 11: Branching Concept -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-code-branch"></i> PART 3 – Branching Concept</h1>
+                <h2>Industry Workflow</h2>
+                <div class="callout question">
+                    <h3>Why Branching?</h3>
+                    <ul>
+                        <li><strong>main branch</strong> = Stable production version</li>
+                        <li><strong>feature branch</strong> = Development work</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3>Example Structure:</h3>
+                    <pre>
+main
+   |
+   |--- feature-login
+   |
+   |--- feature-ui
+                    </pre>
+                </div>
+                <div class="content-card">
+                    <h3>Commands:</h3>
+                    <div class="code-text">git branch feature-login</div>
+                    <div class="code-text">git checkout feature-login</div>
+                    <div class="code-text">git merge feature-login</div>
+                </div>
+                <div class="callout warning">
+                    <p><strong>Never work directly on main in a company!</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 12: Hands-On Activity -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-laptop-code"></i> Hands-On Activity (Compulsory)</h1>
+                <div class="content-card">
+                    <h3>Students must complete:</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item"><i class="fa-solid fa-user-plus"></i> Create GitHub account</div>
+                        <div class="checklist-item"><i class="fa-solid fa-folder-plus"></i> Create repository</div>
+                        <div class="checklist-item"><i class="fa-solid fa-upload"></i> Push a small project</div>
+                        <div class="checklist-item"><i class="fa-solid fa-pen-to-square"></i> Edit file</div>
+                        <div class="checklist-item"><i class="fa-solid fa-check"></i> Commit changes</div>
+                        <div class="checklist-item"><i class="fa-solid fa-cloud-arrow-up"></i> Push again</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Mini Quiz -->
+        <section class="slide" data-slide="13">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-brain"></i> Mini Quiz (10 Minutes)</h1>
+                <div class="content-card">
+                    <h3>Questions:</h3>
+                    <ol class="big-list">
+                        <li>What is Git?</li>
+                        <li>What is a commit?</li>
+                        <li>What's the difference between Git & GitHub?</li>
+                        <li>What is a branch?</li>
+                        <li>What does <code>git add</code> do?</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 14: Session 6 Overview -->
+        <section class="slide" data-slide="14">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-moon"></i> Session 6 (Afternoon) – Portfolio Website</h1>
+                <h2>3 Hours</h2>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-bullseye"></i> Learning Outcome</h3>
+                    <p>Each student will:</p>
+                    <ul class="big-list">
+                        <li>Build personal portfolio website</li>
+                        <li>Deploy live website online</li>
+                        <li>Get public URL (accessible worldwide)</li>
+                        <li>Understand domain & DNS concepts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 15: Portfolio Structure -->
+        <section class="slide" data-slide="15">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-folder-tree"></i> Portfolio Website Structure</h1>
+                <div class="content-card">
+                    <h3>Basic Folder Structure:</h3>
+                    <pre class="code-text">
+portfolio/
+   index.html
+   style.css
+   images/
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 16: HTML Fundamentals -->
+        <section class="slide" data-slide="16">
+            <div class="slide-content">
+                <h1><i class="fa-brands fa-html5"></i> HTML Fundamentals</h1>
+                <div class="content-card">
+                    <h3>Basic HTML Structure:</h3>
+                    <pre class="code-text">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Portfolio&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+&lt;/body&gt;
+&lt;/html&gt;
+                    </pre>
+                </div>
+                <div class="content-card">
+                    <h4>Key Elements:</h4>
+                    <ul>
+                        <li><code>&lt;head&gt;</code> - Metadata</li>
+                        <li><code>&lt;body&gt;</code> - Visible content</li>
+                        <li><code>&lt;title&gt;</code> - Page title</li>
+                        <li><code>&lt;link&gt;</code> - CSS connection</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 17: CSS Basics -->
+        <section class="slide" data-slide="17">
+            <div class="slide-content">
+                <h1><i class="fa-brands fa-css3-alt"></i> CSS Basics</h1>
+                <div class="content-card">
+                    <h3>Essential CSS Concepts:</h3>
+                    <ul class="big-list">
+                        <li><i class="fa-solid fa-palette"></i> Colors & Backgrounds</li>
+                        <li><i class="fa-solid fa-font"></i> Fonts & Typography</li>
+                        <li><i class="fa-solid fa-up-down-left-right"></i> Margin & Padding</li>
+                        <li><i class="fa-solid fa-table-cells"></i> Flexbox (Layout)</li>
+                        <li><i class="fa-solid fa-hand-pointer"></i> Hover Effects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 18: Portfolio Sections -->
+        <section class="slide" data-slide="18">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-list-check"></i> Portfolio Sections to Build</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-1"></i> Hero Section</h3>
+                    <ul>
+                        <li>Your name</li>
+                        <li>Professional tagline</li>
+                        <li>Profile image</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-2"></i> About Section</h3>
+                    <ul>
+                        <li>Who you are</li>
+                        <li>What you study</li>
+                        <li>Career goals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Portfolio Sections Continued -->
+        <section class="slide" data-slide="19">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-list-check"></i> Portfolio Sections (Continued)</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-3"></i> Education Section</h3>
+                    <ul>
+                        <li>College name</li>
+                        <li>Degree/Branch</li>
+                        <li>Year of study</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-4"></i> Skills Section</h3>
+                    <div class="detail-grid">
+                        <div>
+                            <h4>Technical Skills:</h4>
+                            <p>HTML, CSS, Git, Java, Python</p>
+                        </div>
+                        <div>
+                            <h4>Soft Skills:</h4>
+                            <p>Communication, Teamwork, Problem-solving</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 20: Final Portfolio Sections -->
+        <section class="slide" data-slide="20">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-list-check"></i> Final Portfolio Sections</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-5"></i> Projects Section</h3>
+                    <p>For each project include:</p>
+                    <ul>
+                        <li>Project title</li>
+                        <li>Short description</li>
+                        <li>Tech stack used</li>
+                        <li>GitHub link</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-6"></i> Contact Section</h3>
+                    <ul>
+                        <li><i class="fa-solid fa-envelope"></i> Email</li>
+                        <li><i class="fa-brands fa-linkedin"></i> LinkedIn</li>
+                        <li><i class="fa-brands fa-github"></i> GitHub</li>
+                        <li><i class="fa-solid fa-phone"></i> Phone (optional)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Deployment with GitHub Pages -->
+        <section class="slide" data-slide="21">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-globe"></i> PART 4 – Deployment Using GitHub Pages</h1>
+                <div class="workflow vertical">
+                    <div class="workflow-step">
+                        <div class="step-text"><strong>Step 1:</strong> Push portfolio to GitHub</div>
+                        <div class="code-text">git add .</div>
+                        <div class="code-text">git commit -m "Portfolio ready"</div>
+                        <div class="code-text">git push</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text"><strong>Step 2:</strong> Enable GitHub Pages</div>
+                        <ul>
+                            <li>Go to Repository</li>
+                            <li>Settings → Pages</li>
+                            <li>Select branch: <strong>main</strong></li>
+                            <li>Save</li>
+                        </ul>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step success">
+                        <div class="step-text"><i class="fa-solid fa-party-horn"></i> <strong>Result:</strong> Live link
+                            generated!</div>
+                        <p class="code-text">https://username.github.io/repository-name</p>
+                        <div class="callout tip">
+                            <p><strong>This is your online identity!</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 22: Domain & DNS -->
+        <section class="slide" data-slide="22">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-network-wired"></i> PART 5 – Domain & DNS</h1>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-link"></i> What is a Domain?</h3>
+                    <p>Examples: <code>google.com</code>, <code>github.com</code></p>
+                    <p class="highlight-text">Domain = Human-readable website name</p>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-server"></i> What is DNS?</h3>
+                    <p>DNS = Domain Name System</p>
+                    <p>Converts: <code>google.com</code> → <code>142.250.183.14</code> (IP Address)</p>
+                    <div class="callout tip">
+                        <h4>Think of it like a phone contact:</h4>
+                        <p>Domain = Contact Name</p>
+                        <p>IP Address = Phone Number</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 23: Domain Purchasing -->
+        <section class="slide" data-slide="23">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-shopping-cart"></i> Domain Purchasing Platforms</h1>
+                <div class="content-card">
+                    <h3>Popular Domain Providers:</h3>
+                    <ul class="big-list">
+                        <li><i class="fa-solid fa-globe"></i> GoDaddy</li>
+                        <li><i class="fa-solid fa-globe"></i> Namecheap</li>
+                        <li><i class="fa-brands fa-google"></i> Google Domains</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fa-solid fa-link"></i> Connecting Custom Domain to GitHub Pages</h3>
+                    <p>Conceptual Overview:</p>
+                    <ol>
+                        <li>Buy domain from provider</li>
+                        <li>Go to DNS settings</li>
+                        <li>Add A record pointing to GitHub IP</li>
+                        <li>Add CNAME file in repository</li>
+                    </ol>
+                    <p class="slide-hint">(Conceptual demo only - no deep technical configuration needed)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 24: Final Day Activity -->
+        <section class="slide" data-slide="24">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-laptop-code"></i> Final Day 3 Activity</h1>
+                <div class="content-card">
+                    <h3>Each student must:</h3>
+                    <div class="checklist-grid">
+                        <div class="checklist-item"><i class="fa-solid fa-globe"></i> Show live website</div>
+                        <div class="checklist-item"><i class="fa-brands fa-github"></i> Share GitHub link</div>
+                        <div class="checklist-item"><i class="fa-solid fa-folder"></i> Add at least 1 project</div>
+                        <div class="checklist-item"><i class="fa-solid fa-user"></i> Add profile photo</div>
+                        <div class="checklist-item"><i class="fa-solid fa-rocket"></i> Deploy successfully</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 25: Day 3 Outcomes -->
+        <section class="slide" data-slide="25">
+            <div class="slide-content">
+                <h1><i class="fa-solid fa-graduation-cap"></i> Final Outcome of Day 3</h1>
+                <h2>By end of Day 3, students will have:</h2>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li><i class="fa-solid fa-check-circle"></i> Git knowledge</li>
+                        <li><i class="fa-solid fa-check-circle"></i> GitHub profile established</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Industry workflow understanding</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Live portfolio website deployed</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Basic HTML & CSS knowledge</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Domain & DNS awareness</li>
+                        <li><i class="fa-solid fa-check-circle"></i> Confidence to apply for internships</li>
+                    </ul>
+                </div>
+                <div class="callout tip">
+                    <p class="highlight-text"><strong>You are now ready to showcase your work to the world!</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="slide-nav">
+            <span class="slide-number" id="slideNumber">1 / 25</span>
+        </div>
+
+        <!-- Side Arrow Navigation -->
+        <button class="side-arrow left-arrow" id="leftArrow" aria-label="Previous slide">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="side-arrow right-arrow" id="rightArrow" aria-label="Next slide">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
         </div>
     </div>
+
+    <style>
+        /* Side Arrow Navigation Styles */
+        .side-arrow {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(102, 126, 234, 0.9);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .side-arrow:hover {
+            background: rgba(102, 126, 234, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .side-arrow:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .left-arrow {
+            left: 20px;
+        }
+
+        .right-arrow {
+            right: 20px;
+        }
+
+        /* Disable arrows when at first/last slide */
+        .side-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: rgba(102, 126, 234, 0.3);
+        }
+
+        .side-arrow:disabled:hover {
+            transform: translateY(-50%);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .side-arrow {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+
+            .left-arrow {
+                left: 10px;
+            }
+
+            .right-arrow {
+                right: 10px;
+            }
+        }
+
+        /* Hide side arrows on very small screens to avoid cluttering */
+        @media (max-width: 480px) {
+            .side-arrow {
+                display: none;
+            }
+        }
+    </style>
+
+    <script src="js/day3.js"></script>
 </body>
 
 </html>

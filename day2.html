@@ -3,19 +3,927 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Day 2 - Placeholder</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: Operating Systems & Virtualization</title>
+    <meta name="description"
+        content="Interactive guide to Operating Systems, Virtualization, and Windows 11 Installation">
+    <link rel="stylesheet" href="css/slides.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
 
-<body class="placeholder-body">
-    <div class="home-container">
-        <h1 class="home-title">Day 2</h1>
-        <p class="home-subtitle">Content coming soon...</p>
-        <div class="home-buttons">
-            <a href="index.html" class="home-btn secondary">Back to Home</a>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+
+    <!-- Slide Container -->
+    <div class="slide-container">
+
+        <!-- SLIDE 1: Title Slide -->
+        <section class="slide active" data-slide="1" role="region" aria-label="Slide 1">
+            <div class="slide-content">
+                <h1 class="title">Operating Systems & Virtualization</h1>
+                <h2 class="subtitle">Install, Understand & Control Your OS</h2>
+                <p class="slide-hint">Day 2: Hands-on Windows 11 Installation in Virtual Machine</p>
+                <div class="agenda-grid">
+                    <div class="agenda-item">🖥️ Understand OS</div>
+                    <div class="agenda-item">🏗️ OS Architecture</div>
+                    <div class="agenda-item">☁️ Virtualization Concepts</div>
+                    <div class="agenda-item">💿 Install Windows 11 in VM</div>
+                    <div class="agenda-item">🔧 Configure & Troubleshoot</div>
+                </div>
+                <p class="goal-text">Goal: <strong>50% Concept + 50% Practical</strong></p>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: Learning Objectives -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <h1>Learning Objectives</h1>
+                <div class="content-card">
+                    <p class="highlight">By the end of today, you will:</p>
+                    <ul class="big-list">
+                        <li>✅ Understand what an Operating System does</li>
+                        <li>✅ Understand OS architecture</li>
+                        <li>✅ Learn virtualization concepts</li>
+                        <li>✅ Install Windows 11 in VirtualBox</li>
+                        <li>✅ Configure & troubleshoot a Virtual Machine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3: What Happens When You Press Power Button? -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <h1>What Happens When You Press Power?</h1>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">BIOS/UEFI starts</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">Bootloader loads</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">Kernel loads</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">Drivers initialize</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-number">5</div>
+                        <div class="step-text">Login screen</div>
+                    </div>
+                </div>
+                <div class="callout question">
+                    <strong>🤔 Think:</strong> Does Windows load first or BIOS?
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4: What is an Operating System? -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <h1>What is an Operating System?</h1>
+                <div class="content-card">
+                    <p class="definition"><strong>OS</strong> = Bridge between User & Hardware</p>
+                    <ul class="big-list">
+                        <li>👉 Manages hardware & software resources</li>
+                        <li>👉 Provides User Interface (UI)</li>
+                    </ul>
+                </div>
+                <div class="example-box">
+                    <h3>Examples:</h3>
+                    <div class="code-text">Windows, Linux, macOS, Android</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5: Core Responsibilities of OS -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <h1>Core Responsibilities of OS</h1>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li><strong>Process Management:</strong> Running and scheduling programs</li>
+                        <li><strong>Memory Management:</strong> Allocating and managing RAM</li>
+                        <li><strong>File System:</strong> Organizing and storing data</li>
+                        <li><strong>Device Drivers:</strong> Communicating with hardware</li>
+                        <li><strong>Security:</strong> Managing user accounts and permissions</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6: Without an OS? -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <h1>Without an OS?</h1>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li>❌ No application can run</li>
+                        <li>❌ No memory management</li>
+                        <li>❌ No file access</li>
+                        <li>❌ No user interface</li>
+                    </ul>
+                </div>
+                <p class="highlight center">OS is <strong>mandatory</strong> for system operation.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 7: OS Architecture Overview -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <h1>OS Architecture Overview</h1>
+                <div class="workflow vertical">
+                    <div class="workflow-step">
+                        <div class="step-text">👤 User</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">📱 Applications</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">📞 System Calls</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step highlight-step">
+                        <div class="step-text">🧠 Kernel</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">💻 Hardware</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8: Kernel vs User Mode -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <h1>Kernel vs User Mode</h1>
+                <div class="vs-container">
+                    <div class="vs-card">
+                        <h2>User Mode</h2>
+                        <ul>
+                            <li>Applications run here</li>
+                            <li>Limited hardware access</li>
+                            <li>Safe (Crash = App closes)</li>
+                        </ul>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="vs-card highlight-card">
+                        <h2>Kernel Mode</h2>
+                        <ul>
+                            <li>Full hardware access</li>
+                            <li>Core system control</li>
+                            <li>Critical (Crash = Blue Screen)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout tip">
+                    <strong>Why separation?</strong> → Security & Stability.
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9: What is Virtualization? -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <h1>What is Virtualization?</h1>
+                <div class="content-card">
+                    <p class="definition"><strong>Virtualization</strong> = Running multiple OS on one physical machine.
+                    </p>
+                </div>
+                <div class="example-box">
+                    <h3>Example:</h3>
+                    <p>One Laptop → Windows (Host) + Linux (Guest) + Kali (Guest)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10: What is a Hypervisor? -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <h1>What is a Hypervisor?</h1>
+                <div class="content-card">
+                    <p class="definition"><strong>Hypervisor</strong> = Software that creates & manages VMs</p>
+                    <ul class="big-list">
+                        <li>Allocates CPU, RAM, Disk</li>
+                        <li>Controls VM execution</li>
+                    </ul>
+                </div>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Type 1</h3>
+                        <p>Runs on Bare Metal (Servers)</p>
+                    </div>
+                    <div class="comparison-card highlight-card">
+                        <h3>Type 2</h3>
+                        <p>Runs on OS (VirtualBox, VMware)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11: Why Industry Uses Virtualization -->
+        <section class="slide" data-slide="11">
+            <div class="slide-content">
+                <h1>Why Industry Uses Virtualization</h1>
+                <div class="mindset-grid">
+                    <div class="mindset-card">
+                        <h3>☁️ Cloud Computing</h3>
+                        <p>AWS, Azure</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>🧪 Software Testing</h3>
+                        <p>Safe sandbox</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>🚀 DevOps</h3>
+                        <p>CI/CD pipelines</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>🔒 Cybersecurity</h3>
+                        <p>Malware labs</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>📉 Server Consolidation</h3>
+                        <p>Save hardware</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12: Virtual Machine Components -->
+        <section class="slide" data-slide="12">
+            <div class="slide-content">
+                <h1>Virtual Machine Components</h1>
+                <p class="slide-hint">Software-created hardware components:</p>
+                <div class="outcome-grid">
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🧠</div>
+                        <p>Virtual CPU</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">💾</div>
+                        <p>Virtual RAM</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">💿</div>
+                        <p>Virtual Hard Disk</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🌐</div>
+                        <p>Virtual Network Adapter</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 13: System Requirements -->
+        <section class="slide" data-slide="13">
+            <div class="slide-content">
+                <h1>System Requirements for Lab</h1>
+                <div class="vs-container">
+                    <div class="vs-card">
+                        <h2>Minimum</h2>
+                        <ul>
+                            <li>8GB RAM</li>
+                            <li>100GB Free Storage</li>
+                            <li>Any Modern CPU</li>
+                        </ul>
+                    </div>
+                    <div class="vs-card highlight-card">
+                        <h2>Recommended</h2>
+                        <ul>
+                            <li>16GB RAM</li>
+                            <li>SSD Storage</li>
+                            <li>4+ CPU Cores</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 14: Enable Virtualization -->
+        <section class="slide" data-slide="14">
+            <div class="slide-content">
+                <h1>Step 0: Enable Virtualization</h1>
+                <div class="content-card">
+                    <h3>1️⃣ Check Task Manager</h3>
+                    <p>Performance → CPU → "Virtualization: Enabled"</p>
+                </div>
+                <div class="content-card">
+                    <h3>2️⃣ If Disabled: Enable in BIOS</h3>
+                    <ul class="big-list">
+                        <li><strong>Intel:</strong> Enable "Intel VT-x"</li>
+                        <li><strong>AMD:</strong> Enable "SVM Mode"</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 15: Install VirtualBox -->
+        <section class="slide" data-slide="15">
+            <div class="slide-content">
+                <h1>Step 1: Install VirtualBox</h1>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-text">Download from website</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Run Installer</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Allow Network Drivers</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Restart System</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 16: VirtualBox Interface -->
+        <section class="slide" data-slide="16">
+            <div class="slide-content">
+                <h1>VirtualBox Interface Overview</h1>
+                <div class="agenda-grid">
+                    <div class="agenda-item">✨ New (Create VM)</div>
+                    <div class="agenda-item">⚙️ Settings (Configure)</div>
+                    <div class="agenda-item">💾 Storage (ISO/Disk)</div>
+                    <div class="agenda-item">🌐 Network (Internet)</div>
+                    <div class="agenda-item">📸 Snapshots (Backup)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 17: Creating a New VM -->
+        <section class="slide" data-slide="17">
+            <div class="slide-content">
+                <h1>Step 2: Create New VM</h1>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li><strong>Name:</strong> Windows 11</li>
+                        <li><strong>Type:</strong> Microsoft Windows</li>
+                        <li><strong>Version:</strong> Windows 11 (64-bit)</li>
+                    </ul>
+                </div>
+                <div class="callout tip">
+                    Ensure "64-bit" is displayed. If not, Virtualization is disabled in BIOS.
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 18: Allocating RAM -->
+        <section class="slide" data-slide="18">
+            <div class="slide-content">
+                <h1>Step 3: Allocating RAM</h1>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Minimum</h3>
+                        <p>4096 MB (4GB)</p>
+                    </div>
+                    <div class="comparison-card highlight-card">
+                        <h3>Recommended</h3>
+                        <p>8192 MB (8GB)</p>
+                    </div>
+                </div>
+                <div class="callout warning">
+                    <strong>Rule:</strong> Do not allocate more than 50% of your actual physical RAM.
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 19: Allocating CPU -->
+        <section class="slide" data-slide="19">
+            <div class="slide-content">
+                <h1>Step 4: Allocating CPU</h1>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Minimum</h3>
+                        <p>2 Cores</p>
+                    </div>
+                    <div class="comparison-card highlight-card">
+                        <h3>Recommended</h3>
+                        <p>4 Cores</p>
+                    </div>
+                </div>
+                <p class="slide-hint">More cores = Smoother performance</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 20: Creating Virtual Disk -->
+        <section class="slide" data-slide="20">
+            <div class="slide-content">
+                <h1>Step 5: Virtual Disk</h1>
+                <div class="content-card">
+                    <ul class="big-list">
+                        <li><strong>Type:</strong> VDI (VirtualBox Disk Image)</li>
+                        <li><strong>Allocation:</strong> Dynamically Allocated</li>
+                        <li><strong>Size:</strong> 80 GB</li>
+                    </ul>
+                </div>
+                <div class="callout tip">
+                    <strong>Dynamic:</strong> Only uses space as you fill it (Starts small).<br>
+                    <strong>Fixed:</strong> Takes 80GB immediately (Faster but uses space).
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 21: Attach Windows 11 ISO -->
+        <section class="slide" data-slide="21">
+            <div class="slide-content">
+                <h1>Step 6: Attach ISO</h1>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-text">Settings</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Storage</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Empty (CD Icon)</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Choose Disk File</div>
+                    </div>
+                </div>
+                <p class="highlight center">ISO = Digital DVD file</p>
+            </div>
+        </section>
+
+        <!-- SLIDE 22: Windows Installation Process -->
+        <section class="slide" data-slide="22">
+            <div class="slide-content">
+                <h1>Step 7: Installation</h1>
+                <div class="workflow">
+                    <div class="workflow-step">
+                        <div class="step-text">Start VM</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Select Language</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Install Now</div>
+                    </div>
+                    <div class="workflow-arrow">➡️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Select "Unallocated Space"</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 23: TPM Error -->
+        <section class="slide" data-slide="23">
+            <div class="slide-content">
+                <h1>⚠️ The TPM Error</h1>
+                <div class="content-card">
+                    <h2>"This PC can’t run Windows 11"</h2>
+                    <p><strong>Reason:</strong> VirtualBox VMs usually don't have TPM 2.0 or Secure Boot enabled by
+                        default.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 24: TPM Bypass -->
+        <section class="slide" data-slide="24">
+            <div class="slide-content">
+                <h1>Step 8: TPM Bypass (Lab Method)</h1>
+                <div class="workflow vertical">
+                    <div class="workflow-step">
+                        <div class="step-text">Press <strong>Shift + F10</strong> (Opens CMD)</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Type <strong>regedit</strong> & Enter</div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Navigate to <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code></div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Create Key: <strong>LabConfig</strong></div>
+                    </div>
+                    <div class="workflow-arrow">⬇️</div>
+                    <div class="workflow-step">
+                        <div class="step-text">Add DWORDs: <code>BypassTPMCheck=1</code>,
+                            <code>BypassSecureBootCheck=1</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 25: Installation Complete -->
+        <section class="slide" data-slide="25">
+            <div class="slide-content">
+                <h1>Installation Complete! 🎉</h1>
+                <p>After a few restarts, you will see:</p>
+                <div class="outcome-grid">
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🌍</div>
+                        <p>Region Selection</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">👤</div>
+                        <p>Account Creation</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🖼️</div>
+                        <p>Desktop Loads</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 26: Install Guest Additions -->
+        <section class="slide" data-slide="26">
+            <div class="slide-content">
+                <h1>Step 9: Guest Additions (Drivers)</h1>
+                <div class="content-card">
+                    <p class="highlight">Why?</p>
+                    <ul class="big-list">
+                        <li>📺 Full Screen Support</li>
+                        <li>📋 Clipboard Sharing (Copy-Paste)</li>
+                        <li>🖱️ Mouse Integration</li>
+                        <li>🎮 Better Graphics</li>
+                    </ul>
+                </div>
+                <div class="callout tip">
+                    Devices Menu → Insert Guest Additions CD Image
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 27: Network Modes -->
+        <section class="slide" data-slide="27">
+            <div class="slide-content">
+                <h1>Network Modes Explained</h1>
+                <div class="comparison-grid">
+                    <div class="comparison-card highlight-card">
+                        <h3>NAT</h3>
+                        <p>Default. Safe. Shares host internet.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Bridged Adapter</h3>
+                        <p>VM acts as separate device on WiFi. Good for servers.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Host-Only</h3>
+                        <p>Private network between Host and VM. No Internet.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 28: Snapshot Feature -->
+        <section class="slide" data-slide="28">
+            <div class="slide-content">
+                <h1>📸 Snapshot Feature</h1>
+                <div class="content-card">
+                    <p class="definition"><strong>Snapshot</strong> = Save System State</p>
+                    <p>Like a "Save Game" checkpoint.</p>
+                </div>
+                <div class="example-box">
+                    <h3>When to use?</h3>
+                    <ul class="big-list">
+                        <li>Before installing risky software</li>
+                        <li>Before making system changes</li>
+                        <li>To quickly revert mistakes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 29: Common Errors -->
+        <section class="slide" data-slide="29">
+            <div class="slide-content">
+                <h1>Common Errors</h1>
+                <div class="mindset-grid">
+                    <div class="mindset-card">
+                        <h3>Missing 64-bit</h3>
+                        <p>Virtualization needs enabling</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>Black Screen</h3>
+                        <p>Low video memory</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>Slow VM</h3>
+                        <p>Not enough RAM/Cores</p>
+                    </div>
+                    <div class="mindset-card">
+                        <h3>No Internet</h3>
+                        <p>Wrong network mode</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 30: Troubleshooting Quick Fixes -->
+        <section class="slide" data-slide="30">
+            <div class="slide-content">
+                <h1>Troubleshooting Quick Fixes</h1>
+                <div class="vs-container">
+                    <div class="vs-card">
+                        <h2>Problem</h2>
+                        <ul>
+                            <li>64-bit Missing</li>
+                            <li>Black Screen</li>
+                            <li>Slow Performance</li>
+                            <li>No Internet</li>
+                        </ul>
+                    </div>
+                    <div class="vs-card highlight-card">
+                        <h2>Fix</h2>
+                        <ul>
+                            <li>Enable VT-x/SVM in BIOS</li>
+                            <li>Increase Video Memory (Display)</li>
+                            <li>Increase RAM & CPUs (System)</li>
+                            <li>Switch to NAT (Network)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 31: Industry Connection -->
+        <section class="slide" data-slide="31">
+            <div class="slide-content">
+                <h1>Industry Connection</h1>
+                <p class="highlight">This is a real-world skill.</p>
+                <div class="outcome-grid">
+                    <div class="outcome-card">
+                        <div class="outcome-icon">☁️</div>
+                        <p>AWS EC2</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🟦</div>
+                        <p>Azure VMs</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">🐳</div>
+                        <p>Docker Containers</p>
+                    </div>
+                    <div class="outcome-card">
+                        <div class="outcome-icon">💻</div>
+                        <p>DevOps Labs</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 32: End of Day Recap -->
+        <section class="slide" data-slide="32">
+            <div class="slide-content">
+                <h1>End of Day Recap</h1>
+                <div class="content-card">
+                    <div class="outcome-grid">
+                        <div class="outcome-card">
+                            <div class="outcome-icon">✅</div>
+                            <p>OS Fundamentals</p>
+                        </div>
+                        <div class="outcome-card">
+                            <div class="outcome-icon">✅</div>
+                            <p>Virtualization</p>
+                        </div>
+                        <div class="outcome-card">
+                            <div class="outcome-icon">✅</div>
+                            <p>Windows 11 VM</p>
+                        </div>
+                        <div class="outcome-card">
+                            <div class="outcome-icon">✅</div>
+                            <p>Troubleshooting</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ 1 -->
+        <section class="slide quiz-slide" data-slide="33">
+            <div class="slide-content">
+                <h2>🧠 Quick Quiz: Hypervisor</h2>
+                <p class="quiz-question">What software manages Virtual Machines?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Kernel</div>
+                    <div class="quiz-option">(B) Hypervisor</div>
+                    <div class="quiz-option">(C) Bootloader</div>
+                    <div class="quiz-option">(D) Driver</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) Hypervisor</p>
+                    <p class="quiz-explanation">A hypervisor (like VirtualBox) is responsible for creating and running
+                        virtual machines, allocating resources like CPU and RAM.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ 2 -->
+        <section class="slide quiz-slide" data-slide="34">
+            <div class="slide-content">
+                <h2>🧠 Quick Quiz: Kernel Mode</h2>
+                <p class="quiz-question">Which mode has full access to hardware?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) User Mode</div>
+                    <div class="quiz-option">(B) Safe Mode</div>
+                    <div class="quiz-option">(C) Kernel Mode</div>
+                    <div class="quiz-option">(D) Dark Mode</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Kernel Mode</p>
+                    <p class="quiz-explanation">Kernel mode is the core of the OS with unrestricted access to system
+                        memory and hardware. User applications run in User Mode for safety.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ 3 -->
+        <section class="slide quiz-slide" data-slide="35">
+            <div class="slide-content">
+                <h2>🧠 Quick Quiz: Snapshots</h2>
+                <p class="quiz-question">Why is a Snapshot important?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) Takes a photo of the user</div>
+                    <div class="quiz-option">(B) Speeds up the internet</div>
+                    <div class="quiz-option">(C) Saves system state to revert changes</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (C) Saves system state to revert changes</p>
+                    <p class="quiz-explanation">Snapshots allow you to save the exact state of a VM. If you break
+                        something, you can restore the snapshot instantly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZ 4 -->
+        <section class="slide quiz-slide" data-slide="36">
+            <div class="slide-content">
+                <h2>🧠 Quick Quiz: Network Modes</h2>
+                <p class="quiz-question">Which network mode makes the VM appear as a separate device on your WiFi?</p>
+                <div class="quiz-options">
+                    <div class="quiz-option">(A) NAT</div>
+                    <div class="quiz-option">(B) Bridged Adapter</div>
+                    <div class="quiz-option">(C) Host-Only</div>
+                </div>
+                <button class="reveal-btn">Reveal Answer</button>
+                <div class="quiz-reveal hidden">
+                    <p class="quiz-answer">✅ (B) Bridged Adapter</p>
+                    <p class="quiz-explanation">Bridged mode connects the VM directly to the physical network, giving it
+                        its own IP address from the router, just like a separate physical computer.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous slide" title="Previous slide (←)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+    </button>
+    <button class="nav-btn next-btn" id="nextBtn" aria-label="Next slide" title="Next slide (→)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+    </button>
+
+    <!-- Slide Navigator -->
+    <button class="nav-menu-btn" id="navMenuBtn" aria-label="Open slide navigator" title="Slide navigator (N)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+    </button>
+
+    <!-- Slide Navigator Overlay -->
+    <div class="nav-overlay hidden" id="navOverlay">
+        <div class="nav-overlay-header">
+            <h2>Navigate to Slide</h2>
+            <button class="nav-close-btn" id="navCloseBtn" aria-label="Close navigator">&times;</button>
+        </div>
+        <div class="nav-overlay-content" id="navOverlayContent">
+            <!-- Slide thumbnails will be generated here -->
         </div>
     </div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" role="status" aria-live="polite">
+        <span id="currentSlide">1</span> / <span id="totalSlides">36</span>
+    </div>
+
+    <!-- Home Button -->
+    <button class="home-btn" id="homeBtn" aria-label="Go to first slide" title="Go to first slide (Home)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+    </button>
+
+    <!-- Keyboard Shortcuts Helper -->
+    <button class="help-btn" id="helpBtn" aria-label="Show keyboard shortcuts" title="Keyboard shortcuts (?)">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+    </button>
+
+    <!-- Help Overlay -->
+    <div class="help-overlay hidden" id="helpOverlay">
+        <div class="help-overlay-header">
+            <h2>⌨️ Keyboard Shortcuts</h2>
+            <button class="help-close-btn" id="helpCloseBtn" aria-label="Close help">&times;</button>
+        </div>
+        <div class="help-overlay-content">
+            <div class="help-section">
+                <h3>Navigation</h3>
+                <div class="help-item">
+                    <kbd>→</kbd> <kbd>Space</kbd> <kbd>Page Down</kbd>
+                    <span>Next slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>←</kbd> <kbd>Page Up</kbd>
+                    <span>Previous slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>Home</kbd>
+                    <span>First slide</span>
+                </div>
+                <div class="help-item">
+                    <kbd>End</kbd>
+                    <span>Last slide</span>
+                </div>
+            </div>
+            <div class="help-section">
+                <h3>Controls</h3>
+                <div class="help-item">
+                    <kbd>N</kbd>
+                    <span>Open slide navigator</span>
+                </div>
+                <div class="help-item">
+                    <kbd>F</kbd>
+                    <span>Toggle fullscreen</span>
+                </div>
+                <div class="help-item">
+                    <kbd>?</kbd>
+                    <span>Show this help</span>
+                </div>
+                <div class="help-item">
+                    <kbd>Esc</kbd>
+                    <span>Close overlays / Return to first slide</span>
+                </div>
+            </div>
+            <div class="help-section">
+                <h3>Other</h3>
+                <div class="help-item">
+                    <span>📱 Swipe left/right on mobile</span>
+                </div>
+                <div class="help-item">
+                    <span> Click agenda items on first slide</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Use separate JS for Day 2 to handle specific agenda mappings -->
+    <script src="js/day2.js"></script>
 </body>
 
 </html>

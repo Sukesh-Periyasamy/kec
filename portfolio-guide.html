@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website Guide - KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/linux-guide.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="guide-body">
+    <div class="guide-container">
+        <a href="day3.html" class="back-link">← Back to Day 3</a>
+
+        <header class="guide-header" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+            <h1><i class="fa-solid fa-briefcase"></i> Portfolio Website Guide</h1>
+            <p class="subtitle">Manual → Template → AI → Freelancing</p>
+        </header>
+
+        <!-- Phase 1: Manual Portfolio -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-brain"></i> PHASE 1 – Start With Manual Portfolio (Foundation First)</h2>
+
+            <div class="callout warning">
+                <h3><i class="fa-solid fa-bullseye"></i> Why Start Manually?</h3>
+                <p><strong>Tell students:</strong></p>
+                <p>If you don't understand HTML & CSS structure, you will never become a real developer.</p>
+                <ul>
+                    <li>Templates & AI are <strong>tools</strong></li>
+                    <li>But understanding structure is <strong>mandatory</strong></li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-list-check"></i> Requirements Before Starting</h3>
+                <p>Students must have:</p>
+                <ul class="big-list">
+                    <li>✔ Laptop</li>
+                    <li>✔ Internet connection</li>
+                    <li>✔ VS Code installed</li>
+                    <li>✔ Git installed</li>
+                    <li>✔ GitHub account created</li>
+                    <li>✔ Basic understanding of HTML tags</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- File Structure -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-folder-tree"></i> File Structure (Very Important Section)</h2>
+            <p class="subtitle">Teach this clearly.</p>
+
+            <div class="content-card">
+                <p><strong>Every portfolio must follow clean structure:</strong></p>
+                <div class="code-box" style="text-align: left; font-family: 'Courier New', monospace;">
+                    portfolio/<br>
+                    │<br>
+                    ├── index.html<br>
+                    ├── style.css<br>
+                    ├── script.js<br>
+                    │<br>
+                    ├── assets/<br>
+                    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── images/<br>
+                    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── css/<br>
+                    │&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── js/
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h4>Explain:</h4>
+                <ul>
+                    <li><code>index.html</code> → Main entry file</li>
+                    <li><code>style.css</code> → Design</li>
+                    <li><code>script.js</code> → Interactivity</li>
+                    <li><code>assets/</code> → Media & extra files</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Importance of index.html -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-file-code"></i> Importance of index.html</h2>
+
+            <div class="callout tip">
+                <p><strong>Explain clearly:</strong></p>
+                <p><code>index.html</code> is the <strong>heart of the website</strong>.</p>
+            </div>
+
+            <div class="content-card">
+                <p>When someone visits:</p>
+                <div class="code-box">yourdomain.com</div>
+                <p>Server automatically loads:</p>
+                <div class="code-box">index.html</div>
+                <div class="callout warning">
+                    <p>Without <code>index.html</code> → website won't load properly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Goes Inside Files -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-code"></i> What Goes Inside Each File?</h2>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> index.html</h3>
+                <p><strong>Contains:</strong></p>
+                <ul>
+                    <li>Website structure</li>
+                    <li>Sections</li>
+                    <li>Text content</li>
+                    <li>Links to CSS & JS</li>
+                </ul>
+
+                <div class="content-card">
+                    <h4>Basic structure:</h4>
+                    <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px; overflow-x: auto;"><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Portfolio&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;section id="hero"&gt;
+    &lt;h1&gt;Your Name&lt;/h1&gt;
+    &lt;p&gt;Web Developer&lt;/p&gt;
+  &lt;/section&gt;
+
+  &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </div>
+
+                <div class="info-box">
+                    <h4>Explain:</h4>
+                    <ul>
+                        <li><code>&lt;head&gt;</code> → metadata</li>
+                        <li><code>&lt;body&gt;</code> → visible content</li>
+                        <li><code>&lt;link&gt;</code> → connects CSS</li>
+                        <li><code>&lt;script&gt;</code> → connects JS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> style.css</h3>
+                <p><strong>Controls:</strong></p>
+                <ul>
+                    <li>Colors</li>
+                    <li>Layout</li>
+                    <li>Fonts</li>
+                    <li>Spacing</li>
+                    <li>Responsive design</li>
+                </ul>
+
+                <div class="content-card">
+                    <h4>Example:</h4>
+                    <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px;"><code>body {
+  font-family: Arial;
+  margin: 0;
+}
+
+#hero {
+  text-align: center;
+  padding: 50px;
+}</code></pre>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-3"></i> script.js</h3>
+                <p><strong>Controls:</strong></p>
+                <ul>
+                    <li>Button clicks</li>
+                    <li>Animations</li>
+                    <li>Menu toggle</li>
+                    <li>Smooth scrolling</li>
+                </ul>
+
+                <div class="content-card">
+                    <h4>Example:</h4>
+                    <pre
+                        style="background: #f5f5f5; padding: 1rem; border-radius: 8px;"><code>console.log("Portfolio Loaded");</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Required Sections -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-puzzle-piece"></i> Sections Every Portfolio Must Have</h2>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> Hero Section</h3>
+                <ul>
+                    <li>Name</li>
+                    <li>Title</li>
+                    <li>Button (View Projects)</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> About Section</h3>
+                <ul>
+                    <li>Short description</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-3"></i> Skills Section</h3>
+                <ul>
+                    <li>Technical skills</li>
+                    <li>Tools</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-4"></i> Projects Section</h3>
+                <p>Each project card:</p>
+                <ul>
+                    <li>Title</li>
+                    <li>Description</li>
+                    <li>GitHub link</li>
+                    <li>Demo link</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-5"></i> Contact Section</h3>
+                <ul>
+                    <li>Email</li>
+                    <li>LinkedIn</li>
+                    <li>GitHub</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Phase 2: Templates -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-palette"></i> PHASE 2 – Using Portfolio Templates (Real Industry Workflow)</h2>
+
+            <p>After they understand structure, now move to:</p>
+            <a href="https://themewagon.com/theme-tag/portfolio-template/" target="_blank" class="download-link">
+                <i class="fa-solid fa-arrow-right"></i> https://themewagon.com/theme-tag/portfolio-template/
+            </a>
+
+            <div class="callout tip">
+                <p><strong>Explain:</strong></p>
+                <p>These are pre-designed themes made by professional designers.</p>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-download"></i> How to Download Template</h3>
+                <ol class="step-list">
+                    <li>Choose a template</li>
+                    <li>Click <strong>Download</strong></li>
+                    <li>Extract ZIP file</li>
+                    <li>Open folder in VS Code</li>
+                </ol>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-folder"></i> Understanding Template Structure</h3>
+                <p>Template usually contains:</p>
+                <div class="code-box" style="text-align: left; font-family: 'Courier New', monospace;">
+                    index.html<br>
+                    css/<br>
+                    js/<br>
+                    images/<br>
+                    fonts/
+                </div>
+
+                <div class="info-box">
+                    <h4>Explain:</h4>
+                    <ul>
+                        <li><code>css/</code> folder → multiple style files</li>
+                        <li><code>js/</code> folder → animation & effects</li>
+                        <li><code>images/</code> → all graphics</li>
+                        <li><code>fonts/</code> → custom typography</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout warning">
+                <h3><i class="fa-solid fa-brain"></i> Important Teaching Point</h3>
+                <p><strong>Tell students:</strong></p>
+                <p>Don't change design randomly.<br>First understand how sections are structured.</p>
+            </div>
+        </section>
+
+        <!-- Customization -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-pen"></i> How to Customize Template</h2>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 1</span>
+                    <h3>Change Text</h3>
+                </div>
+                <ol>
+                    <li>Open <code>index.html</code></li>
+                    <li>Find: <code>John Doe</code></li>
+                    <li>Replace with: <code>Your Name</code></li>
+                </ol>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 2</span>
+                    <h3>Replace Images</h3>
+                </div>
+                <ol>
+                    <li>Go to: <code>images/</code> folder</li>
+                    <li>Replace: <code>profile.jpg</code></li>
+                    <li>Keep same file name or update path</li>
+                </ol>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 3</span>
+                    <h3>Edit Skills</h3>
+                </div>
+                <p>Find skill section in HTML.</p>
+                <p>Modify:</p>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px;"><code>&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;</code></pre>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 4</span>
+                    <h3>Add Projects</h3>
+                </div>
+                <ol>
+                    <li>Duplicate project card block</li>
+                    <li>Update: Title</li>
+                    <li>Update: Description</li>
+                    <li>Update: GitHub link</li>
+                </ol>
+            </div>
+
+            <div class="step-section">
+                <div class="step-header">
+                    <span class="step-number">STEP 5</span>
+                    <h3>Update Contact Section</h3>
+                </div>
+                <p>Add:</p>
+                <ul>
+                    <li>Email</li>
+                    <li>LinkedIn link</li>
+                    <li>GitHub link</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Phase 3: GitHub -->
+        <section class="guide-section">
+            <h2><i class="fa-brands fa-github"></i> PHASE 3 – Connect to GitHub</h2>
+
+            <p>After customization:</p>
+            <div class="info-box">
+                <p>Open terminal inside project folder:</p>
+                <pre style="background: #f5f5f5; padding: 1rem; border-radius: 8px;"><code>git init
+git add .
+git commit -m "Portfolio customized"
+git remote add origin https://github.com/username/portfolio.git
+git push -u origin main</code></pre>
+            </div>
+
+            <div class="tip-box">
+                <p>Enable GitHub Pages.</p>
+                <h4><i class="fa-solid fa-rocket"></i> Now portfolio is live!</h4>
+            </div>
+        </section>
+
+        <!-- Phase 4: Freelancing -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-indian-rupee-sign"></i> PHASE 4 – How Students Can Earn Using This Skill</h2>
+            <p class="subtitle">Now change mindset 🔥</p>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-1"></i> Freelancing Opportunities</h3>
+                <p><strong>Students can:</strong></p>
+                <ul class="big-list">
+                    <li>Build portfolio for classmates</li>
+                    <li>Build simple website for:</li>
+                </ul>
+                <ul style="margin-left: 2rem;">
+                    <li>Doctors</li>
+                    <li>Small shops</li>
+                    <li>Local businesses</li>
+                    <li>Photographers</li>
+                    <li>Tutors</li>
+                </ul>
+
+                <div class="content-card"
+                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-align: center; padding: 2rem;">
+                    <h3 style="margin: 0;">Charge:</h3>
+                    <h2 style="margin: 0.5rem 0; font-size: 2rem;">₹2000 – ₹8000</h2>
+                    <p style="margin: 0;">per website (basic level)</p>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-2"></i> Where to Find Clients?</h3>
+                <p><strong>Platforms:</strong></p>
+                <ul>
+                    <li><i class="fa-brands fa-fiverr"></i> Fiverr</li>
+                    <li><i class="fa-brands fa-upwork"></i> Upwork</li>
+                    <li><i class="fa-solid fa-laptop-code"></i> Freelancer</li>
+                    <li><i class="fa-brands fa-linkedin"></i> LinkedIn outreach</li>
+                    <li><i class="fa-solid fa-store"></i> Local business approach</li>
+                </ul>
+            </div>
+
+            <div class="substep">
+                <h3><i class="fa-solid fa-bullseye"></i> How to Approach Clients</h3>
+                <div class="content-card">
+                    <h4>Message format:</h4>
+                    <div
+                        style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #667eea;">
+                        <p><em>"Hi, I create modern portfolio and business websites.</em></p>
+                        <p><em>I can create a responsive website for your business with hosting support.</em></p>
+                        <p><em>Would you like to see demo samples?"</em></p>
+                    </div>
+                    <p style="margin-top: 1rem;"><strong>Attach:</strong></p>
+                    <ul>
+                        <li>Your portfolio link</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="callout tip">
+                <h3><i class="fa-solid fa-brain"></i> Important Advice</h3>
+                <p><strong>First build 3–4 demo websites.</strong></p>
+                <p>Then approach clients.</p>
+            </div>
+        </section>
+
+        <!-- Phase 5: AI -->
+        <section class="guide-section">
+            <h2><i class="fa-solid fa-robot"></i> PHASE 5 – Using AI Tools (Advanced Level)</h2>
+
+            <p>After manual learning:</p>
+            <p>Now introduce:</p>
+
+            <div class="content-card"
+                style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; text-align: center;">
+                <h3 style="margin: 0;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI-Powered Development</h3>
+            </div>
+
+            <div class="callout tip" style="margin-top: 2rem;">
+                <p><strong>Explain:</strong></p>
+                <p>Instead of designing from scratch,<br>AI can generate full structure.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Students can:</h4>
+                <ul class="big-list">
+                    <li><i class="fa-solid fa-rocket"></i> Create websites faster</li>
+                    <li><i class="fa-solid fa-clock"></i> Deliver projects quickly</li>
+                    <li><i class="fa-solid fa-chart-line"></i> Increase freelancing income</li>
+                </ul>
+            </div>
+
+            <!-- Antigravity Button Placeholder -->
+            <div
+                style="margin-top: 3rem; padding: 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1.5rem;">
+                    <i class="fa-solid fa-robot"></i> Learn More About AI-Powered Development
+                </h3>
+                <button disabled
+                    style="padding: 1.5rem 3rem; background: rgba(255,255,255,0.2); color: white; border: 2px solid white; border-radius: 12px; font-size: 1.3rem; font-weight: 700; cursor: not-allowed; opacity: 0.6;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Antigravity AI Tool
+                    <br>
+                    <small style="font-size: 0.8rem; font-weight: 400;">(Content Coming Soon)</small>
+                </button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 2rem; color: #666;">
+            <p><i class="fa-solid fa-circle-info"></i> Start with manual, master with templates, scale with AI!</p>
+        </footer>
+    </div>
+</body>
+
+</html>
