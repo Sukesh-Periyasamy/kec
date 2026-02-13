@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Lab Manual - ESP32 Cloud IoT System | KEC Workshop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --color-primary: #5568d3;
+            --color-accent: #d946ef;
+            --color-text: #1f2937;
+            --color-text-secondary: #6b7280;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--color-text);
+            line-height: 1.7;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid rgba(85, 104, 211, 0.15);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--color-primary);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(85, 104, 211, 0.05);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--color-primary);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-value {
+            color: var(--color-text);
+            font-size: 1rem;
+        }
+
+        .section {
+            margin: 2.5rem 0;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .subsection-title {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+        }
+
+        .aim-box {
+            background: linear-gradient(135deg, rgba(85, 104, 211, 0.08) 0%, rgba(217, 70, 239, 0.08) 100%);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--color-accent);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        ul,
+        ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(85, 104, 211, 0.2);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(85, 104, 211, 0.1);
+        }
+
+        th {
+            background: rgba(85, 104, 211, 0.1);
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        tr:hover {
+            background: rgba(85, 104, 211, 0.04);
+        }
+
+        .architecture-flow {
+            text-align: center;
+            font-size: 1.3rem;
+            padding: 1.5rem;
+            background: white;
+            border: 2px dashed var(--color-primary);
+            border-radius: var(--radius-md);
+            margin: 1.5rem 0;
+            font-weight: 600;
+            color: var(--color-primary);
+        }
+
+        .highlight-box {
+            background: rgba(217, 119, 6, 0.08);
+            border-left: 4px solid #d97706;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+
+        .tip-box {
+            background: rgba(5, 150, 105, 0.08);
+            border-left: 4px solid #059669;
+            padding: 1rem 1.5rem;
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+
+        .code-note {
+            font-style: italic;
+            color: var(--color-text-secondary);
+            text-align: center;
+            padding: 1rem;
+            background: rgba(85, 104, 211, 0.05);
+            border-radius: var(--radius-md);
+            margin: 1rem 0;
+        }
+
+        .observation-table {
+            margin: 1.5rem 0;
+        }
+
+        .observation-table td {
+            min-width: 120px;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-bottom: 2rem;
+        }
+
+        .back-button:hover {
+            background: var(--color-accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(85, 104, 211, 0.3);
+        }
+
+        .print-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-left: 1rem;
+            cursor: pointer;
+        }
+
+        .print-button:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+
+            .back-button,
+            .print-button {
+                display: none;
+            }
+
+            .container {
+                border: none;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="day4.html" class="back-button">
+        <i class="fa-solid fa-arrow-left"></i> Back to Day 4
+    </a>
+    <button onclick="window.print()" class="print-button">
+        <i class="fa-solid fa-print"></i> Print Manual
+    </button>
+
+    <div class="container">
+        <div class="header">
+            <h1><i class="fa-solid fa-book"></i> LAB MANUAL</h1>
+            <div class="subtitle">ESP32 Cloud IoT Monitoring System</div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Board Used:</div>
+                <div class="info-value">ESP32</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Cloud Platform:</div>
+                <div class="info-value">ThingSpeak</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Website Hosting:</div>
+                <div class="info-value">GitHub Pages</div>
+            </div>
+        </div>
+
+        <!-- Section 1: Experiment Details -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">1</span>
+                Experiment Details
+            </h2>
+            <table>
+                <tr>
+                    <th>Experiment No:</th>
+                    <td>04</td>
+                </tr>
+                <tr>
+                    <th>Experiment Name:</th>
+                    <td>Cloud-Based Temperature and Humidity Monitoring using ESP32</td>
+                </tr>
+                <tr>
+                    <th>Duration:</th>
+                    <td>3 Hours</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 2: Aim -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">2</span>
+                Aim
+            </h2>
+            <div class="aim-box">
+                To design and implement a cloud-based IoT system that reads temperature and humidity using DHT11 sensor
+                and displays data on a live web dashboard.
+            </div>
+        </div>
+
+        <!-- Section 3: Learning Outcomes -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">3</span>
+                Learning Outcomes
+            </h2>
+            <p>After completing this experiment, students will be able to:</p>
+            <ul>
+                <li>Understand microcontroller-based IoT architecture</li>
+                <li>Interface DHT11 sensor with ESP32</li>
+                <li>Connect ESP32 to WiFi</li>
+                <li>Send sensor data to cloud server</li>
+                <li>Create and host a live dashboard using GitHub</li>
+            </ul>
+        </div>
+
+        <!-- Section 4: Required Components -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">4</span>
+                Required Components
+            </h2>
+
+            <h3 class="subsection-title">Hardware</h3>
+            <ul>
+                <li>ESP32 Development Board</li>
+                <li>DHT11 Sensor</li>
+                <li>Breadboard</li>
+                <li>Jumper Wires</li>
+                <li>USB Cable</li>
+            </ul>
+
+            <h3 class="subsection-title">Software</h3>
+            <ul>
+                <li>Arduino IDE</li>
+                <li>ESP32 Board Package</li>
+                <li>DHT Sensor Library</li>
+                <li>Internet Connection</li>
+                <li>GitHub Account</li>
+                <li>ThingSpeak Account</li>
+            </ul>
+        </div>
+
+        <!-- Section 5: Theory -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">5</span>
+                Theory
+            </h2>
+
+            <h3 class="subsection-title">5.1 What is IoT?</h3>
+            <p>Internet of Things (IoT) is a system where physical devices collect and exchange data through the
+                internet.</p>
+
+            <h3 class="subsection-title">5.2 System Architecture</h3>
+            <div class="architecture-flow">
+                Sensor → ESP32 → WiFi → Cloud → Website
+            </div>
+            <p><strong>Explanation:</strong></p>
+            <ul>
+                <li><strong>Sensor</strong> measures environment</li>
+                <li><strong>ESP32</strong> processes data</li>
+                <li><strong>WiFi</strong> sends data to cloud</li>
+                <li><strong>Cloud</strong> stores data</li>
+                <li><strong>Website</strong> displays data</li>
+            </ul>
+
+            <h3 class="subsection-title">5.3 About ESP32</h3>
+            <p>ESP32 is a WiFi and Bluetooth-enabled microcontroller used for IoT applications.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Built-in WiFi</li>
+                <li>Multiple GPIO pins</li>
+                <li>Low power consumption</li>
+                <li>Supports HTTP communication</li>
+            </ul>
+
+            <h3 class="subsection-title">5.4 About ThingSpeak</h3>
+            <p>ThingSpeak is a cloud-based IoT platform that stores and visualizes sensor data.</p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Free student version</li>
+                <li>Auto graph generation</li>
+                <li>API-based data update</li>
+                <li>CSV export</li>
+            </ul>
+
+            <h3 class="subsection-title">5.5 About GitHub Pages</h3>
+            <p>GitHub Pages is a free static website hosting service used to host the IoT dashboard.</p>
+        </div>
+
+        <!-- Section 6: Circuit Diagram -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">6</span>
+                Circuit Diagram
+            </h2>
+
+            <h3 class="subsection-title">Connections:</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>DHT11 Pin</th>
+                        <th>ESP32 Pin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>VCC</td>
+                        <td>3.3V</td>
+                    </tr>
+                    <tr>
+                        <td>GND</td>
+                        <td>GND</td>
+                    </tr>
+                    <tr>
+                        <td>DATA</td>
+                        <td>GPIO 4</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="code-note">
+                <i class="fa-solid fa-image"></i> Wiring diagram image will be provided in the final PDF version
+            </div>
+        </div>
+
+        <!-- Section 7: Procedure -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">7</span>
+                Procedure
+            </h2>
+
+            <h3 class="subsection-title">Step 1 – Install Software</h3>
+            <ul>
+                <li>Install Arduino IDE</li>
+                <li>Add ESP32 board support</li>
+                <li>Install DHT library</li>
+            </ul>
+
+            <h3 class="subsection-title">Step 2 – Hardware Setup</h3>
+            <ul>
+                <li>Connect DHT11 to ESP32</li>
+                <li>Verify wiring connections</li>
+            </ul>
+
+            <h3 class="subsection-title">Step 3 – Sensor Testing</h3>
+            <ul>
+                <li>Upload basic DHT reading code</li>
+                <li>Open Serial Monitor</li>
+                <li>Confirm temperature values</li>
+            </ul>
+
+            <h3 class="subsection-title">Step 4 – Connect to WiFi</h3>
+            <ul>
+                <li>Add WiFi credentials</li>
+                <li>Upload code</li>
+                <li>Verify WiFi connection in Serial Monitor</li>
+            </ul>
+
+            <h3 class="subsection-title">Step 5 – Configure ThingSpeak</h3>
+            <ol>
+                <li>Create new channel</li>
+                <li>Add fields</li>
+                <li>Copy Write API Key</li>
+                <li>Update ESP32 code</li>
+            </ol>
+            <div class="tip-box">
+                <strong>Verify:</strong> Graph updates every 15 seconds.
+            </div>
+
+            <h3 class="subsection-title">Step 6 – Create GitHub Dashboard</h3>
+            <ol>
+                <li>Create GitHub repository</li>
+                <li>Upload index.html</li>
+                <li>Replace Channel ID and Read API Key</li>
+                <li>Enable GitHub Pages</li>
+                <li>Open public dashboard URL</li>
+            </ol>
+        </div>
+
+        <!-- Section 8: Program Code -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">8</span>
+                Program Code
+            </h2>
+            <div class="code-note">
+                <i class="fa-solid fa-code"></i> Complete ESP32 and HTML dashboard code will be provided during the
+                practical session
+            </div>
+        </div>
+
+        <!-- Section 9: Observations -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">9</span>
+                Observations
+            </h2>
+            <table class="observation-table">
+                <thead>
+                    <tr>
+                        <th>Reading No</th>
+                        <th>Temperature (°C)</th>
+                        <th>Humidity (%)</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="highlight-box">
+                <strong>Note:</strong> Students must record at least 5 readings during the experiment.
+            </div>
+        </div>
+
+        <!-- Section 10: Result -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">10</span>
+                Result
+            </h2>
+            <div class="aim-box">
+                The ESP32 successfully transmitted sensor data to the cloud and displayed live data on a public
+                dashboard.
+            </div>
+        </div>
+
+        <!-- Section 11: Applications -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">11</span>
+                Applications
+            </h2>
+            <ul>
+                <li>Smart agriculture monitoring</li>
+                <li>Cold storage monitoring</li>
+                <li>Remote weather stations</li>
+                <li>Hospital patient monitoring</li>
+                <li>Vaccine temperature monitoring</li>
+            </ul>
+        </div>
+
+        <!-- Section 12: Troubleshooting -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">12</span>
+                Troubleshooting Guide
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Problem</th>
+                        <th>Possible Cause</th>
+                        <th>Solution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>No WiFi connection</td>
+                        <td>Wrong password</td>
+                        <td>Check credentials</td>
+                    </tr>
+                    <tr>
+                        <td>No graph update</td>
+                        <td>Wrong API key</td>
+                        <td>Verify Write API key</td>
+                    </tr>
+                    <tr>
+                        <td>NaN values</td>
+                        <td>Loose wiring</td>
+                        <td>Check DHT connection</td>
+                    </tr>
+                    <tr>
+                        <td>Website not updating</td>
+                        <td>Channel private</td>
+                        <td>Make channel public</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 13: Viva Questions -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">13</span>
+                Viva Questions
+            </h2>
+            <ol>
+                <li>What is IoT?</li>
+                <li>What is API key?</li>
+                <li>Why 15-second delay in ThingSpeak?</li>
+                <li>Difference between local server and cloud server?</li>
+                <li>What is JSON?</li>
+                <li>What protocol is used to send data?</li>
+            </ol>
+        </div>
+
+        <!-- Section 14: Mini Challenge -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">14</span>
+                Mini Challenge (Optional)
+            </h2>
+            <ul>
+                <li>Add third sensor field</li>
+                <li>Add temperature alert system</li>
+                <li>Change dashboard UI</li>
+                <li>Reduce update time</li>
+            </ul>
+        </div>
+
+        <!-- Section 15: Conclusion -->
+        <div class="section">
+            <h2 class="section-title">
+                <span class="section-number">15</span>
+                Conclusion
+            </h2>
+            <div class="aim-box">
+                This experiment demonstrates how embedded systems integrate with cloud computing to create real-world
+                IoT applications.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
