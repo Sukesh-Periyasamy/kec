@@ -414,13 +414,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const agendaItems = document.querySelectorAll('.agenda-item');
 
     // Map agenda items to slide numbers
-    // Map agenda items to slide numbers - Day 2 (Consolidated)
+    // Map agenda items to slide numbers - Day 2 (36 Slides)
     const agendaSlideMap = {
-        0: 2,   // Core OS Concepts
-        1: 3,   // Virtualization Tech
-        2: 5,   // Windows 11 Install
-        3: 6,   // Post-Install Features
-        4: 7    // Troubleshooting
+        0: 4,   // Understand OS
+        1: 7,   // OS Architecture
+        2: 9,   // Virtualization Concepts
+        3: 17,  // Install Windows 11 in VM (Step 2)
+        4: 29   // Configure & Troubleshoot
     };
 
     agendaItems.forEach((item, index) => {

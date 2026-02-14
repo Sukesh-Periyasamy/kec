@@ -1299,6 +1299,14 @@ ul {
     transition: all var(--transition-base);
 }
 
+.quiz-option:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--color-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+    cursor: pointer;
+}
+
 .reveal-btn {
     background: linear-gradient(135deg, var(--color-primary), var(--color-accent-1));
     border: none;
@@ -1906,7 +1914,7 @@ button:focus-visible {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
     }
-    
+
     .vs-divider {
         transform: rotate(90deg);
     }
@@ -1983,7 +1991,7 @@ table tbody td:first-child {
 }
 
 /* Ensure proper spacing between sections */
-.content-card + .content-card {
+.content-card+.content-card {
     margin-top: var(--spacing-xl);
 }
 
