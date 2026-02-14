@@ -36,18 +36,16 @@
                 <div class="content-card" style="padding: 1.5rem;">
                     <h3>Workshop Topics</h3>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">🧠 CPU</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">⚡ Motherboard</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">💾 RAM</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">🎮 GPU</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">🔌 Power Supply Unit (PSU)
-                        </div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">💿 Storage</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">❄️ Cooling & Thermals</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">🖥️ Monitor & Display</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">🔗 Ports & Cables</div>
-                        <div class="agenda-item" style="text-align: left; padding: 0.8rem;">💻 Operating System (OS)
-                        </div>
+                        <div class="agenda-item" onclick="goToSlide(3)" style="text-align: left; padding: 0.8rem; cursor: pointer;">🧠 CPU</div>
+                        <div class="agenda-item" onclick="goToSlide(5)" style="text-align: left; padding: 0.8rem; cursor: pointer;">⚡ Motherboard</div>
+                        <div class="agenda-item" onclick="goToSlide(6)" style="text-align: left; padding: 0.8rem; cursor: pointer;">💾 RAM</div>
+                        <div class="agenda-item" onclick="goToSlide(7)" style="text-align: left; padding: 0.8rem; cursor: pointer;">🎮 GPU</div>
+                        <div class="agenda-item" onclick="goToSlide(8)" style="text-align: left; padding: 0.8rem; cursor: pointer;">🔌 Power Supply Unit (PSU)</div>
+                        <div class="agenda-item" onclick="goToSlide(9)" style="text-align: left; padding: 0.8rem; cursor: pointer;">💿 Storage</div>
+                        <div class="agenda-item" onclick="goToSlide(9)" style="text-align: left; padding: 0.8rem; cursor: pointer;">❄️ Cooling & Thermals</div>
+                        <div class="agenda-item" onclick="goToSlide(10)" style="text-align: left; padding: 0.8rem; cursor: pointer;">🖥️ Monitor & Display</div>
+                        <div class="agenda-item" onclick="goToSlide(10)" style="text-align: left; padding: 0.8rem; cursor: pointer;">🔗 Ports & Cables</div>
+                        <div class="agenda-item" onclick="goToSlide(11)" style="text-align: left; padding: 0.8rem; cursor: pointer;">💻 Operating System (OS)</div>
                     </div>
                 </div>
             </div>
@@ -473,55 +471,16 @@
     </section>
 
     <!-- SLIDE 4: What is a CPU? -->
+           <!-- SLIDE 5: What Is a Motherboard? -->
     <section class="slide" data-slide="5">
         <div class="slide-content">
-            <h1>What is a CPU?</h1>
-            <div class="content-card">
-                <p class="definition"><strong>CPU</strong> = Central Processing Unit</p>
-                <ul class="big-list">
-                    <li>🧠 Brain of the computer</li>
-                    <li>⚙️ Executes instructions</li>
-                    <li>🔄 Controls data flow between components</li>
-                </ul>
-            </div>
-            <p class="highlight center">CPU decides <strong>what happens</strong> and <strong>when</strong></p>
-        </div>
-    </section>
-
-    <!-- SLIDE 5: What Does a CPU Actually Do? -->
-    <section class="slide" data-slide="6">
-        <div class="slide-content">
-            <h1>What Does a CPU Actually Do?</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>📖 Reads instructions from software</li>
-                    <li>🔢 Performs calculations</li>
-                    <li>📤 Sends tasks to:
-                        <ul>
-                            <li>RAM</li>
-                            <li>GPU</li>
-                            <li>Storage</li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="callout warning">
-                If CPU struggles → whole PC feels slow
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 6: CPU Core Concepts -->
-    <section class="slide" data-slide="7">
-        <div class="slide-content">
             <h1>What Is a Motherboard?</h1>
-            <p class="highlight center">In-Depth, Practical Explanation</p>
+            <p class="subtitle">In-Depth, Practical Explanation</p>
 
             <!-- Main Functions -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🔌 Main Circuit Board</h2>
-                <p class="definition">The motherboard is the foundation of the computer. Every major component plugs
-                    into it.</p>
+                <p class="definition">The motherboard is the foundation of the computer. Every major component plugs into it.</p>
             </div>
 
             <div class="content-card" style="margin-top: 2rem;">
@@ -556,49 +515,46 @@
                     <li>Overclocking support</li>
                 </ul>
                 <div class="callout tip">
-                    <strong>Think of the motherboard as the city map:</strong> even a fast car (CPU) can't perform
-                    if the roads (power, lanes, cooling) are poor.
+                    <strong>Think of the motherboard as the city map:</strong> even a fast car (CPU) can’t perform if the roads (power, lanes, cooling) are poor.
                 </div>
             </div>
 
             <!-- CPU & Socket Dependency -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
+            <div class="content-card" style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
                 <h2>🧩 CPU & Socket Dependency</h2>
 
                 <h3>🔌 Socket = physical CPU connection</h3>
                 <p>The socket is the exact shape and pin layout where the CPU fits.<br>
-                    <strong>CPU and motherboard socket must match.</strong>
-                </p>
+                <strong>CPU and motherboard socket must match.</strong></p>
 
-                <h3>🔵 Intel</h3>
-                <p><strong>Uses LGA sockets</strong> (pins on motherboard)</p>
-                <div class="example-box">
-                    <p><strong>Examples:</strong></p>
-                    <div class="code-text">LGA1200 → 10th/11th Gen</div>
-                    <div class="code-text">LGA1700 → 12th/13th/14th Gen</div>
-                    <p class="highlight">⚠️ Meaning: You can't put a 12th Gen Intel CPU into an older LGA1200 board.
-                    </p>
-                </div>
-
-                <h3>🔴 AMD</h3>
-                <p><strong>Uses AM sockets</strong> (pins on CPU)</p>
-                <div class="example-box">
-                    <p><strong>Examples:</strong></p>
-                    <div class="code-text">AM4 → Ryzen 1000–5000</div>
-                    <div class="code-text">AM5 → Ryzen 7000+</div>
-                    <p class="highlight">✅ Meaning: AM4 had long support → better upgrade flexibility.</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>🔵 Intel</h3>
+                        <p><strong>Uses LGA sockets</strong> (pins on motherboard)</p>
+                        <ul class="big-list">
+                            <li>LGA1200 → 10th/11th Gen</li>
+                            <li>LGA1700 → 12th/13th/14th Gen</li>
+                        </ul>
+                        <p class="highlight" style="font-size: 0.9rem;">⚠️ Meaning: You can’t put a 12th Gen Intel CPU into an older LGA1200 board.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>🔴 AMD</h3>
+                        <p><strong>Uses AM sockets</strong> (pins on CPU)</p>
+                        <ul class="big-list">
+                            <li>AM4 → Ryzen 1000–5000</li>
+                            <li>AM5 → Ryzen 7000+</li>
+                        </ul>
+                        <p class="highlight" style="font-size: 0.9rem;">✅ Meaning: AM4 had long support → better upgrade flexibility.</p>
+                    </div>
                 </div>
             </div>
 
             <!-- Chipsets Explained -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🧠 Motherboard Chipsets Explained (Very Important)</h2>
-                <p class="definition">A chipset is the controller that defines features and limits of the
-                    motherboard.</p>
+                <p class="definition">A chipset is the controller that defines features and limits of the motherboard.</p>
 
                 <h3>🔵 Intel Chipsets</h3>
-
                 <div class="comparison-grid">
                     <div class="comparison-card">
                         <h4>H-Series → Basic</h4>
@@ -630,11 +586,10 @@
                 </div>
 
                 <h3>🔴 AMD Chipsets</h3>
-
                 <div class="comparison-grid">
                     <div class="comparison-card">
                         <h4>A-Series → Entry</h4>
-                        <ul>
+                         <ul>
                             <li>Basic features</li>
                             <li>Limited expansion</li>
                         </ul>
@@ -642,7 +597,7 @@
                     </div>
                     <div class="comparison-card">
                         <h4>B-Series → Best Value</h4>
-                        <ul>
+                         <ul>
                             <li>RAM & CPU tuning</li>
                             <li>Good VRMs</li>
                         </ul>
@@ -650,7 +605,7 @@
                     </div>
                     <div class="comparison-card">
                         <h4>X-Series → High-End</h4>
-                        <ul>
+                         <ul>
                             <li>Maximum PCIe lanes</li>
                             <li>Strongest power delivery</li>
                         </ul>
@@ -660,93 +615,50 @@
             </div>
 
             <!-- Performance Factors -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
+            <div class="content-card" style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
                 <h2>🤔 Why the SAME CPU Performs Differently on Different Motherboards</h2>
                 <p>Even with the same CPU, performance can change due to:</p>
 
                 <h3>1️⃣ 📊 RAM Speed Support</h3>
                 <ul class="big-list">
-                    <li>CPU may support DDR4-3200</li>
-                    <li>Cheap board may limit to DDR4-2666</li>
+                    <li>CPU may support DDR4-3200 but Cheap board may limit to DDR4-2666</li>
                 </ul>
-                <p><strong>Performance loss:</strong></p>
-                <ul class="big-list">
-                    <li>Slower apps</li>
-                    <li>Lower FPS</li>
-                    <li>Slower AI/data workloads</li>
-                </ul>
-                <div class="callout tip">
-                    📌 RAM speed is controlled by the motherboard chipset + BIOS
-                </div>
+                <p><strong>Performance loss:</strong> Slower apps, Lower FPS, Slower AI/data workloads.</p>
+                <div class="callout tip">📌 RAM speed is controlled by the motherboard chipset + BIOS</div>
 
                 <h3>2️⃣ ⚡ Power Delivery (VRMs)</h3>
-                <p><strong>What are VRMs?</strong></p>
-                <p>Voltage Regulator Modules supply clean, stable power to the CPU.</p>
+                <p><strong>Voltage Regulator Modules</strong> supply clean, stable power to the CPU.</p>
                 <ul class="big-list">
                     <li>Weak VRMs → CPU throttles</li>
                     <li>Strong VRMs → CPU boosts higher & longer</li>
                 </ul>
                 <div class="example-box">
-                    <p><strong>📌 Result:</strong></p>
-                    <p>Same CPU</p>
-                    <div class="code-text">Cheap board → lower sustained speed</div>
-                    <div class="code-text">Good board → higher real-world performance</div>
+                    <p><strong>📌 Result:</strong> Same CPU on Cheap board → lower sustained speed.</p>
                 </div>
 
                 <h3>3️⃣ 🔌 PCIe Lanes</h3>
-                <p><strong>PCIe lanes decide:</strong></p>
-                <ul class="big-list">
-                    <li>GPU bandwidth</li>
-                    <li>NVMe SSD speed</li>
-                    <li>Expansion cards</li>
-                </ul>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Board Type</th>
-                            <th>PCIe Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Entry</td>
-                            <td>Limited lanes</td>
-                        </tr>
-                        <tr>
-                            <td>Mid-range</td>
-                            <td>Balanced</td>
-                        </tr>
-                        <tr>
-                            <td>High-end</td>
-                            <td>Maximum</td>
-                        </tr>
-                    </tbody>
+                <p>PCIe lanes decide GPU bandwidth, NVMe SSD speed, Expansion cards.</p>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">Board Type</th><th style="padding: 0.5rem; text-align: left;">PCIe Result</th></tr>
+                    <tr><td style="padding: 0.5rem;">Entry</td><td style="padding: 0.5rem;">Limited lanes</td></tr>
+                    <tr><td style="padding: 0.5rem;">Mid-range</td><td style="padding: 0.5rem;">Balanced</td></tr>
+                    <tr><td style="padding: 0.5rem;">High-end</td><td style="padding: 0.5rem;">Maximum</td></tr>
                 </table>
-                <div class="example-box">
-                    <p><strong>📌 Example:</strong></p>
-                    <div class="code-text">PCIe 3.0 SSD on cheap board</div>
-                    <div class="code-text">PCIe 4.0 SSD on good board → 2× speed</div>
+                 <div class="example-box">
+                    <p><strong>📌 Example:</strong> PCIe 3.0 SSD on cheap board vs PCIe 4.0 SSD on good board → 2× speed.</p>
                 </div>
 
                 <h3>4️⃣ ❄️ Cooling Support</h3>
-                <p><strong>Motherboards control:</strong></p>
-                <ul class="big-list">
-                    <li>Fan headers</li>
-                    <li>Pump support</li>
-                    <li>Thermal sensors</li>
-                </ul>
-                <div class="vs-container">
-                    <div class="vs-card">
-                        <h4>Poor board:</h4>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                         <h4>Poor board:</h4>
                         <ul>
                             <li>Fewer fan headers</li>
                             <li>Less thermal control</li>
                             <li>CPU throttles earlier</li>
                         </ul>
                     </div>
-                    <div class="vs-divider">VS</div>
-                    <div class="vs-card">
+                    <div class="comparison-card">
                         <h4>Good board:</h4>
                         <ul>
                             <li>Multiple fans</li>
@@ -761,1426 +673,966 @@
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🧪 Real-World Example</h2>
                 <p><strong>Same CPU: Ryzen 5 5600X</strong></p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Motherboard</th>
-                            <th>Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>A-Series</td>
-                            <td>Lower RAM speed, throttling</td>
-                        </tr>
-                        <tr>
-                            <td>B-Series</td>
-                            <td>Full performance</td>
-                        </tr>
-                        <tr>
-                            <td>X-Series</td>
-                            <td>Best boost, cooler, faster</td>
-                        </tr>
-                    </tbody>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">Motherboard</th><th style="padding: 0.5rem; text-align: left;">Result</th></tr>
+                    <tr><td style="padding: 0.5rem;">A-Series</td><td style="padding: 0.5rem;">Lower RAM speed, throttling</td></tr>
+                    <tr><td style="padding: 0.5rem;">B-Series</td><td style="padding: 0.5rem;">Full performance</td></tr>
+                    <tr><td style="padding: 0.5rem;">X-Series</td><td style="padding: 0.5rem;">Best boost, cooler, faster</td></tr>
                 </table>
             </div>
 
-            <!-- Final Truth -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🧠 Simple One-Line Truth</h2>
-                <p class="highlight center" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);"><strong>CPU gives
-                        potential. Motherboard decides how much of that potential you actually get.</strong></p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SLIDE 13: CPU & Socket Dependency -->
-    <section class="slide" data-slide="8">
-        <div class="slide-content">
-            <h1>CPU & Socket Dependency</h1>
-            <div class="content-card">
-                <p class="definition"><strong>Socket</strong> = physical CPU connection</p>
-                <div class="comparison-grid">
-                    <div class="comparison-card">
-                        <h3>Intel</h3>
-                        <p>LGA sockets</p>
-                    </div>
-                    <div class="comparison-card">
-                        <h3>AMD</h3>
-                        <p>AM sockets</p>
-                    </div>
-                </div>
-            </div>
-            <div class="callout warning">
-                ❌ Wrong socket → PC won't start
+                <p class="highlight center" style="font-size: 1.5rem;">CPU gives potential. Motherboard decides how much of that potential you actually get.</p>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 14: Motherboard Chipsets -->
-    <section class="slide" data-slide="9">
-        <div class="slide-content">
-            <h1>Motherboard Chipsets Explained</h1>
-            <div class="vs-container">
-                <div class="vs-card">
-                    <h2>Intel</h2>
-                    <ul class="chipset-list">
-                        <li><strong>H</strong> → Basic</li>
-                        <li><strong>B</strong> → Balanced</li>
-                        <li><strong>Z</strong> → Overclocking</li>
-                    </ul>
-                </div>
-                <div class="vs-card">
-                    <h2>AMD</h2>
-                    <ul class="chipset-list">
-                        <li><strong>A</strong> → Entry</li>
-                        <li><strong>B</strong> → Best value</li>
-                        <li><strong>X</strong> → High-end</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 15: Why Same CPU Performs Differently -->
-    <section class="slide" data-slide="10">
-        <div class="slide-content">
-            <h1>Why Same CPU Performs Differently</h1>
-            <p class="highlight">Motherboard affects:</p>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>📊 RAM speed</li>
-                    <li>⚡ Power delivery (VRMs)</li>
-                    <li>🔌 PCIe lanes</li>
-                    <li>❄️ Cooling support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 16: What is RAM? - Comprehensive -->
-    <section class="slide" data-slide="11">
+    <!-- SLIDE 6: What is RAM? -->
+    <section class="slide" data-slide="6">
         <div class="slide-content">
             <h1>What is RAM?</h1>
-            <p class="highlight center">Deep, Practical & Technical Explanation</p>
+            <p class="subtitle">Deep, Practical & Technical Explanation</p>
 
-            <!-- Basic Definition -->
-            <div class="content-card" style="margin-top: 2rem;">
+            <!-- Definition -->
+            <div class="content-card">
                 <h2>💾 RAM = Temporary Working Memory</h2>
-                <p class="definition">RAM (Random Access Memory) is the active workspace of your computer.</p>
-
-                <p><strong>Stores:</strong></p>
+                <p><strong>Random Access Memory</strong> is the active workspace of your computer.</p>
                 <ul class="big-list">
-                    <li>Running programs</li>
-                    <li>Currently open files</li>
-                    <li>Background processes</li>
-                    <li>OS tasks</li>
+                    <li>Stores running programs</li>
+                    <li>Stores currently open files</li>
+                    <li>Stores background processes</li>
+                    <li>Stores OS tasks</li>
                 </ul>
+                <div class="callout warning" style="margin-top: 1rem;">
+                    <strong>🔄 Clears when power is off:</strong> RAM is volatile memory. Power off → Data erased.
+                </div>
             </div>
 
             <!-- Memory Hierarchy -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🏗 Where RAM Sits in Memory Hierarchy</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Layer</th>
-                            <th>Speed</th>
-                            <th>Size</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>CPU Cache</td>
-                            <td>Fastest</td>
-                            <td>Smallest (MB)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>RAM</strong></td>
-                            <td>Fast</td>
-                            <td>Medium (GB)</td>
-                        </tr>
-                        <tr>
-                            <td>SSD</td>
-                            <td>Slower</td>
-                            <td>Large (TB)</td>
-                        </tr>
-                        <tr>
-                            <td>HDD</td>
-                            <td>Slowest</td>
-                            <td>Largest (TB)</td>
-                        </tr>
-                    </tbody>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr>
+                        <th style="padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">Level</th>
+                        <th style="padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">Speed</th>
+                        <th style="padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">Size</th>
+                        <th style="padding: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.2);">Example</th>
+                    </tr>
+                    <tr><td style="padding: 0.5rem;">Cache</td><td style="padding: 0.5rem;">Fastest</td><td style="padding: 0.5rem;">Very small</td><td style="padding: 0.5rem;">Inside CPU</td></tr>
+                    <tr><td style="padding: 0.5rem;">RAM</td><td style="padding: 0.5rem;">Very fast</td><td style="padding: 0.5rem;">Medium</td><td style="padding: 0.5rem;">8–64GB</td></tr>
+                    <tr><td style="padding: 0.5rem;">SSD</td><td style="padding: 0.5rem;">Slower</td><td style="padding: 0.5rem;">Large</td><td style="padding: 0.5rem;">512GB–2TB</td></tr>
+                    <tr><td style="padding: 0.5rem;">HDD</td><td style="padding: 0.5rem;">Slowest</td><td style="padding: 0.5rem;">Very large</td><td style="padding: 0.5rem;">1TB+</td></tr>
                 </table>
-                <div class="callout tip">
-                    CPU asks RAM for data thousands of times per second.
-                </div>
+                <p class="highlight center" style="margin-top: 1rem;">CPU asks RAM for data thousands of times per second.</p>
             </div>
 
-            <!-- Low RAM Problems -->
+            <!-- Low RAM Warning -->
+            <div class="callout warning" style="margin-top: 2rem;">
+                <h3>🚨 Low RAM = Lag & Crashes (Why?)</h3>
+                <p>When RAM is full, system uses <strong>page file (virtual memory)</strong> on SSD.</p>
+                <ul class="big-list">
+                    <li>SSD is much slower than RAM → System becomes slow</li>
+                    <li>Apps may crash (Memory Swapping)</li>
+                </ul>
+            </div>
+
+            <!-- Capacity Truth -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>⚠️ What Happens When RAM is Low?</h2>
-
-                <h3>🔄 Memory Swapping (The Villain)</h3>
-                <p>When RAM is full, OS uses SSD/HDD as "virtual RAM"</p>
-                <ul class="big-list">
-                    <li>RAM: ~10 ns access</li>
-                    <li>SSD: ~100 µs access</li>
-                    <li>HDD: ~10 ms access</li>
-                </ul>
-                <div class="callout warning">
-                    ❌ Swapping = 1000× to 1,000,000× slower!
-                </div>
-
-                <h3>📌 Symptoms of Low RAM</h3>
-                <ul class="big-list">
-                    <li>System freezes</li>
-                    <li>Programs crash</li>
-                    <li>Constant disk activity</li>
-                    <li>Slow multitasking</li>
-                </ul>
-            </div>
-
-            <!-- RAM Capacity Truth -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
                 <h2>📊 RAM Capacity Truth</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Capacity</th>
-                            <th>Use Case</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>8 GB</td>
-                            <td>Office, browsing, light coding</td>
-                        </tr>
-                        <tr>
-                            <td><strong>16 GB</strong></td>
-                            <td><strong>Recommended for most users</strong></td>
-                        </tr>
-                        <tr>
-                            <td>32 GB</td>
-                            <td>Heavy multitasking, VMs, video editing</td>
-                        </tr>
-                        <tr>
-                            <td>64+ GB</td>
-                            <td>AI/ML, large simulations, 3D rendering</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="callout warning">
-                    <h3>❌ More RAM ≠ Faster PC Always</h3>
-                    <p>Unused RAM doesn't make your PC faster</p>
-                    <div class="code-text">16 GB used → fast</div>
-                    <div class="code-text">32 GB with 16 GB used → same speed</div>
-                    <p>Extra RAM only helps when you use it</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>8 GB → Basic</h3>
+                        <ul class="big-list">
+                            <li>Browsing, Office</li>
+                            <li>Light coding, Online classes</li>
+                        </ul>
+                        <p class="highlight" style="font-size: 0.9rem;">⚠️ Struggles with Heavy Chrome tabs, Android Studio, VMs</p>
+                    </div>
+                    <div class="comparison-card" style="border: 2px solid var(--color-primary);">
+                        <h3>16 GB → Sweet Spot</h3>
+                        <ul class="big-list">
+                            <li>Coding, Multitasking</li>
+                            <li>Light video editing</li>
+                            <li>Most students & developers</li>
+                        </ul>
+                        <p class="highlight" style="font-size: 0.9rem;">👉 Best balance today.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>32 GB → Heavy Tasks</h3>
+                        <ul class="big-list">
+                            <li>AI models, Simulations</li>
+                            <li>Rendering, Virtual machines</li>
+                            <li>Large datasets</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout tip">
+                    <strong>❌ More RAM ≠ Faster PC Always:</strong> If your system only uses 10GB, adding 64GB won’t increase speed. RAM improves stability under load.
                 </div>
             </div>
 
-            <!-- RAM Speed vs Latency -->
+            <!-- Speed vs Latency -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>⚡ RAM Speed vs Latency (CRITICAL Understanding)</h2>
-
-                <h3>1️⃣ MHz (Megahertz) = Throughput</h3>
-                <p>Data transfer rate</p>
-                <div class="code-text">DDR4-3200 → 3200 MT/s (million transfers/sec)</div>
-                <p class="highlight">Higher MHz = more data transferred per second</p>
-
-                <h3>2️⃣ CL (CAS Latency) = Response Delay</h3>
-                <p>Measured in clock cycles</p>
-                <div class="code-text">CL16 = 16 clock cycles to respond</div>
-                <p class="highlight">Lower CL = faster response</p>
-
-                <div class="callout tip">
-                    <h3>📌 Both Matter Together!</h3>
-                    <div class="comparison-grid">
-                        <div class="comparison-card">
-                            <h4>Bad:</h4>
-                            <p>3600 MHz / CL22</p>
-                            <p>High speed, slow response</p>
-                        </div>
-                        <div class="comparison-card">
-                            <h4>Good:</h4>
-                            <p>3600 MHz / CL16</p>
-                            <p>High speed, fast response</p>
-                        </div>
+                <h2>⚡ RAM Speed vs Latency (Very Important)</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>MHz (Frequency)</h3>
+                        <p>Measured in MHz (e.g., 3200 MHz)</p>
+                        <p>Higher MHz = more data transferred per second</p>
                     </div>
-                    <p><strong>Real latency (ns) = (CL / MHz) × 2000</strong></p>
-                    <p>Example: CL16 @ 3200 MHz = (16/3200)×2000 = 10 ns</p>
+                    <div class="comparison-card">
+                        <h3>CL (CAS Latency)</h3>
+                        <p>Measured as a number (e.g., CL16)</p>
+                        <p>Lower = faster response</p>
+                    </div>
                 </div>
+                <h3 style="margin-top: 1rem;">⚖ Both Matter Together</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">RAM</th><th style="padding: 0.5rem; text-align: left;">Speed</th><th style="padding: 0.5rem; text-align: left;">Latency</th></tr>
+                    <tr><td style="padding: 0.5rem;">3200 CL16</td><td style="padding: 0.5rem;">Balanced</td><td style="padding: 0.5rem;">Good</td></tr>
+                    <tr><td style="padding: 0.5rem;">3600 CL18</td><td style="padding: 0.5rem;">Slightly higher bandwidth</td><td style="padding: 0.5rem;">Good</td></tr>
+                    <tr><td style="padding: 0.5rem;">3200 CL22</td><td style="padding: 0.5rem;">Slower response</td><td style="padding: 0.5rem;">Bad</td></tr>
+                </table>
+                <p class="highlight center">📌 Effective latency matters more than just MHz.</p>
             </div>
 
             <!-- DDR4 vs DDR5 -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>🔄 DDR4 vs DDR5 In-Depth</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feature</th>
-                            <th>DDR4</th>
-                            <th>DDR5</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Speed Range</td>
-                            <td>2133–3600 MHz</td>
-                            <td>4800–8000+ MHz</td>
-                        </tr>
-                        <tr>
-                            <td>Voltage</td>
-                            <td>1.2V</td>
-                            <td>1.1V</td>
-                        </tr>
-                        <tr>
-                            <td>Channels per stick</td>
-                            <td>1</td>
-                            <td>2 (built-in dual)</td>
-                        </tr>
-                        <tr>
-                            <td>Price</td>
-                            <td>Cheaper</td>
-                            <td>More expensive</td>
-                        </tr>
-                        <tr>
-                            <td>Platform</td>
-                            <td>Older CPUs</td>
-                            <td>Newer CPUs only</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="callout warning">
-                    ⚠️ <strong>DDR4 and DDR5 are NOT interchangeable</strong><br>
-                    Different physical notch position and electrical standards
+                <h2>🔬 DDR4 vs DDR5 (In-Depth)</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>DDR4</h3>
+                        <ul class="big-list">
+                            <li>✓ Cheaper, Mature ecosystem</li>
+                            <li>✓ Works with older CPUs</li>
+                            <li>Speed: 2133–3600 MHz</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>DDR5</h3>
+                        <ul class="big-list">
+                            <li>✓ Higher base speed</li>
+                            <li>✓ On-module power management</li>
+                            <li>Speed: 4800–8000+ MHz</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <h3>📌 Real Performance Difference</h3>
-                <ul class="big-list">
-                    <li>Gaming: 5–10% better with DDR5</li>
-                    <li>AI/Data science: 15–25% faster</li>
-                    <li>Office work: No difference</li>
-                </ul>
+                <div class="callout warning">
+                    <strong>⚠️ Not interchangeable:</strong> DDR4 board → cannot use DDR5. DDR5 board → cannot use DDR4.
+                </div>
             </div>
 
             <!-- Dual Channel -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
-                <h2>🔗 Dual Channel Concept (Must Know)</h2>
-
-                <h3>What is Dual Channel?</h3>
-                <p>Using two RAM sticks in parallel = 2× bandwidth</p>
-
-                <div class="vs-container">
-                    <div class="vs-card">
-                        <h4>Single Channel</h4>
-                        <p>1 stick → 1 data path</p>
-                        <div class="code-text">1×16 GB = 64-bit bus</div>
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔄 Dual Channel Concept</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Single Channel</h3>
+                        <p>1 RAM stick</p>
+                        <p>Lower bandwidth</p>
                     </div>
-                    <div class="vs-divider">VS</div>
-                    <div class="vs-card">
-                        <h4>Dual Channel</h4>
-                        <p>2 sticks → 2 data paths</p>
-                        <div class="code-text">2×8 GB = 128-bit bus</div>
+                    <div class="comparison-card">
+                        <h3>Dual Channel</h3>
+                        <p>2 identical RAM sticks</p>
+                        <p>Doubles memory bandwidth</p>
                     </div>
                 </div>
-
-                <h3>📊 Performance Impact</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Task</th>
-                            <th>Performance Gain</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Gaming</td>
-                            <td>10–20% FPS boost</td>
-                        </tr>
-                        <tr>
-                            <td>Rendering</td>
-                            <td>15–30% faster</td>
-                        </tr>
-                        <tr>
-                            <td>Integrated GPU</td>
-                            <td>40–60% faster</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="callout tip">
-                    <strong>📌 Always use 2 sticks instead of 1!</strong><br>
-                    2×8 GB > 1×16 GB (same capacity, better performance)
-                </div>
+                <p class="highlight center">📌 Example: 2×8GB (Dual) is faster than 1×16GB (Single)</p>
+                <h3>🧠 Why Dual Channel Matters</h3>
+                <ul class="big-list">
+                    <li>Better gaming performance</li>
+                    <li>Faster data transfer</li>
+                    <li>Better integrated GPU performance</li>
+                    <li>Faster AI dataset handling (5–20% difference)</li>
+                </ul>
             </div>
 
             <!-- XMP / EXPO -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>🚀 XMP / EXPO: The Thing Everyone Forgets (CRITICAL!)</h2>
-
-                <h3>❌ Default Behavior</h3>
-                <p>By default, RAM runs at <strong>JEDEC standard speed</strong> (slow)</p>
-                <div class="code-text">DDR4-3200 → runs at 2133 MHz by default!</div>
-                <div class="code-text">DDR5-6000 → runs at 4800 MHz by default!</div>
-
-                <h3>✅ XMP / EXPO = Performance Profiles</h3>
-                <ul class="big-list">
-                    <li><strong>XMP</strong> (Intel boards)</li>
-                    <li><strong>EXPO</strong> (AMDboards)</li>
-                </ul>
-                <p>Enable in BIOS → RAM runs at rated speed</p>
-
-                <div class="callout warning">
-                    <h3>⚠️ If You Don't Enable XMP/EXPO:</h3>
-                    <ul>
-                        <li>You lose 20–40% RAM performance</li>
-                        <li>You waste money on fast RAM you're not using</li>
-                        <li>AI/ML workloads run slower</li>
-                    </ul>
+            <div class="content-card" style="margin-top: 2rem; border-left: 4px solid #F59E0B;">
+                <h2>🧩 XMP / EXPO (Very Important)</h2>
+                <p>RAM does NOT run at advertised speed automatically.</p>
+                <div class="highlight">
+                    You must enable <strong>XMP (Intel)</strong> or <strong>EXPO (AMD)</strong> in BIOS.
                 </div>
-
-                <div class="example-box">
-                    <p><strong>📌 How to Enable:</strong></p>
-                    <ol>
-                        <li>Enter BIOS (press DEL/F2 at boot)</li>
-                        <li>Find "XMP" or "EXPO" setting</li>
-                        <li>Enable Profile 1</li>
-                        <li>Save and exit</li>
-                    </ol>
-                </div>
+                <p>Otherwise: 3200 MHz RAM may run at 2133 MHz.</p>
             </div>
 
             <!-- Other Important Concepts -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>🔍 Other Important RAM Concepts</h2>
+                <h2>🔥 Other Important RAM Concepts</h2>
+                
+                <h3>1️⃣ Memory Rank</h3>
+                <p><strong>Single Rank</strong> (One data block) vs <strong>Dual Rank</strong>. Dual Rank often faster in multitasking.</p>
 
-                <h3>1️⃣ Rank (Single vs Dual Rank)</h3>
-                <ul class="big-list">
-                    <li>Dual rank slightly faster (5–10%)</li>
-                    <li>Heavier load on memory controller</li>
-                </ul>
+                <h3 style="margin-top: 1rem;">2️⃣ RAM Form Factor</h3>
+                <p><strong>Desktop</strong> → DIMM | <strong>Laptop</strong> → SO-DIMM (Not interchangeable)</p>
 
-                <h3>2️⃣ Form Factor</h3>
-                <ul class="big-list">
-                    <li>DIMM → Desktop</li>
-                    <li>SO-DIMM → Laptop</li>
-                </ul>
+                <h3 style="margin-top: 1rem;">3️⃣ ECC RAM</h3>
+                <p>Error Correcting Code. Used in Servers/Workstations. Not required for normal users.</p>
 
-                <h3>3️⃣ ECC RAM</h3>
-                <p><strong>Error-Correcting Code</strong></p>
-                <ul class="big-list">
-                    <li>Detects & corrects memory errors</li>
-                    <li>Used in servers, workstations</li>
-                    <li>More expensive, slightly slower</li>
-                </ul>
-                <div class="callout tip">
-                    For AI/ML in production → ECC is valuable
-                </div>
+                <h3 style="margin-top: 1rem;">4️⃣ RAM & Integrated Graphics</h3>
+                <p>If using Intel iGPU or AMD APU, RAM speed matters A LOT because GPU uses system RAM.</p>
 
-                <h3>4️⃣ RAM for Integrated Graphics</h3>
-                <p>iGPU uses system RAM as VRAM</p>
-                <p class="highlight">Fast RAM = better iGPU performance</p>
-
-                <h3>5️⃣ RAM for AI & Data Science</h3>
-                <ul class="big-list">
-                    <li>Large models need more capacity</li>
-                    <li>Higher bandwidth helps preprocessing</li>
-                    <li>Consider 32–64 GB for ML work</li>
-                </ul>
+                <h3 style="margin-top: 1rem;">5️⃣ RAM & AI / Data Science</h3>
+                <p>Large datasets → Need higher capacity.<br>
+                ML training → More RAM reduces disk swapping.<br>
+                Parallel tasks → Dual channel helps.</p>
             </div>
 
-            <!-- Real-World Examples -->
+            <!-- Real-World Example -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>🧪 Real-World Performance Examples</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Scenario</th>
-                            <th>Performance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1×16 GB DDR4-2133</td>
-                            <td>Baseline (slow)</td>
-                        </tr>
-                        <tr>
-                            <td>2×8 GB DDR4-3200 (no XMP)</td>
-                            <td>Barely better</td>
-                        </tr>
-                        <tr>
-                            <td>2×8 GB DDR4-3200 (XMP ON)</td>
-                            <td>30–40% faster</td>
-                        </tr>
-                        <tr>
-                            <td>2×16 GB DDR5-6000 (EXPO ON)</td>
-                            <td>50–60% faster</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h2>🧠 Real-World Example</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>System A</h3>
+                        <p>i5 + 8GB + single channel</p>
+                        <p>→ Lag with 15 Chrome tabs</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>System B</h3>
+                        <p>Same i5 + 16GB dual channel</p>
+                        <p>→ Smooth performance</p>
+                    </div>
+                </div>
+                <p class="highlight center">CPU same. RAM changed. Performance improved.</p>
             </div>
 
             <!-- Smart Buying Advice -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>💡 Smart RAM Buying Advice</h2>
-
-                <h3>For Students / Developers:</h3>
-                <div class="code-text">2×8 GB DDR4-3200 CL16 (affordable, great performance)</div>
-
-                <h3>For AI / ML / Data Science:</h3>
-                <div class="code-text">2×16 GB DDR4-3600 CL16 OR DDR5-6000 CL30</div>
-
-                <h3>For Heavy Multitasking / VMs:</h3>
-                <div class="code-text">2×32 GB (64 GB total)</div>
-
-                <h3>For Budget Office Use:</h3>
-                <div class="code-text">2×8 GB DDR4-3200 (cheapest dual-channel kit)</div>
-
-                <div class="callout tip">
-                    <h3>📌 Golden Rules:</h3>
-                    <ul>
-                        <li>Always buy 2 sticks (dual channel)</li>
-                        <li>Enable XMP/EXPO in BIOS</li>
-                        <li>Match speed to CPU support</li>
-                        <li>Prioritize capacity over speed for productivity</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Final Understanding -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>🧠 Final Core Understanding</h2>
-
-                <ul class="big-list">
-                    <li>RAM = fast temporary workspace</li>
-                    <li>More RAM prevents swapping (critical)</li>
-                    <li>Speed (MHz) + Latency (CL) both matter</li>
-                    <li>Dual channel = free performance</li>
-                    <li>XMP/EXPO = unlock advertised speed</li>
-                    <li>Capacity > Speed for most work</li>
+                <h2>🎯 Smart Buying Advice</h2>
+                 <ul class="big-list">
+                    <li><strong>Students:</strong> 16GB (2×8GB) DDR4 or DDR5</li>
+                    <li><strong>Developers:</strong> 16GB minimum (32GB if using VMs)</li>
+                    <li><strong>AI / Simulations:</strong> 32GB recommended</li>
                 </ul>
             </div>
 
-            <!-- One-Line Summary -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>🎯 One-Line Summary</h2>
-                <p class="highlight center" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);"><strong>RAM =
-                        short-term memory. Enough capacity prevents slowdowns. Dual channel + XMP unlock speed. For
-                        AI/productivity, prioritize 32+ GB over flashy RGB.</strong></p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SLIDE 17: RAM Capacity Truth -->
-    <section class="slide" data-slide="12">
-        <div class="slide-content">
-            <h1>RAM Capacity Truth</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>8 GB</h3>
-                    <p>Basic</p>
+                <h2>🏁 One-Line Summary</h2>
+                <div class="highlight">
+                    RAM is your system’s workspace. Capacity decides how much you can do. Speed + latency decide how fast you can do it.
                 </div>
-                <div class="comparison-card highlight-card">
-                    <h3>16 GB</h3>
-                    <p>Recommended</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>32 GB</h3>
-                    <p>Heavy tasks</p>
-                </div>
-            </div>
-            <div class="callout warning">
-                ❌ More RAM ≠ faster PC always
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 18: RAM Speed vs Latency -->
-    <section class="slide" data-slide="13">
-        <div class="slide-content">
-            <h1>RAM Speed vs Latency</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>MHz</h3>
-                    <p>Data transfer speed</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>CL</h3>
-                    <p>Response delay</p>
-                </div>
-            </div>
-            <p class="highlight center"><strong>Both matter together</strong></p>
-        </div>
-    </section>
 
-    <!-- SLIDE 19: DDR4 vs DDR5 -->
-    <section class="slide" data-slide="14">
-        <div class="slide-content">
-            <h1>DDR4 vs DDR5</h1>
-            <div class="vs-container">
-                <div class="vs-card">
-                    <h2>DDR4</h2>
-                    <ul>
-                        <li>✓ Cheaper</li>
-                        <li>✓ Mature & stable</li>
-                    </ul>
-                </div>
-                <div class="vs-divider">VS</div>
-                <div class="vs-card">
-                    <h2>DDR5</h2>
-                    <ul>
-                        <li>✓ Higher speed</li>
-                        <li>✓ Newer CPUs only</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="callout warning">
-                ⚠️ Not interchangeable
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 20: Dual Channel Concept -->
-    <section class="slide" data-slide="15">
-        <div class="slide-content">
-            <h1>Dual Channel Concept</h1>
-            <div class="content-card">
-                <div class="channel-comparison">
-                    <p><strong>1 stick</strong> → single channel</p>
-                    <p><strong>2 identical sticks</strong> → dual channel</p>
-                </div>
-            </div>
-            <p class="highlight center">Dual channel = <strong>higher bandwidth</strong></p>
-        </div>
-    </section>
-
-    <!-- SLIDE 21: What is a GPU? - Comprehensive -->
-    <section class="slide" data-slide="16">
+    <!-- SLIDE 7: What is a GPU? -->
+    <section class="slide" data-slide="7">
         <div class="slide-content">
             <h1>What is a GPU?</h1>
-            <p class="highlight center">Deep, Practical & Real-World Explanation</p>
+            <p class="subtitle">Deep, Practical & Real-World Explanation</p>
 
-            <!-- Basic Definition -->
-            <div class="content-card" style="margin-top: 2rem;">
+            <!-- Definition -->
+            <div class="content-card">
                 <h2>🎨 GPU = Graphics Processing Unit</h2>
-                <p class="definition">A GPU is a specialized processor designed to handle:</p>
+                <p>A specialized processor designed to handle:</p>
                 <ul class="big-list">
                     <li>Graphics (images, video, 3D)</li>
                     <li>Massive parallel computation</li>
-                </ul>
-
-                <h3>⚡ Thousands of Small Cores</h3>
-                <p>A GPU has hundreds to thousands of tiny cores</p>
-                <ul class="big-list">
-                    <li>Each core is simple, but they work together</li>
+                    <li>Thousands of small cores working together</li>
                 </ul>
             </div>
 
             <!-- CPU vs GPU -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>CPU vs GPU (Core Idea)</h2>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>CPU</th>
-                            <th>GPU</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Manager</td>
-                            <td>Factory</td>
-                        </tr>
-                        <tr>
-                            <td>Few powerful cores</td>
-                            <td>Thousands of small cores</td>
-                        </tr>
-                        <tr>
-                            <td>Handles decisions & logic</td>
-                            <td>Handles bulk work</td>
-                        </tr>
-                        <tr>
-                            <td>Serial processing</td>
-                            <td>Parallel processing</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="callout tip">
-                    <p><strong>📌 Simple analogy</strong></p>
-                    <p>CPU = Project manager (decides what to do)<br>
-                        GPU = Assembly line (does a lot of work at once)</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>CPU (Manager)</h3>
+                        <p>Few powerful cores</p>
+                        <p>Handles decisions & logic</p>
+                        <p>Serial processing</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>GPU (Factory)</h3>
+                        <p>Thousands of small cores</p>
+                        <p>Handles bulk work</p>
+                        <p>Parallel processing</p>
+                    </div>
                 </div>
+                <p class="highlight center">📌 <strong>Analogy:</strong> CPU = Project Manager. GPU = Assembly Line.</p>
             </div>
 
-            <!-- Why GPUs Are Powerful -->
+            <!-- When Do You Need a GPU? -->
             <div class="content-card" style="margin-top: 2rem;">
-                <h2>🔁 Why GPUs Are So Powerful</h2>
-
-                <p><strong>GPUs excel at:</strong></p>
-                <ul class="big-list">
-                    <li>Doing the same operation on huge data</li>
-                    <li>Vector & matrix math</li>
-                    <li>Image and signal processing</li>
-                </ul>
-
-                <p><strong>That's why GPUs dominate:</strong></p>
-                <ul class="big-list">
-                    <li>Gaming graphics</li>
-                    <li>AI / ML</li>
-                    <li>Video encoding</li>
-                    <li>Scientific simulations</li>
-                </ul>
-            </div>
-
-            <!-- When Do You Need a GPU -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
                 <h2>🎯 When Do You Need a GPU?</h2>
-
-                <h3>✅ GPU is NEEDED for</h3>
-
-                <h4>🎮 Gaming</h4>
-                <ul class="big-list">
-                    <li>Renders frames</li>
-                    <li>Handles textures, lighting, shadows</li>
-                    <li>Higher GPU → higher FPS & quality</li>
-                </ul>
-
-                <h4>🧠 AI / ML</h4>
-                <ul class="big-list">
-                    <li>Matrix multiplication</li>
-                    <li>Neural network training</li>
-                    <li>CUDA / ROCm acceleration</li>
-                </ul>
-
-                <h4>🎥 Video Editing</h4>
-                <ul class="big-list">
-                    <li>Timeline playback</li>
-                    <li>Encoding / decoding</li>
-                    <li>Effects & color grading</li>
-                </ul>
-
-                <h4>🧱 3D Rendering</h4>
-                <ul class="big-list">
-                    <li>CAD</li>
-                    <li>Blender</li>
-                    <li>Simulation meshes</li>
-                </ul>
-
-                <h3>❌ GPU is NOT Needed for</h3>
-                <ul class="big-list">
-                    <li>Office work (Word, Excel)</li>
-                    <li>Browsing</li>
-                    <li>Programming (basic)</li>
-                    <li>Online classes</li>
-                </ul>
-                <p class="highlight">👉 Integrated GPU is enough here.</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card" style="border-top: 3px solid #10B981;">
+                        <h3>✅ GPU is NEEDED for</h3>
+                        <ul class="big-list">
+                            <li><strong>Gaming:</strong> Textures, lighting, shadows</li>
+                            <li><strong>AI / ML:</strong> Matrix multiplication, Neural networks</li>
+                            <li><strong>Video Editing:</strong> Timeline playback, Grading</li>
+                            <li><strong>3D Rendering:</strong> CAD, Blender</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card" style="border-top: 3px solid #EF4444;">
+                        <h3>❌ GPU is NOT Needed for</h3>
+                        <ul class="big-list">
+                            <li>Office work (Word, Excel)</li>
+                            <li>Browsing</li>
+                            <li>Basic Programming</li>
+                            <li>Online classes</li>
+                        </ul>
+                        <p class="highlight" style="font-size: 0.9rem;">👉 Integrated GPU (iGPU) is enough here.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- GPU Types -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🧩 GPU Types (Very Important)</h2>
-
-                <h3>1️⃣ Gaming GPUs</h3>
-                <p><strong>Examples:</strong></p>
-                <ul>
-                    <li>NVIDIA GeForce</li>
-                    <li>AMD Radeon RX</li>
-                </ul>
-                <p><strong>Optimized for:</strong></p>
-                <ul class="big-list">
-                    <li>High FPS</li>
-                    <li>Real-time rendering</li>
-                    <li>Gaming workloads</li>
-                </ul>
-
-                <h3>2️⃣ Workstation GPUs</h3>
-                <p><strong>Examples:</strong></p>
-                <ul>
-                    <li>NVIDIA RTX A-series</li>
-                    <li>AMD Radeon Pro</li>
-                </ul>
-                <p><strong>Optimized for:</strong></p>
-                <ul class="big-list">
-                    <li>Accuracy</li>
-                    <li>Stability</li>
-                    <li>Certified drivers</li>
-                    <li>CAD, medical, scientific workloads</li>
-                </ul>
-                <div class="callout warning">
-                    ⚠️ More expensive, not for gaming value.
-                </div>
-
-                <h3>3️⃣ Integrated GPUs (iGPU)</h3>
-                <p><strong>Examples:</strong></p>
-                <ul>
-                    <li>Intel Iris Xe</li>
-                    <li>AMD Radeon (APUs)</li>
-                </ul>
-                <ul class="big-list">
-                    <li>Built into CPU</li>
-                    <li>Uses system RAM</li>
-                    <li>Low power, low performance</li>
-                </ul>
-                <p><strong>Good for:</strong></p>
-                <ul class="big-list">
-                    <li>Office</li>
-                    <li>Browsing</li>
-                    <li>Light coding</li>
-                    <li>Casual graphics</li>
-                </ul>
-
-                <div class="callout tip">
-                    <h3>🧠 Same Idea, Different Optimization</h3>
-                    <p><strong>All GPUs:</strong></p>
-                    <ul>
-                        <li>Do parallel work</li>
-                        <li>Use VRAM</li>
-                        <li>Use shaders / compute units</li>
-                    </ul>
-                    <p>Difference is software tuning, not basic concept.</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>1️⃣ Gaming GPUs</h3>
+                        <p><em>(NVIDIA GeForce, AMD Radeon)</em></p>
+                        <ul class="big-list">
+                            <li>High FPS</li>
+                            <li>Real-time rendering</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>2️⃣ Workstation GPUs</h3>
+                        <p><em>(NVIDIA RTX A-series, Radeon Pro)</em></p>
+                        <ul class="big-list">
+                            <li>Accuracy & Stability</li>
+                            <li>Certified drivers</li>
+                            <li>Medical / Scientific work</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>3️⃣ Integrated GPUs</h3>
+                        <p><em>(Iris Xe, Radeon APU)</em></p>
+                        <ul class="big-list">
+                            <li>Built into CPU</li>
+                            <li>Uses system RAM</li>
+                            <li>Office / Light use</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <!-- GPU Specs That Matter -->
-            <div class="content-card"
-                style="margin-top: 3rem; border-top: 3px solid var(--color-primary); padding-top: 2rem;">
+            <!-- Specs That Matter -->
+            <div class="content-card" style="margin-top: 2rem;">
                 <h2>🔍 GPU Specs That REALLY Matter</h2>
-
+                
                 <h3>1️⃣ 💾 VRAM (Video Memory)</h3>
-                <p><strong>Stores:</strong></p>
-                <ul class="big-list">
-                    <li>Textures</li>
-                    <li>Models</li>
-                    <li>AI tensors</li>
-                </ul>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Task</th>
-                            <th>VRAM Needed</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Office</td>
-                            <td>0–1 GB</td>
-                        </tr>
-                        <tr>
-                            <td>Gaming (1080p)</td>
-                            <td>6–8 GB</td>
-                        </tr>
-                        <tr>
-                            <td>AI / ML</td>
-                            <td>12–24+ GB</td>
-                        </tr>
-                        <tr>
-                            <td>3D / Video</td>
-                            <td>8–16 GB</td>
-                        </tr>
-                    </tbody>
+                <p>Stores textures, models, AI tensors. More VRAM = handle larger data.</p>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 0.5rem; color: white;">
+                     <tr><th style="padding: 0.5rem; text-align: left;">Task</th><th style="padding: 0.5rem; text-align: left;">VRAM Needed</th></tr>
+                     <tr><td style="padding: 0.5rem;">Office</td><td style="padding: 0.5rem;">0–1 GB</td></tr>
+                     <tr><td style="padding: 0.5rem;">Gaming (1080p)</td><td style="padding: 0.5rem;">6–8 GB</td></tr>
+                     <tr><td style="padding: 0.5rem;">3D / Video</td><td style="padding: 0.5rem;">8–16 GB</td></tr>
+                     <tr><td style="padding: 0.5rem;">AI / ML</td><td style="padding: 0.5rem;">12–24+ GB</td></tr>
                 </table>
 
-                <div class="callout tip">
-                    📌 More VRAM = handle larger data<br>
-                    📌 VRAM does NOT increase raw speed alone
-                </div>
+                <h3 style="margin-top: 1rem;">2️⃣ ⚡ Core Count (CUDA / Stream Processors)</h3>
+                <p>More cores = Better parallel performance. (Note: Count across brands isn't directly comparable).</p>
 
-                <h3>2️⃣ ⚡ Core Count (CUDA / Stream Processors)</h3>
-                <ul class="big-list">
-                    <li>NVIDIA → CUDA cores</li>
-                    <li>AMD → Stream processors</li>
-                </ul>
-                <p><strong>More cores:</strong></p>
-                <ul class="big-list">
-                    <li>Better parallel performance</li>
-                    <li>Faster rendering & compute</li>
-                </ul>
+                <h3 style="margin-top: 1rem;">3️⃣ 📊 Memory Bandwidth</h3>
+                <p>How fast data moves. High bandwidth = smoother high-res gaming & AI.</p>
+
+                <h3 style="margin-top: 1rem;">4️⃣ 🔌 Power Consumption (TDP)</h3>
+                <p>Mid GPU (150-250W) vs High-end (300-450W+). More power = needs better cooling.</p>
+                
                 <div class="callout warning">
-                    ⚠️ Core count across brands is not directly comparable
-                </div>
-
-                <h3>3️⃣ 📊 Memory Bandwidth</h3>
-                <p>How fast data moves between GPU & VRAM</p>
-                <p><strong>Depends on:</strong></p>
-                <ul class="big-list">
-                    <li>Memory type (GDDR6, GDDR6X)</li>
-                    <li>Bus width (128-bit, 256-bit)</li>
-                </ul>
-                <p><strong>High bandwidth = smoother performance in:</strong></p>
-                <ul class="big-list">
-                    <li>High resolution gaming</li>
-                    <li>AI workloads</li>
-                </ul>
-
-                <h3>4️⃣ 🔌 Power Consumption (TDP)</h3>
-                <p>GPUs consume a lot of power</p>
-                <div class="code-text">Entry GPU → 75–120W</div>
-                <div class="code-text">Mid GPU → 150–250W</div>
-                <div class="code-text">High-end → 300–450W+</div>
-                <div class="callout tip">
-                    📌 More power = more heat = more cooling needed
-                </div>
-
-                <div class="callout warning">
-                    <h3>❌ Marketing Specs ≠ Real Performance</h3>
-                    <p><strong>Misleading specs:</strong></p>
-                    <ul>
-                        <li>Boost clock alone</li>
-                        <li>VRAM size alone</li>
-                        <li>"AI cores" count alone</li>
-                    </ul>
-                    <p><strong>Real performance depends on:</strong></p>
-                    <ul>
-                        <li>Architecture</li>
-                        <li>Memory bandwidth</li>
-                        <li>Driver optimization</li>
-                        <li>Cooling</li>
-                    </ul>
+                    <strong>❄️ Cooling & Power Reality:</strong> Weak PSU → crashes. Poor airflow → throttling.
                 </div>
             </div>
 
-            <!-- GPU Power & Size Reality -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>⚡ GPU Power & Size Reality (Critical)</h2>
-
-                <h3>⚡ Power Supply (PSU)</h3>
-                <ul class="big-list">
-                    <li>GPU needs dedicated PCIe power cables</li>
-                    <li>Weak PSU → crashes or shutdowns</li>
-                </ul>
-                <p><strong>Rule of thumb:</strong></p>
-                <div class="code-text">Mid GPU → 650W PSU</div>
-                <div class="code-text">High GPU → 750–850W PSU</div>
-
-                <h3>📏 Physical Size</h3>
-                <p><strong>GPUs are BIG</strong></p>
-                <p>Check:</p>
-                <ul class="big-list">
-                    <li>Length (mm)</li>
-                    <li>Thickness (2-slot, 3-slot)</li>
-                    <li>Case clearance</li>
-                </ul>
-
-                <h3>❄️ Cooling & Airflow</h3>
-                <ul class="big-list">
-                    <li>GPUs dump heat into case</li>
-                    <li>Poor airflow → throttling</li>
-                    <li>Good case fans are mandatory</li>
-                </ul>
-            </div>
-
-            <!-- Real Example -->
+            <!-- Real-World Context -->
             <div class="content-card" style="margin-top: 2rem;">
                 <h2>🧪 Real Example (Why GPU Choice Matters)</h2>
                 <p><strong>Same CPU, Different GPUs</strong></p>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>GPU</th>
-                            <th>Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Integrated</td>
-                            <td>Can't run AI</td>
-                        </tr>
-                        <tr>
-                            <td>Entry GPU</td>
-                            <td>Basic ML</td>
-                        </tr>
-                        <tr>
-                            <td>High-end GPU</td>
-                            <td>Fast training</td>
-                        </tr>
-                    </tbody>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">GPU</th><th style="padding: 0.5rem; text-align: left;">Result</th></tr>
+                    <tr><td style="padding: 0.5rem;">Integrated</td><td style="padding: 0.5rem;">Can’t run AI</td></tr>
+                    <tr><td style="padding: 0.5rem;">Entry GPU</td><td style="padding: 0.5rem;">Basic ML</td></tr>
+                    <tr><td style="padding: 0.5rem;">High-end GPU</td><td style="padding: 0.5rem;">Fast training</td></tr>
                 </table>
-
-                <p class="highlight center" style="margin-top: 1rem;"><strong>CPU same<br>
-                        RAM same<br>
-                        GPU changed → huge difference</strong></p>
-            </div>
-
-            <!-- GPU + Your Workload -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>🧠 GPU + Your Workload (Your Context)</h2>
-
-                <p><strong>For AI / simulations / MedTech:</strong></p>
-                <ul class="big-list">
-                    <li>VRAM matters more than FPS</li>
-                    <li>Stability matters more than RGB</li>
-                    <li>Cooling matters more than looks</li>
-                </ul>
-
-                <p><strong>Often:</strong></p>
-                <div class="code-text">AMD → better value</div>
-                <div class="code-text">NVIDIA → better AI ecosystem (CUDA)</div>
-            </div>
-
-            <!-- Final Truth -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>🏁 Final Truth</h2>
-
-                <ul class="big-list">
-                    <li>GPU = parallel work engine</li>
-                    <li>Needed only for specific workloads</li>
-                    <li>VRAM enables size, not speed</li>
-                    <li>Power & size are real constraints</li>
-                    <li>Your workload decides GPU choice</li>
-                </ul>
-            </div>
-
-            <!-- One-Line Summary -->
-            <div class="content-card" style="margin-top: 2rem;">
-                <h2>🧠 One-Line Summary</h2>
-                <p class="highlight center" style="font-size: clamp(1.3rem, 2.5vw, 1.8rem);"><strong>CPU thinks.<br>
-                        GPU works.<br>
-                        And for AI, graphics, and rendering — GPU decides speed.</strong></p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SLIDE 22: When Do You Need a GPU? -->
-    <section class="slide" data-slide="17">
-        <div class="slide-content">
-            <h1>When Do You Need a GPU?</h1>
-            <div class="vs-container">
-                <div class="vs-card needed">
-                    <h2>✅ Needed for:</h2>
-                    <ul>
-                        <li>Gaming</li>
-                        <li>AI / ML</li>
-                        <li>Video editing</li>
-                        <li>3D rendering</li>
-                    </ul>
-                </div>
-                <div class="vs-card not-needed">
-                    <h2>❌ Not needed for:</h2>
-                    <ul>
-                        <li>Office work</li>
-                        <li>Browsing</li>
-                    </ul>
-                </div>
+                <p class="highlight center">CPU thinks. GPU works. And for AI/rendering — GPU decides speed.</p>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 23: GPU Types -->
-    <section class="slide" data-slide="18">
-        <div class="slide-content">
-            <h1>GPU Types</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>Gaming GPUs</h3>
-                </div>
-                <div class="comparison-card">
-                    <h3>Workstation GPUs</h3>
-                </div>
-                <div class="comparison-card">
-                    <h3>Integrated GPUs</h3>
-                </div>
-            </div>
-            <p class="highlight center">Different optimization, same idea</p>
-        </div>
-    </section>
 
-    <!-- SLIDE 24: GPU Specs That Matter -->
-    <section class="slide" data-slide="19">
-        <div class="slide-content">
-            <h1>GPU Specs That Matter</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>💾 VRAM</li>
-                    <li>⚡ Core count</li>
-                    <li>📊 Memory bandwidth</li>
-                    <li>🔌 Power consumption</li>
-                </ul>
-            </div>
-            <div class="callout warning">
-                Marketing specs ≠ real performance
-            </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 25: GPU Power & Size Reality -->
-    <section class="slide" data-slide="20">
-        <div class="slide-content">
-            <h1>GPU Power & Size Reality</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>⚡ GPUs consume high power</li>
-                    <li>🔌 Need strong PSU</li>
-                    <li>📏 Must fit inside case</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <!-- SLIDE 8: Storage & Cooling Basics -->
+    
 
-    <!-- SLIDE 26: What is a PSU? -->
-    <section class="slide" data-slide="21">
+
+    <!-- SLIDE 8: What is a PSU? -->
+    <section class="slide" data-slide="8">
         <div class="slide-content">
             <h1>What is a PSU?</h1>
+            <p class="subtitle">Power Supply Unit — Explained In-Depth</p>
+
+            <!-- Definition -->
             <div class="content-card">
-                <p class="definition"><strong>PSU</strong> = Power Supply Unit</p>
+                <h2>⚡ PSU = Power Supply Unit</h2>
+                <p>The PSU feeds life to your PC. It does three critical jobs:</p>
                 <ul class="big-list">
-                    <li>🔄 Converts AC → DC</li>
-                    <li>⚡ Supplies clean power</li>
-                    <li>🛡️ Protects components</li>
+                    <li><strong>🔄 Converts AC → DC:</strong> Wall socket (AC) to Component power (DC).</li>
+                    <li><strong>⚡ Supplies Clean Power:</strong> Smooths fluctuations, prevents spikes.</li>
+                    <li><strong>🛡️ Protects Components:</strong> OVP, OCP, SCP (Short Circuit Protection).</li>
                 </ul>
-            </div>
-            <p class="highlight center"><strong>Most ignored, most important</strong></p>
-        </div>
-    </section>
-
-    <!-- SLIDE 27: PSU Wattage Reality -->
-    <section class="slide" data-slide="22">
-        <div class="slide-content">
-            <h1>PSU Wattage Reality</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>Wattage = <strong>maximum output</strong></li>
-                    <li>PC draws only what it needs</li>
-                    <li>Higher watt ≠ higher bill</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 28: PSU Quality & 80+ Ratings -->
-    <section class="slide" data-slide="23">
-        <div class="slide-content">
-            <h1>PSU Quality & 80+ Ratings</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>Bronze</h3>
-                    <p>Good</p>
-                </div>
-                <div class="comparison-card highlight-card">
-                    <h3>Gold</h3>
-                    <p>Best value</p>
-                </div>
-                <div class="comparison-card">
-                    <h3>Platinum</h3>
-                    <p>Premium</p>
+                <div class="callout warning" style="margin-top: 1rem;">
+                    <strong>⚠️ Most ignored, most important part:</strong> Cheap PSU = risk of killing components.
                 </div>
             </div>
-            <p class="highlight center">Efficiency = less heat, longer life</p>
-        </div>
-    </section>
 
-    <!-- SLIDE 29: PSU Cables Explained -->
-    <section class="slide" data-slide="24">
-        <div class="slide-content">
-            <h1>PSU Cables Explained</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li><code>24-pin</code> → motherboard</li>
-                    <li><code>8-pin</code> → CPU</li>
-                    <li><code>PCIe</code> → GPU</li>
-                    <li><code>SATA</code> → storage</li>
-                </ul>
-            </div>
-            <div class="callout warning">
-                ⚠️ Never mix PSU cables
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 30: Storage Basics -->
-    <section class="slide" data-slide="25">
-        <div class="slide-content">
-            <h1>Storage Basics</h1>
-            <div class="content-card">
-                <p class="definition"><strong>Storage</strong> = long-term memory</p>
-                <ul class="big-list">
-                    <li>💾 Stores OS, apps, files</li>
-                    <li>⚡ Affects boot & load times</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 31: Storage Types -->
-    <section class="slide" data-slide="26">
-        <div class="slide-content">
-            <h1>Storage Types</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card slow">
-                    <h3>HDD</h3>
-                    <p>Slow, mechanical</p>
+            <!-- Wattage Reality -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>⚡ PSU Wattage Reality (Big Myth Buster)</h2>
+                <p><strong>Wattage = Maximum Output</strong> (Not forced consumption)</p>
+                <div class="example-box">
+                    <p><strong>Example:</strong> 750W PSU with 320W PC load 👉 Supplies only 320W.</p>
                 </div>
-                <div class="comparison-card medium">
-                    <h3>SATA SSD</h3>
-                    <p>Fast</p>
-                </div>
-                <div class="comparison-card fast">
-                    <h3>NVMe SSD</h3>
-                    <p>Extremely fast</p>
-                </div>
+                <p class="highlight center">❌ Higher Watt ≠ Higher Electricity Bill. 📌 Think of PSU like a water tank, not a pump.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 32: Storage Speed Comparison -->
-    <section class="slide" data-slide="27">
-        <div class="slide-content">
-            <h1>Storage Speed Comparison</h1>
-            <div class="speed-bars">
-                <div class="speed-bar-row">
-                    <div class="speed-label">HDD</div>
-                    <div class="speed-bar-container">
-                        <div class="speed-bar" style="width: 10%;">~100 MB/s</div>
+            <!-- Review Wattage Needs -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧮 How Much Wattage Do You Actually Need?</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">System Type</th><th style="padding: 0.5rem; text-align: left;">Recommended PSU</th></tr>
+                    <tr><td style="padding: 0.5rem;">Office PC</td><td style="padding: 0.5rem;">450–550W</td></tr>
+                    <tr><td style="padding: 0.5rem;">Entry GPU</td><td style="padding: 0.5rem;">550–650W</td></tr>
+                    <tr><td style="padding: 0.5rem;">Mid GPU</td><td style="padding: 0.5rem;">650–750W</td></tr>
+                    <tr><td style="padding: 0.5rem;">High-end GPU</td><td style="padding: 0.5rem;">750–850W+</td></tr>
+                </table>
+                <p class="highlight" style="font-size: 0.9rem;">👉 Always keep 30% headroom.</p>
+            </div>
+
+            <!-- Efficiency Ratings -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🏅 PSU Quality & 80+ Ratings</h2>
+                <p><strong>Efficiency = How much wall power becomes usable PC power.</strong></p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Bronze</h3>
+                        <p>~82–85%</p>
+                        <p>Good</p>
+                    </div>
+                    <div class="comparison-card" style="border: 2px solid #F59E0B;">
+                        <h3>Gold</h3>
+                        <p>~87–90%</p>
+                        <p>Best Value</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Platinum</h3>
+                        <p>~90–92%</p>
+                        <p>Premium</p>
                     </div>
                 </div>
-                <div class="speed-bar-row">
-                    <div class="speed-label">SATA SSD</div>
-                    <div class="speed-bar-container">
-                        <div class="speed-bar" style="width: 50%;">~500 MB/s</div>
+                <p class="highlight center">📌 Gold is the sweet spot. Higher efficiency = Less heat, Quieter.</p>
+            </div>
+
+            <!-- Cheap vs Good -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔥 Cheap PSU vs Good PSU</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card" style="border-top: 3px solid #EF4444;">
+                        <h3>Cheap PSU</h3>
+                        <ul class="big-list">
+                            <li>Fake wattage</li>
+                            <li>Poor protection</li>
+                            <li>Voltage spikes</li>
+                            <li><strong>Can damage PC</strong></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="speed-bar-row">
-                    <div class="speed-label">NVMe SSD</div>
-                    <div class="speed-bar-container">
-                        <div class="speed-bar" style="width: 100%;">3000+ MB/s</div>
+                    <div class="comparison-card" style="border-top: 3px solid #10B981;">
+                        <h3>Good PSU</h3>
+                        <ul class="big-list">
+                            <li>True rated</li>
+                            <li>Full protection</li>
+                            <li>Stable output</li>
+                            <li><strong>Protects PC</strong></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 33: Cooling & Thermals -->
-    <section class="slide" data-slide="28">
-        <div class="slide-content">
-            <h1>Cooling & Thermals</h1>
-            <div class="comparison-grid">
-                <div class="comparison-card">
-                    <h3>Air Cooling</h3>
-                </div>
-                <div class="comparison-card">
-                    <h3>Liquid Cooling</h3>
-                </div>
-                <div class="comparison-card">
-                    <h3>Thermal Throttling</h3>
+            <!-- Cables Explained -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔌 PSU Cables Explained (Know This!)</h2>
+                <ul class="big-list">
+                    <li><strong>24-Pin ATX:</strong> Main motherboard power.</li>
+                    <li><strong>8-Pin (4+4) CPU:</strong> Powers CPU VRMs.</li>
+                    <li><strong>PCIe (6+2) GPU:</strong> Powers Graphics Card.</li>
+                    <li><strong>SATA Power:</strong> SSDs, HDDs, RGB.</li>
+                </ul>
+                <div class="callout warning">
+                    <strong>⚠️ CRITICAL WARNING:</strong> Never Mix PSU Cables! Pinouts differ. Mixing can kill SSD/Motherboard.
                 </div>
             </div>
-            <p class="highlight center"><strong>Heat limits performance</strong></p>
+
+            <!-- Modular vs Non-Modular -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧩 Modular vs Non-Modular PSU</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">Type</th><th style="padding: 0.5rem; text-align: left;">Description</th></tr>
+                    <tr><td style="padding: 0.5rem;">Non-modular</td><td style="padding: 0.5rem;">All cables fixed</td></tr>
+                    <tr><td style="padding: 0.5rem;">Semi-modular</td><td style="padding: 0.5rem;">Some fixed, some detachable</td></tr>
+                    <tr><td style="padding: 0.5rem;">Fully modular</td><td style="padding: 0.5rem;">All cables detachable (Cleaner, Better Airflow)</td></tr>
+                </table>
+            </div>
+
+            <!-- Cooling & Orientation -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>❄️ PSU Cooling & Orientation</h2>
+                <p>PSU has its own fan. <strong>Mount fan towards vent</strong> (usually bottom).</p>
+                <p class="highlight">Wrong orientation → overheating.</p>
+            </div>
+
+            <!-- Real World Example -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧪 Real Example (Why it Matters)</h2>
+                 <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>High-end GPU + Cheap PSU</h3>
+                        <p>PC boots → Crashes under load → GPU throttles.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Same PC + Good Gold PSU</h3>
+                        <p>Stable → Sustained boost → Longer life.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🏁 One-Line Summary</h2>
+                <div class="highlight center">
+                    CPU is the brain, GPU is the muscle, PSU is the heart — weak heart, whole system fails.
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SLIDE 34: Monitor Basics -->
-    <section class="slide" data-slide="29">
+
+<section class="slide" data-slide="9">
         <div class="slide-content">
-            <h1>Monitor Basics</h1>
+            <h1>Storage & Cooling Basics</h1>
+            <p class="subtitle">In-Depth, Practical Explanation</p>
+
+            <!-- Storage Definition -->
             <div class="content-card">
+                <h2>🧠 What Is Storage? (Long-term Memory)</h2>
+                <p>Storage permanently holds OS, Apps, Files, and Datasets.</p>
+                <div class="callout tip">
+                    <strong>📌 Non-Volatile:</strong> Unlike RAM, storage does <strong>not</strong> clear when power is off.
+                </div>
+                <p class="highlight" style="margin-top: 1rem;">Fast CPU + slow storage = system still feels slow.</p>
+            </div>
+
+            <!-- Storage Types -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧩 Storage Types Explained</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>1️⃣ HDD (Hard Disk)</h3>
+                        <p>Spinning platters</p>
+                        <ul class="big-list">
+                            <li>❌ Slow, Noisy, Fragile</li>
+                            <li>✅ Huge capacity, Cheap</li>
+                        </ul>
+                        <p class="highlight">Best for: Backups / Archives</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>2️⃣ SATA SSD</h3>
+                        <p>NAND Flash</p>
+                        <ul class="big-list">
+                            <li>✅ Fast, Silent, Durable</li>
+                            <li>⚠️ Limited speed (550 MB/s)</li>
+                        </ul>
+                        <p class="highlight">Best for: OS / Daily Apps</p>
+                    </div>
+                    <div class="comparison-card" style="border: 2px solid var(--color-primary);">
+                        <h3>3️⃣ NVMe SSD</h3>
+                        <p>M.2 PCIe</p>
+                        <ul class="big-list">
+                            <li>🚀 Extremely fast (7000+ MB/s)</li>
+                            <li>⚠️ Can get hot</li>
+                        </ul>
+                        <p class="highlight">Best for: Boot, AI, Video</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speed Comparison -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>📊 Storage Speed Comparison (Real-World Feel)</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">Task</th><th style="padding: 0.5rem; text-align: left;">HDD</th><th style="padding: 0.5rem; text-align: left;">SATA SSD</th><th style="padding: 0.5rem; text-align: left;">NVMe SSD</th></tr>
+                    <tr><td style="padding: 0.5rem;">Windows boot</td><td style="padding: 0.5rem;">60–90s</td><td style="padding: 0.5rem;">15–20s</td><td style="padding: 0.5rem;">5–10s</td></tr>
+                    <tr><td style="padding: 0.5rem;">App open</td><td style="padding: 0.5rem;">Slow</td><td style="padding: 0.5rem;">Fast</td><td style="padding: 0.5rem;">Instant</td></tr>
+                    <tr><td style="padding: 0.5rem;">AI dataset load</td><td style="padding: 0.5rem;">Painful</td><td style="padding: 0.5rem;">Okay</td><td style="padding: 0.5rem;">Smooth</td></tr>
+                </table>
+            </div>
+
+            <!-- Important Concepts -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>⚠️ Concepts You Must Know</h2>
                 <ul class="big-list">
-                    <li>📏 Size</li>
-                    <li>🖼️ Resolution</li>
-                    <li>🔄 Refresh rate</li>
-                    <li>🎨 Panel type</li>
+                    <li><strong>IOPS:</strong> Small file access speed. NVMe wins huge here.</li>
+                    <li><strong>Separation:</strong> Keep OS on NVMe, Data on HDD/SSD.</li>
+                    <li><strong>FPS Myth:</strong> Faster storage reduces load times, but does NOT obtain higher FPS.</li>
                 </ul>
             </div>
-            <p class="highlight center"><strong>Monitor defines experience</strong></p>
-        </div>
-    </section>
 
-    <!-- SLIDE 35: HDMI vs DisplayPort -->
-    <section class="slide" data-slide="30">
-        <div class="slide-content">
-            <h1>HDMI vs DisplayPort</h1>
-            <div class="vs-container">
-                <div class="vs-card">
-                    <h2>HDMI</h2>
-                    <ul>
-                        <li>TVs, basic use</li>
-                    </ul>
+            <!-- Cooling Section -->
+            <div class="content-card" style="margin-top: 3rem; border-top: 3px solid #3B82F6; padding-top: 2rem;">
+                <h2>❄️ Cooling & Thermals</h2>
+                <div class="callout warning">
+                    <strong>Heat = Enemy of Performance.</strong> Too much heat → Thermal Throttling (Speed drops to prevent damage).
                 </div>
-                <div class="vs-divider">VS</div>
-                <div class="vs-card">
-                    <h2>DisplayPort</h2>
-                    <ul>
-                        <li>High refresh, gaming</li>
-                    </ul>
+
+                <h3>🧊 Cooling Types</h3>
+                <div class="comparison-grid" style="margin-top: 1rem;">
+                    <div class="comparison-card">
+                        <h3>Air Cooling</h3>
+                        <p>Heatsink + Fan</p>
+                        <p>Reliable, Cheaper, Long life.</p>
+                        <p class="highlight">Best for most users.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Liquid Cooling (AIO)</h3>
+                        <p>Pump + Radiator</p>
+                        <p>Better cooling, Cleaner look.</p>
+                        <p class="highlight">Best for High-end CPUs.</p>
+                    </div>
+                </div>
+
+                <div class="comparison-grid" style="margin-top: 1rem;">
+                    <div class="comparison-card">
+                        <h3>🌬️ Case Airflow</h3>
+                        <ul class="big-list">
+                            <li>Front intake, Rear exhaust</li>
+                            <li>Bad airflow = throttling even with good cooler</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>🔥 NVMe Heat</h3>
+                        <ul class="big-list">
+                            <li>NVMe SSDs reach 70–80°C</li>
+                            <li>Always use a heatsink!</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <p class="highlight center">Cable choice matters</p>
-        </div>
-    </section>
 
-    <!-- SLIDE 36: Ports & Cables -->
-    <section class="slide" data-slide="31">
-        <div class="slide-content">
-            <h1>Ports & Cables</h1>
-            <div class="content-card">
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🎯 Smart Recommendations</h2>
                 <ul class="big-list">
-                    <li>USB versions ≠ same speed</li>
-                    <li>USB-C ≠ guaranteed display</li>
-                    <li>Thunderbolt = high capability</li>
+                    <li><strong>Students:</strong> NVMe (500GB) + Air Cooling</li>
+                    <li><strong>Developers:</strong> NVMe (1TB) + Good Airflow</li>
+                    <li><strong>AI / Simulation:</strong> NVMe Gen4 + SSD Heatsink + Strong Cooling</li>
                 </ul>
             </div>
+
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🏁 One-Line Summary</h2>
+                <div class="highlight center">
+                    Storage decides how fast things load.<br>
+                    Cooling decides how long performance lasts.
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SLIDE 37: Internal Cables (Reality) -->
-    <section class="slide" data-slide="32">
+
+    <!-- SLIDE 10: Monitor, Ports & Cables -->
+    <section class="slide" data-slide="10">
         <div class="slide-content">
-            <h1>Internal Cables (Reality)</h1>
+            <h1>Monitor, Ports & Cables</h1>
+            <p class="subtitle">Complete Practical Guide (Beginner → Advanced)</p>
+
+            <!-- Monitor Basics -->
             <div class="content-card">
+                <h2>🖥️ Monitor Basics (What Actually Matters)</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>📏 Size</h3>
+                        <p>Measured diagonally.</p>
+                        <ul class="big-list">
+                            <li><strong>24″:</strong> Best for 1080p</li>
+                            <li><strong>27″:</strong> Best for 1440p</li>
+                            <li><strong>32″:</strong> Best for 4K</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>🖼️ Resolution</h3>
+                        <table style="width: 100%; color: white; margin-top: 0.5rem;">
+                            <tr><td>1080p</td><td>Full HD</td></tr>
+                            <tr><td>1440p</td><td>2K</td></tr>
+                            <tr><td>2160p</td><td>4K (Sharpest)</td></tr>
+                        </table>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>🔄 Refresh Rate</h3>
+                        <ul class="big-list">
+                            <li><strong>60Hz:</strong> Office</li>
+                            <li><strong>144Hz:</strong> Gaming</li>
+                            <li><strong>240Hz:</strong> Esports</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="highlight center" style="margin-top: 1rem;">⚠️ GPU + Cable + Monitor must ALL support the refresh rate.</p>
+            </div>
+
+            <!-- Panel Types -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🎨 Panel Types</h2>
+                <table style="width: 100%; border-collapse: collapse; color: white;">
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.2);"><th style="padding:0.5rem; text-align:left;">Panel</th><th style="padding:0.5rem; text-align:left;">Strength</th></tr>
+                    <tr><td style="padding:0.5rem;"><strong>IPS</strong></td><td style="padding:0.5rem;">Best colors, viewing angles (Best for most)</td></tr>
+                    <tr><td style="padding:0.5rem;"><strong>VA</strong></td><td style="padding:0.5rem;">Best contrast (Deep blacks)</td></tr>
+                    <tr><td style="padding:0.5rem;"><strong>TN</strong></td><td style="padding:0.5rem;">Fastest, poor colors (Old esports)</td></tr>
+                </table>
+            </div>
+
+            <!-- Display Cables -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔌 Display Cables (VERY IMPORTANT)</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>HDMI</h3>
+                        <p>TVs, Laptops, Monitors</p>
+                        <ul class="big-list">
+                            <li><strong>1.4:</strong> 1080p 144Hz</li>
+                            <li><strong>2.0:</strong> 1440p 144Hz</li>
+                            <li><strong>2.1:</strong> 4K 144Hz / 8K</li>
+                        </ul>
+                        <p class="highlight">Video + Audio</p>
+                    </div>
+                    <div class="comparison-card" style="border: 2px solid var(--color-primary);">
+                        <h3>DisplayPort (DP)</h3>
+                        <p>Best for PCs</p>
+                        <ul class="big-list">
+                            <li><strong>1.2:</strong> 1440p 144Hz</li>
+                            <li><strong>1.4:</strong> 4K 144Hz</li>
+                        </ul>
+                        <p class="highlight">Sup. G-Sync/FreeSync</p>
+                    </div>
+                    <div class="comparison-card" style="opacity: 0.7;">
+                        <h3>VGA / DVI (OLD)</h3>
+                        <p>❌ Avoid</p>
+                        <ul class="big-list">
+                            <li>Analog / Old Digital</li>
+                            <li>No Audio (VGA)</li>
+                            <li>Obsolete</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout tip">
+                    <strong>🧠 Rule:</strong> TV / Casual → HDMI. Gaming / High Refresh → DisplayPort.
+                </div>
+            </div>
+
+            <!-- USB Ports -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔌 USB Ports Explained</h2>
+                <div class="callout warning">
+                    <strong>⚠️ Confusion Alert:</strong> USB Version (Speed) ≠ USB Shape (Connector).
+                </div>
+                
+                <h3 style="margin-top: 1rem;">⚡ USB Speeds</h3>
+                <table style="width: 100%; border-collapse: collapse; color: white;">
+                    <tr><td style="padding:0.2rem;">USB 2.0</td><td style="padding:0.2rem;">480 Mbps</td></tr>
+                    <tr><td style="padding:0.2rem;">USB 3.2 Gen1</td><td style="padding:0.2rem;">5 Gbps</td></tr>
+                    <tr><td style="padding:0.2rem;">USB 3.2 Gen2</td><td style="padding:0.2rem;">10 Gbps</td></tr>
+                </table>
+
+                <h3 style="margin-top: 1rem;">📌 USB-C Truth</h3>
+                <p>USB-C is just a <strong>shape</strong>. It MAY support Charging, Data, Display (Alt Mode)... or just charging. <strong>Check specs!</strong></p>
+            </div>
+
+            <!-- Thunderbolt & Ethernet -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>⚡ Thunderbolt & Network</h2>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Thunderbolt 3/4</h3>
+                        <p>Uses USB-C connector</p>
+                        <ul class="big-list">
+                            <li>🚀 40 Gbps</li>
+                            <li>Video + Power + Data</li>
+                            <li>Daisy Chaining</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Ethernet (LAN)</h3>
+                        <p>Wired Internet (RJ45)</p>
+                        <ul class="big-list">
+                            <li>Cat5e: 1 Gbps</li>
+                            <li>Cat6: 10 Gbps</li>
+                            <li>Lower latency than Wi-Fi</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Internal Cables & Other Ports -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔌 Internal & Audio Cables</h2>
+                
+                <h3>🔲 Internal PC Cables</h3>
                 <ul class="big-list">
-                    <li>🔌 SATA data vs power</li>
-                    <li>🔲 Front panel connectors</li>
-                    <li>❄️ Fan headers</li>
-                    <li>🌈 RGB vs ARGB</li>
+                     <li><strong>SATA Data:</strong> Motherboard ↔ SSD/HDD (Thin cable)</li>
+                     <li><strong>SATA Power:</strong> PSU → Storage (Wide connector) ❌ Not interchangeable</li>
+                     <li><strong>Front Panel:</strong> Power SW, Reset, HDD LED (Polarity matters!)</li>
+                     <li><strong>Fan Headers:</strong> CPU_FAN (Cooler), SYS_FAN (Case), PUMP (AIO)</li>
+                </ul>
+
+                <h3 style="margin-top: 1rem;">🌈 RGB vs ARGB (Don't Burn It!)</h3>
+                <p><strong>RGB (12V, 4-pin)</strong> vs <strong>ARGB (5V, 3-pin)</strong>. Mixing = 🔥 Burned LEDs.</p>
+
+                <h3 style="margin-top: 1rem;">🔊 Audio Ports</h3>
+                <p>💚 Green (Headphones) | 🩷 Pink (Mic) | 💙 Blue (Line-in)</p>
+            </div>
+            
+            <div class="content-card" style="margin-top: 2rem;">
+                 <h2>🧠 Monitor + Cable + GPU Rule</h2>
+                 <p class="highlight center">All three must support Resolution, Refresh Rate, and Color Depth.<br>Weakest link limits performance.</p>
+            </div>
+
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🏁 One-Line Truths</h2>
+                <ul class="big-list">
+                    <li>Cable choice matters.</li>
+                    <li>USB-C ≠ Thunderbolt.</li>
+                    <li>HDMI ≠ DisplayPort.</li>
+                    <li>ARGB ≠ RGB.</li>
+                    <li>Ports define capability, not looks.</li>
                 </ul>
             </div>
-            <p class="highlight center"><strong>Most PC issues are cable issues</strong></p>
+
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧠 Ultimate Summary</h2>
+                <div class="highlight center">
+                    Monitor decides what you see.<br>
+                    Cable decides how well you see.<br>
+                    Port decides what is possible.
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- SLIDE 38: What is an OS? -->
-    <section class="slide" data-slide="33">
+
+    <!-- SLIDE 11: What is an OS? -->
+    <section class="slide" data-slide="11">
         <div class="slide-content">
             <h1>What is an OS?</h1>
+            <p class="subtitle">Operating System — Deep & Practical Explanation</p>
+
+            <!-- Definition -->
             <div class="content-card">
-                <p class="definition"><strong>OS</strong> = Operating System</p>
+                <h2>⚙️ OS = Operating System</h2>
+                <p>The core software layer that makes a computer usable.</p>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>Controls Hardware</h3>
+                        <p>CPU, RAM, GPU, Storage</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Runs Apps</h3>
+                        <p>Manages memory & CPU time</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>Interface</h3>
+                        <p>GUI (Windows) / CLI (Terminal)</p>
+                    </div>
+                </div>
+                <p class="highlight center" style="margin-top: 1rem;">Without an OS, hardware is just powered metal.</p>
+            </div>
+
+            <!-- Boot Flow -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🔄 OS Installation & Boot Flow</h2>
+                <div class="steps-container" style="display: flex; justify-content: space-between; text-align: center; margin-top: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <div style="flex: 1; min-width: 100px; border: 1px solid #555; padding: 0.5rem; border-radius: 8px;">Power ON</div>
+                    <div style="align-self: center;">→</div>
+                    <div style="flex: 1; min-width: 120px; border: 1px solid #10B981; padding: 0.5rem; border-radius: 8px;">BIOS / UEFI<br><span style="font-size: 0.8rem; color: #aaa;">Wake Hardware</span></div>
+                    <div style="align-self: center;">→</div>
+                    <div style="flex: 1; min-width: 120px; border: 1px solid #3B82F6; padding: 0.5rem; border-radius: 8px;">Bootloader<br><span style="font-size: 0.8rem; color: #aaa;">Load Kernel</span></div>
+                    <div style="align-self: center;">→</div>
+                    <div style="flex: 1; min-width: 120px; border: 1px solid #F59E0B; padding: 0.5rem; border-radius: 8px;">OS Kernel<br><span style="font-size: 0.8rem; color: #aaa;">Take Control</span></div>
+                    <div style="align-self: center;">→</div>
+                    <div style="flex: 1; min-width: 100px; border: 1px solid #fff; padding: 0.5rem; border-radius: 8px;">Usable System</div>
+                </div>
+            </div>
+
+            <!-- Drivers & BIOS -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>⚙️ BIOS & Drivers (Performance Unlockers)</h2>
+                
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h3>1️⃣ BIOS / UEFI</h3>
+                        <ul class="big-list">
+                            <li>Initializes Hardware (POST)</li>
+                            <li>Controls Fan Curves, Power Limits</li>
+                            <li><strong>XMP / EXPO:</strong> MUST enable for full RAM speed!</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card" style="border: 2px solid var(--color-primary);">
+                        <h3>2️⃣ Drivers</h3>
+                        <p>Translators between OS and Hardware.</p>
+                        <ul class="big-list">
+                            <li><strong>GPU Driver:</strong> Essential for gaming/AI</li>
+                            <li><strong>Chipset Driver:</strong> CPU efficiency</li>
+                            <li><strong>Wi-Fi/LAN:</strong> Stability</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout warning">
+                    <strong>⚠️ Without Drivers:</strong> Hardware runs in "Basic Mode" (Low res, no boost, slow SSD).
+                </div>
+            </div>
+
+            <!-- Real World Performance -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🧠 OS + Drivers = Real Performance</h2>
+                <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: white;">
+                    <tr><th style="padding: 0.5rem; text-align: left;">Component</th><th style="padding: 0.5rem; text-align: left;">Without Driver</th><th style="padding: 0.5rem; text-align: left;">With Driver</th></tr>
+                    <tr><td style="padding: 0.5rem;">GPU</td><td style="padding: 0.5rem;">Low resolution / Basic</td><td style="padding: 0.5rem;">Full Power / High FPS</td></tr>
+                    <tr><td style="padding: 0.5rem;">CPU</td><td style="padding: 0.5rem;">No Boost / Generic</td><td style="padding: 0.5rem;">Turbo Enabled / Efficient</td></tr>
+                    <tr><td style="padding: 0.5rem;">RAM</td><td style="padding: 0.5rem;">2133 MHz (Slow)</td><td style="padding: 0.5rem;">3200+ MHz (XMP On)</td></tr>
+                </table>
+            </div>
+
+            <!-- Optimization Checklist -->
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🎯 Best Practice OS Setup (Checklist)</h2>
                 <ul class="big-list">
-                    <li>⚙️ Controls hardware</li>
-                    <li>📱 Runs applications</li>
-                    <li>🔗 Interface between user & machine</li>
+                    <li>✅ <strong>Update BIOS</strong> (if stable)</li>
+                    <li>✅ <strong>Install OS</strong> on NVMe SSD (Not HDD!)</li>
+                    <li>✅ <strong>Install Chipset Drivers</strong> first</li>
+                    <li>✅ <strong>Install GPU Drivers</strong> (from NVIDIA/AMD site)</li>
+                    <li>✅ <strong>Enable XMP / EXPO</strong> in BIOS</li>
+                    <li>✅ <strong>Run OS Updates</strong></li>
                 </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 39: OS Installation Flow -->
-    <section class="slide" data-slide="34">
-        <div class="slide-content">
-            <h1>OS Installation Flow</h1>
-            <div class="workflow">
-                <div class="workflow-step">BIOS</div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">Boot</div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">Install</div>
-                <div class="workflow-arrow">→</div>
-                <div class="workflow-step">Drivers</div>
-            </div>
-            <div class="callout warning">
-                Skipping drivers = wasted performance
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 40: BIOS & Drivers -->
-    <section class="slide" data-slide="35">
-        <div class="slide-content">
-            <h1>BIOS & Drivers</h1>
-            <div class="content-card">
-                <ul class="big-list">
-                    <li>⚙️ BIOS initializes hardware</li>
-                    <li>🚀 Drivers unlock performance</li>
-                    <li>⚡ XMP / EXPO boosts RAM speed</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- SLIDE 41: Laptop vs Desktop -->
-    <section class="slide" data-slide="36">
-        <div class="slide-content">
-            <h1>Laptop vs Desktop</h1>
-            <div class="vs-container">
-                <div class="vs-card">
-                    <h2>Laptop</h2>
-                    <ul>
-                        <li>✓ Portable</li>
-                        <li>⚠️ Power-limited</li>
-                        <li>⚠️ Limited upgrade</li>
-                    </ul>
-                </div>
-                <div class="vs-divider">VS</div>
-                <div class="vs-card">
-                    <h2>Desktop</h2>
-                    <ul>
-                        <li>✓ Powerful</li>
-                        <li>✓ Upgradeable</li>
-                        <li>✓ Better value</li>
-                    </ul>
+            <div class="content-card" style="margin-top: 2rem;">
+                <h2>🏁 One-Line Summary</h2>
+                <div class="highlight center">
+                    Hardware gives potential.<br>
+                    OS + BIOS + Drivers decide how much of it you actually use.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SLIDE 42: Final Engineering Mindset -->
-    <section class="slide" data-slide="37">
-        <div class="slide-content">
-            <h1>Final Engineering Mindset</h1>
-            <div class="mindset-grid">
-                <div class="mindset-card">
-                    <h3>Balance</h3>
-                    <p>&gt;</p>
-                    <h3>Specs</h3>
-                </div>
-                <div class="mindset-card">
-                    <h3>System</h3>
-                    <p>&gt;</p>
-                    <h3>Single Part</h3>
-                </div>
-                <div class="mindset-card">
-                    <h3>Logic</h3>
-                    <p>&gt;</p>
-                    <h3>Marketing</h3>
-                </div>
-            </div>
-            <div class="quote-box">
-                "There is no best computer — only the right one."
-            </div>
-        </div>
-    </section>
 
-    <!-- SLIDE 43: Course Outcome -->
-    <section class="slide" data-slide="38">
-        <div class="slide-content">
-            <h1>Course Outcome</h1>
-            <p class="highlight">After this course, you can:</p>
-            <div class="outcome-grid">
-                <div class="outcome-card">
-                    <div class="outcome-icon">✅</div>
-                    <p>Choose hardware intelligently</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">🔧</div>
-                    <p>Troubleshoot confidently</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">🚫</div>
-                    <p>Avoid common mistakes</p>
-                </div>
-                <div class="outcome-card">
-                    <div class="outcome-icon">🧠</div>
-                    <p>Think like an engineer</p>
-                </div>
-            </div>
-            <p class="final-message">Thank you for learning! 🎓</p>
-        </div>
-    </section>
 
+
+
+
+    
     </div>
 
     <!-- Navigation Controls -->
@@ -2220,7 +1672,7 @@
 
     <!-- Slide Counter -->
     <div class="slide-counter" role="status" aria-live="polite">
-        <span id="currentSlide">1</span> / <span id="totalSlides">38</span>
+        <span id="currentSlide">1</span> / <span id="totalSlides">11</span>
     </div>
 
 
