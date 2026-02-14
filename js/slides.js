@@ -88,6 +88,11 @@ function goToLastSlide() {
     goToSlide(totalSlides);
 }
 
+// Expose functions to global scope for inline onclick handlers
+window.goToSlide = goToSlide;
+window.nextSlide = nextSlide;
+window.previousSlide = previousSlide;
+
 // ========================================
 // UI UPDATE FUNCTIONS
 // ========================================
@@ -402,47 +407,8 @@ document.addEventListener('mousemove', () => {
 });
 
 // ========================================
-// AGENDA ITEM CLICK NAVIGATION (Slide 1)
+// INITIALIZATION
 // ========================================
-document.addEventListener('DOMContentLoaded', () => {
-    const agendaItems = document.querySelectorAll('.agenda-item');
-
-    // Map agenda items to slide numbers
-    const agendaSlideMap = {
-        0: 3,   // How computers really work
-        1: 7,   // CPU Architecture
-        2: 23,  // Motherboards & Chipsets
-        3: 31,  // RAM & Memory
-        4: 41,  // Graphics Cards (GPU)
-        5: 51,  // Power Supplies
-        6: 59,  // Storage Technology
-        7: 65,  // Cooling Systems
-        8: 67,  // Displays & Monitors
-        9: 69,  // Ports & Connectivity
-        10: 75, // Operating Systems
-        11: 79  // BIOS & Optimization
-    };
-
-    agendaItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            const targetSlide = agendaSlideMap[index];
-            if (targetSlide) {
-                goToSlide(targetSlide);
-            }
-        });
-
-        // Add keyboard support for agenda items
-        item.setAttribute('tabindex', '0');
-        item.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                const targetSlide = agendaSlideMap[index];
-                if (targetSlide) {
-                    goToSlide(targetSlide);
-                }
-            }
-        });
-    });
-});
 
 // ========================================
 // UTILITY FUNCTIONS
