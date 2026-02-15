@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Tasks: Terminal Challenge | KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --terminal-bg: #1e1e1e;
+            --terminal-text: #cccccc;
+            --terminal-green: #4af626;
+            --terminal-blue: #3b8eea;
+            --terminal-yellow: #f1fa8c;
+            --glass-terminal: rgba(30, 30, 30, 0.95);
+        }
+
+        body {
+            background-color: #0d1117;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .task-container {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 2rem;
+        }
+
+        .terminal-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .terminal-title {
+            font-family: 'Fira Code', monospace;
+            color: var(--terminal-green);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 10px rgba(74, 246, 38, 0.5);
+        }
+
+        /* Task Card specific styles */
+        .task-card {
+            background: var(--glass-terminal);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--terminal-green);
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        .task-title {
+            font-family: 'Fira Code', monospace;
+            color: var(--terminal-yellow);
+            font-size: 1.4rem;
+        }
+
+        .badge-level {
+            background: #333;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: 'Fira Code', monospace;
+        }
+
+        /* Code Block */
+        .code-block {
+            background: #000;
+            color: var(--terminal-text);
+            padding: 1.5rem;
+            border-radius: 6px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            border-left: 4px solid var(--terminal-green);
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .prompt {
+            color: var(--terminal-green);
+            margin-right: 0.5rem;
+        }
+
+        .cmd {
+            color: white;
+        }
+
+        .comment {
+            color: #6a737d;
+            font-style: italic;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        /* Challenge Section */
+        .challenge-box {
+            background: rgba(59, 142, 234, 0.1);
+            border: 1px dashed var(--terminal-blue);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .challenge-title {
+            color: var(--terminal-blue);
+            font-family: 'Fira Code', monospace;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Back Button */
+        .back-nav {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+        }
+
+        .btn-terminal {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--terminal-green);
+            color: var(--terminal-green);
+            padding: 0.8rem 1.5rem;
+            font-family: 'Fira Code', monospace;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .btn-terminal:hover {
+            background: var(--terminal-green);
+            color: black;
+            box-shadow: 0 0 15px var(--terminal-green);
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li::before {
+            content: "➜";
+            color: var(--terminal-green);
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="back-nav">
+        <a href="day2.html" class="btn-terminal">
+            <i class="fas fa-chevron-left"></i> cd ..
+        </a>
+    </nav>
+
+    <div class="task-container">
+        <header class="terminal-header reveal">
+            <h1 class="terminal-title glow-text">_DAY_2_TASKS</h1>
+            <p style="color: #8b9bb4; font-family: 'Fira Code', monospace;">> Initiating linux_lab_challenges.exe...</p>
+        </header>
+
+        <!-- TASK 1 -->
+        <article class="task-card reveal">
+            <div class="task-header">
+                <h2 class="task-title">🐧 TASK 1: Basic Navigation</h2>
+                <span class="badge-level">Level: Beginner</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Understand directory navigation and listing files.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">cd ~</span><br>
+                <span class="prompt">$</span><span class="cmd">mkdir Practice</span><br>
+                <span class="prompt">$</span><span class="cmd">cd Practice</span><br>
+                <span class="prompt">$</span><span class="cmd">pwd</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Go to root directory (`/`).</li>
+                    <li>Return to your home directory (`~`).</li>
+                    <li>Create folder named <strong>LinuxLab</strong>.</li>
+                    <li>Enter <strong>LinuxLab</strong>.</li>
+                    <li>Display all files including hidden files (`ls -a`).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 2 -->
+        <article class="task-card reveal" style="animation-delay: 0.1s;">
+            <div class="task-header">
+                <h2 class="task-title">📝 TASK 2: File Creation & Editing</h2>
+                <span class="badge-level">Level: Beginner → Basic</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Create and edit files using the terminal.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">touch test.txt</span><br>
+                <span class="prompt">$</span><span class="cmd">echo "This is Linux Day 2" > test.txt</span><br>
+                <span class="prompt">$</span><span class="cmd">cat test.txt</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create file named <strong>info.txt</strong>.</li>
+                    <li>Write: "Linux commands are powerful" into it.</li>
+                    <li>Append another line: "Practice makes perfect" (Hint: `>>`).</li>
+                    <li>Display file content.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 3 -->
+        <article class="task-card reveal" style="animation-delay: 0.2s;">
+            <div class="task-header">
+                <h2 class="task-title">📂 TASK 3: File Management</h2>
+                <span class="badge-level">Level: Basic → Intermediate</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Copy, move, and rename files.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">mkdir Data</span><br>
+                <span class="prompt">$</span><span class="cmd">cp test.txt Data/</span><br>
+                <span class="prompt">$</span><span class="cmd">mv Data/test.txt Data/backup.txt</span><br>
+                <span class="prompt">$</span><span class="cmd">mv Data/backup.txt ~/</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create folder named <strong>Projects</strong>.</li>
+                    <li>Inside it create file <strong>project1.txt</strong>.</li>
+                    <li>Copy <strong>project1.txt</strong> to home directory.</li>
+                    <li>Rename copied file to <strong>final_project.txt</strong>.</li>
+                    <li>Delete the original file inside Projects.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 4 -->
+        <article class="task-card reveal" style="animation-delay: 0.3s;">
+            <div class="task-header">
+                <h2 class="task-title">🔐 TASK 4: Permissions</h2>
+                <span class="badge-level">Level: Intermediate</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Understand and modify file permissions.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">touch script.sh</span><br>
+                <span class="prompt">$</span><span class="cmd">ls -l script.sh</span><br>
+                <span class="prompt">$</span><span class="cmd">chmod +x script.sh</span><br>
+                <span class="prompt">$</span><span class="cmd">chmod 700 script.sh</span><br>
+                <span class="comment"># 700: Owner=rwx (7), Group=--- (0), Others=--- (0)</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create file <strong>secure.txt</strong>.</li>
+                    <li>Give <strong>read & write</strong> permission only to owner (6).</li>
+                    <li>Remove all permissions from group and others (0 0).</li>
+                    <li>Verify using `ls -l`. Expected: `-rw-------`.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 5 -->
+        <article class="task-card reveal" style="animation-delay: 0.4s;">
+            <div class="task-header">
+                <h2 class="task-title">📊 TASK 5: Process Monitoring</h2>
+                <span class="badge-level">Level: Medium</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Understand system processes and resource usage.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">top</span> <span class="comment"># View processes (q to
+                    exit)</span><br>
+                <span class="prompt">$</span><span class="cmd">free -h</span> <span class="comment"># Memory
+                    usage</span><br>
+                <span class="prompt">$</span><span class="cmd">df -h</span> <span class="comment"># Disk
+                    usage</span><br>
+                <span class="prompt">$</span><span class="cmd">clear</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Run `top` and identify the process with highest CPU usage.</li>
+                    <li>Check how much RAM is free on your system.</li>
+                    <li>Check how much space is left on your main disk (`/`).</li>
+                    <li>Clear your terminal screen.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 6 -->
+        <article class="task-card reveal" style="animation-delay: 0.5s;">
+            <div class="task-header">
+                <h2 class="task-title">🔍 TASK 6: File Search & Content Filtering</h2>
+                <span class="badge-level">Level: Medium</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Search inside files and filter data using
+                <code>grep</code>.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">grep "Linux" data.txt</span> <span class="comment"># Find
+                    lines with "Linux"</span><br>
+                <span class="prompt">$</span><span class="cmd">grep -c "Linux" data.txt</span> <span class="comment">#
+                    Count occurrences</span><br>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create file <strong>tech.txt</strong> with 5 lines of hardware/software words.</li>
+                    <li>Search for the word <strong>"server"</strong>.</li>
+                    <li>Count how many times "server" appears (`grep -c`).</li>
+                    <li>Display only lines that do <strong>NOT</strong> contain "server" (`grep -v`).</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 7 -->
+        <article class="task-card reveal" style="animation-delay: 0.6s;">
+            <div class="task-header">
+                <h2 class="task-title">💾 TASK 7: Disk Usage Investigation</h2>
+                <span class="badge-level">Level: Medium</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Analyze which files/folders consume storage.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">ls -lh</span> <span class="comment"># List files with
+                    human-readable sizes</span><br>
+                <span class="prompt">$</span><span class="cmd">du -sh *</span> <span class="comment"># Check size of all
+                    folders</span><br>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create 3 files of different sizes using `dd` or `touch`.</li>
+                    <li>Check disk usage of each file.</li>
+                    <li>Identify which file uses maximum space.</li>
+                    <li>Delete the largest file.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 8 -->
+        <article class="task-card reveal" style="animation-delay: 0.7s;">
+            <div class="task-header">
+                <h2 class="task-title">⚡ TASK 8: Process Control</h2>
+                <span class="badge-level">Level: Medium → Advanced</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Manage background processes and kill unwanted tasks.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">sleep 300 &</span> <span class="comment"># Run in
+                    background (&)</span><br>
+                <span class="prompt">$</span><span class="cmd">ps</span> <span class="comment"># Find PID</span><br>
+                <span class="prompt">$</span><span class="cmd">kill 1234</span> <span class="comment"># Replace 1234
+                    with actual PID</span><br>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Run 2 background sleep processes (`sleep 300 &`).</li>
+                    <li>Identify both PIDs using `ps` or `jobs -l`.</li>
+                    <li>Kill only <strong>one</strong> process.</li>
+                    <li>Verify the other one is still running.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 9 -->
+        <article class="task-card reveal" style="animation-delay: 0.8s;">
+            <div class="task-header">
+                <h2 class="task-title">👤 TASK 9: User & Permission Engineering</h2>
+                <span class="badge-level">Level: Advanced</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> User isolation and advanced permission security.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example Demonstration</span><br>
+                <span class="prompt">$</span><span class="cmd">sudo adduser testuser</span><br>
+                <span class="prompt">$</span><span class="cmd">chmod 600 secure.txt</span> <span class="comment"># Owner
+                    rw only</span><br>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create user named <strong>labadmin</strong> (`sudo adduser labadmin`).</li>
+                    <li>Create file <strong>project.txt</strong> inside home.</li>
+                    <li>Set permissions: Owner full (7), Group read (4), Others none (0).</li>
+                    <li>Verify using `ls -l`. Expected permissions: `740` (rwxr-----).</li>
+                    <li>Delete user after completion.</li>
+                </ul>
+            </div>
+        </article>
+
+        <!-- TASK 10 -->
+        <article class="task-card reveal" style="animation-delay: 0.9s;">
+            <div class="task-header">
+                <h2 class="task-title">📜 TASK 10: Bash Automation Script</h2>
+                <span class="badge-level">Level: Advanced</span>
+            </div>
+            <p style="color: #ccc;"><strong>Objective:</strong> Create a system information script.</p>
+
+            <div class="code-block">
+                <span class="comment"># Example using nano or vim</span><br>
+                <span class="prompt">$</span><span class="cmd">nano report.sh</span><br>
+                <span class="cmd">#!/bin/bash</span><br>
+                <span class="cmd">echo "System Report"</span><br>
+                <span class="cmd">date</span><br>
+                <span class="cmd">uptime</span><br>
+                <span class="prompt">$</span><span class="cmd">chmod +x report.sh</span><br>
+                <span class="prompt">$</span><span class="cmd">./report.sh</span>
+            </div>
+
+            <div class="challenge-box">
+                <h3 class="challenge-title"><i class="fas fa-flask"></i> Student Task</h3>
+                <ul style="color: #ccc; line-height: 1.8;">
+                    <li>Create a script named <strong>sys_check.sh</strong>.</li>
+                    <li>It should print system date, current user (`whoami`), and free memory.</li>
+                    <li>Make it executable.</li>
+                    <li>Run the script and verify output.</li>
+                </ul>
+            </div>
+        </article>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <p style="color: #666; font-family: 'Fira Code', monospace; margin-bottom: 1rem;">> All tasks completed?</p>
+            <a href="day2.html" class="btn-terminal" style="background: var(--terminal-green); color: black;">
+                Return to Dashboard <i class="fas fa-check"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>
