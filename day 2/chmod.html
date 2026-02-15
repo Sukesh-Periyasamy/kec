@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chmod Practice | Master Linux Permissions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .cmd-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid var(--glass-border);
+            margin: 1rem 0;
+            white-space: pre-wrap;
+        }
+
+        .highlight-green {
+            color: #50fa7b;
+            font-weight: bold;
+        }
+
+        .highlight-red {
+            color: #ff5555;
+            font-weight: bold;
+        }
+
+        .vertical-section {
+            display: block;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Mastering <span class="gradient-text">Permissions</span></h1>
+            <p class="hero-subtitle">Understanding chmod, Users, and Security in Linux.</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. What is chmod? -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">1. What is chmod?</h2>
+            <p><strong>chmod</strong> means "change mode". It is used to change file permissions — determining who can
+                read, write, or execute a file.</p>
+
+            <div class="grid-2-col" style="margin-top: 1.5rem;">
+                <div class="glass-card">
+                    <h3>3 Types of Users</h3>
+                    <ul>
+                        <li><strong style="color: var(--primary);">Owner (u)</strong>: Person who created the file.</li>
+                        <li><strong style="color: var(--secondary);">Group (g)</strong>: Users in same group.</li>
+                        <li><strong style="color: var(--text-muted);">Others (o)</strong>: Everyone else.</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>3 Permissions</h3>
+                    <ul>
+                        <li><strong>r</strong> = Read (View file)</li>
+                        <li><strong>w</strong> = Write (Edit/Delete)</li>
+                        <li><strong>x</strong> = Execute (Run script)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Permission Numbers -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. The Numbers Game (4-2-1)</h2>
+            <p>Permissions use simple math. Memorize this:</p>
+
+            <table style="width: 100%; margin: 1rem 0; border-collapse: collapse;">
+                <tr style="border-bottom: 1px solid var(--glass-border);">
+                    <th style="padding: 10px; text-align: left; color: var(--primary);">Permission</th>
+                    <th style="padding: 10px; text-align: left; color: var(--primary);">Value</th>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Read (r)</td>
+                    <td style="padding: 10px;">4</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Write (w)</td>
+                    <td style="padding: 10px;">2</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;">Execute (x)</td>
+                    <td style="padding: 10px;">1</td>
+                </tr>
+            </table>
+
+            <div class="highlight-box">
+                <h3>Example: <code>chmod 755 file</code></h3>
+                <p><strong>7 (Owner)</strong> = 4+2+1 (Read + Write + Execute)</p>
+                <p><strong>5 (Group)</strong> = 4+1 (Read + Execute)</p>
+                <p><strong>5 (Others)</strong> = 4+1 (Read + Execute)</p>
+            </div>
+        </section>
+
+        <!-- 3. Step-by-Step Practice -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">3. Hands-On Practice</h2>
+
+            <h3>Step 1: Create a File</h3>
+            <div class="cmd-box">
+                <span class="highlight-green">nano</span> test.sh
+                # Add inside:
+                echo "Hello Students"
+                # Save and Exit (Ctrl+X, Y, Enter)
+            </div>
+
+            <h3>Step 2: Check Permissions</h3>
+            <div class="cmd-box">
+                <span class="highlight-green">ls -l</span> test.sh
+                # Output example:
+                -rw-r--r-- 1 user user test.sh
+            </div>
+        </section>
+
+        <!-- 4. Practice Commands -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Common Permission Sets</h2>
+
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3 style="color: var(--highlight-red);">chmod 777</h3>
+                    <p><code>rwxrwxrwx</code></p>
+                    <p>Everyone can do everything.</p>
+                    <p class="highlight-red">⚠ UNSAFE!</p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--highlight-green);">chmod 755</h3>
+                    <p><code>rwxr-xr-x</code></p>
+                    <p>Owner: Full control.</p>
+                    <p>Others: Read & Run.</p>
+                    <p><strong>Best for Scripts.</strong></p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--primary);">chmod 644</h3>
+                    <p><code>rw-r--r--</code></p>
+                    <p>Owner: Edit.</p>
+                    <p>Others: Read only.</p>
+                    <p><strong>Best for Docs.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Execution & Fixing -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">5. Fixing "Permission Denied"</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>The Problem</h3>
+                    <p>If you try to run a script without 'x' permission:</p>
+                    <div class="cmd-box">./test.sh</div>
+                    <p class="highlight-red">❌ Permission denied</p>
+                </div>
+                <div>
+                    <h3>The Fix</h3>
+                    <p>Add Execute permission (+x):</p>
+                    <div class="cmd-box">chmod +x test.sh</div>
+                    <p>Now run it:</p>
+                    <div class="cmd-box">./test.sh</div>
+                    <p class="highlight-green">✅ Hello Students</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Student Task -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">🧪 Mini Exercise</h2>
+            <p>1. Create <code>practice.sh</code> having <code>echo "Test"</code> inside.</p>
+            <p>2. Run the following and answer: <strong>Which one blocks execution?</strong></p>
+            <div class="cmd-box">
+                chmod 644 practice.sh
+                ./practice.sh # ?
+
+                chmod 755 practice.sh
+                ./practice.sh # ?
+
+                chmod 700 practice.sh
+                ./practice.sh # ?
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 chmod Practice. Secure your files.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

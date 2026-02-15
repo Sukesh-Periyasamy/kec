@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtualization | Run Multiple OSs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Virtualization <span class="gradient-text">Masterclass</span></h1>
+            <p class="hero-subtitle">One Physical PC ➡️ Many Virtual PCs. The Core of Cloud Computing.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#concepts" class="btn btn-primary">Start Learning ☁️</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. What is Virtualization -->
+        <section id="concepts" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. What is Virtualization?</h2>
+            <p>It's technology that allows you to run multiple operating systems on <strong>one physical
+                    machine</strong> simultaneously.</p>
+            <div class="grid-2-col">
+                <div>
+                    <h3>The Concept</h3>
+                    <p>Imagine your laptop is a large <strong>apartment building</strong>.</p>
+                    <p><strong>Virtual Machines (VMs)</strong> are separate rooms inside.</p>
+                    <p>Each room has its own OS (Windows, Linux, Kali) but shares the building's resources.</p>
+                </div>
+                <div>
+                    <h3>Why use it?</h3>
+                    <ul style="list-style: none;">
+                        <li>🧪 <strong>Testing:</strong> Safe playground for malware.</li>
+                        <li>🐧 <strong>Learning:</strong> Run Linux inside Windows.</li>
+                        <li>💰 <strong>Cost:</strong> 1 Server replaces 10 physical ones.</li>
+                        <li>🛡️ <strong>Safety:</strong> If VM breaks, Host is safe.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Hypervisors -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. The Hypervisor</h2>
+            <p>The <strong>Hypervisor</strong> is the software that creates and manages VMs. It's the "Landlord".</p>
+
+            <div class="grid-2-col" style="margin-top: 2rem;">
+                <div class="glass-card">
+                    <h3 style="color: var(--primary);">Type 1 (Bare Metal)</h3>
+                    <p>Runs <strong>directly on hardware</strong>. No Host OS.</p>
+                    <p>Used in: <strong>Data Centers, Enterprise Servers</strong>.</p>
+                    <p>Examples: <em>VMware ESXi, Microsoft Hyper-V</em>.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--secondary);">Type 2 (Hosted)</h3>
+                    <p>Runs as an <strong>app on your OS</strong>.</p>
+                    <p>Used for: <strong>Learning, Labs, Personal Use</strong>.</p>
+                    <p>Examples: <em>VirtualBox, VMware Workstation</em>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. VM Components -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">3. Inside a VM</h2>
+            <div class="grid-3-col">
+                <div class="step-card">
+                    <h3>vCPU</h3>
+                    <p>Virtual Processors.</p>
+                    <p><em>Don't allocate all cores!</em></p>
+                </div>
+                <div class="step-card">
+                    <h3>vRAM</h3>
+                    <p>Virtual Memory.</p>
+                    <p><em>Takes from real RAM.</em></p>
+                </div>
+                <div class="step-card">
+                    <h3>vDisk</h3>
+                    <p>Virtual Hard Drive.</p>
+                    <p><em>Just a file (.vdi) on disk.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Practical Guide -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Practical: Setup a Lab</h2>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Install VirtualBox</h3>
+                    <p>Download from <a href="https://www.virtualbox.org" target="_blank"
+                            style="color: var(--primary);">virtualbox.org</a>.</p>
+                    <p>Install with default settings.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Download ISO</h3>
+                    <p>Get <strong>Kali Linux</strong> or <strong>Ubuntu</strong> ISO.</p>
+                    <p>Always choose <strong>64-bit Installer</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Create VM</h3>
+                    <p>Control + N in VirtualBox.</p>
+                    <p>Name: "Kali Lab". Type: Linux.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">4</span>
+                    <h3>Attach ISO</h3>
+                    <p>Settings -> Storage.</p>
+                    <p>Empty CD -> Choose Disk File (ISO).</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem;">
+                <h3>⚠️ Golden Rule of RAM</h3>
+                <p>Never give a VM more than <strong>50%</strong> of your total RAM.</p>
+                <p>Example: 16GB Total -> Give VM 4GB-8GB max. Host needs the rest!</p>
+            </div>
+        </section>
+
+        <!-- 5. Advanced Concepts -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">5. Deep Dive</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>Virtual Networking</h3>
+                    <p><strong>NAT:</strong> VM hides behind Host (Internet works easily).</p>
+                    <p><strong>Bridged:</strong> VM gets its own IP address on the network.</p>
+                </div>
+                <div>
+                    <h3>Hardware Req (VT-x)</h3>
+                    <p>Virtualization needs hardware support.</p>
+                    <p>If VM is slow or fails, enable <strong>Intel VT-x</strong> or <strong>AMD-V</strong> in
+                        <strong>BIOS</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Virtualization Guide. Build your lab today.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

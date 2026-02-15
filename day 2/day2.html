@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2: OS & Virtualization | Master the Core</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .cmd-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid var(--glass-border);
+            margin: 1rem 0;
+        }
+
+        .highlight-yellow {
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        .highlight-red {
+            color: #ff5555;
+            font-weight: bold;
+        }
+
+        .highlight-green {
+            color: #50fa7b;
+            font-weight: bold;
+        }
+
+        .hack-alert {
+            border: 2px solid var(--accent);
+            background: rgba(255, 0, 85, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 85, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 0, 85, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 85, 0);
+            }
+        }
+
+        /* Override hidden states for Day 2 specific vertical layout */
+        .vertical-section {
+            display: block !important;
+            opacity: 1 !important;
+            margin-bottom: 2rem;
+            animation: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Day 2: <span class="gradient-text">OS & Virtualization</span></h1>
+            <p class="hero-subtitle">Install, Understand & Control Your OS. 50% Concept + 50% Practical.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#lab" class="btn btn-primary">Go to Lab 🧪</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- Learning Objectives -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">✅ Learning Objectives</h2>
+            <div class="grid-2-col">
+                <div>
+                    <ul>
+                        <li>Understand what an Operating System does</li>
+                        <li>Understand OS architecture (Kernel vs User)</li>
+                        <li>Learn virtualization concepts (Hypervisors)</li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li><span class="highlight-green">Install Windows 11</span> in VirtualBox</li>
+                        <li>Configure & troubleshoot a Virtual Machine</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Theory Section -->
+        <section id="theory" class="section" data-aos="fade-up">
+            <h2 class="section-title">Core Theory</h2>
+
+            <!-- OS Fundamentals -->
+            <div class="glass-card vertical-section">
+                <h3>1. OS Fundamentals</h3>
+                <p>The OS is the <strong>bridge</strong> between User & Hardware. Without it, you have no app execution,
+                    memory management, or file storage.</p>
+                <div class="grid-3-col" style="margin-top: 1rem;">
+                    <div class="glass-card">
+                        <h4>Process Mgmt</h4>
+                        <p>Running & scheduling programs.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4>Memory Mgmt</h4>
+                        <p>Allocating RAM to apps.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4>Security</h4>
+                        <p>Permissions & accounts.</p>
+                    </div>
+                </div>
+                <div class="highlight-box">
+                    <p><strong>Boot Flow:</strong> BIOS/UEFI ➡️ Bootloader ➡️ Kernel ➡️ Drivers ➡️ Login</p>
+                </div>
+            </div>
+
+            <!-- Architecture -->
+            <div class="glass-card vertical-section">
+                <h3>2. Architecture: Kernel vs User Mode</h3>
+                <div class="grid-2-col">
+                    <div style="border-right: 1px solid var(--glass-border); padding-right: 1rem;">
+                        <h4 class="highlight-green">User Mode</h4>
+                        <ul>
+                            <li>Applications run here.</li>
+                            <li>Limited hardware access.</li>
+                            <li>Safe: Crash = App closes.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="highlight-red">Kernel Mode</h4>
+                        <ul>
+                            <li>Full hardware access.</li>
+                            <li>The Core of the OS.</li>
+                            <li>Critical: Crash = Blue Screen (BSOD).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Virtualization -->
+            <div class="glass-card vertical-section">
+                <h3>3. Virtualization & Hypervisors</h3>
+                <p>Running multiple OSs on one physical machine using a <strong>Hypervisor</strong>.</p>
+                <div class="grid-2-col">
+                    <div class="glass-card">
+                        <h4>Type 1 (Bare Metal)</h4>
+                        <p>Runs directly on hardware. Used in Enterprise Severs.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4>Type 2 (Hosted)</h4>
+                        <p>Runs as an app on OS. Example: <strong>VirtualBox</strong>.</p>
+                    </div>
+                </div>
+                <h4 style="margin-top: 1rem;">Components:</h4>
+                <p>vCPU (Processor), vRAM (Memory), vDisk (Hard Drive).</p>
+            </div>
+        </section>
+
+        <!-- Lab Section -->
+        <section id="lab" class="section" data-aos="fade-up">
+            <h2 class="section-title">🧪 Hands-On Lab: Install Windows 11</h2>
+
+            <!-- Step 0 -->
+            <div class="glass-card vertical-section">
+                <h3>Step 0: Enable Virtualization (BIOS)</h3>
+                <ol>
+                    <li>Check Task Manager → Performance → CPU. Look for <strong>"Virtualization: Enabled"</strong>.
+                    </li>
+                    <li>If Disabled, restart and enter BIOS (F2/F10/Del).</li>
+                    <li>Enable <strong>Intel VT-x</strong> or <strong>AMD SVM Mode</strong>.</li>
+                </ol>
+            </div>
+
+            <!-- Step 1-2 -->
+            <div class="glass-card vertical-section">
+                <h3>Step 1-2: Install VirtualBox & Create VM</h3>
+                <p>1. Download & Install VirtualBox (Default settings).</p>
+                <p>2. Click <strong>New</strong>:</p>
+                <ul>
+                    <li>Name: <strong>Windows 11 Lab</strong></li>
+                    <li>Type: Microsoft Windows</li>
+                    <li>Version: Windows 11 (64-bit)</li>
+                </ul>
+                <p class="highlight-red">Warning: If "64-bit" is missing, Virtualization is OFF in BIOS.</p>
+            </div>
+
+            <!-- Step 3-6 -->
+            <div class="glass-card vertical-section">
+                <h3>Step 3-6: Configure VM Hardware</h3>
+                <div class="grid-2-col">
+                    <div>
+                        <h4>RAM (Memory)</h4>
+                        <p>Min: 4GB. Rec: 8GB.</p>
+                        <p><em>Never allocate >50% of host RAM!</em></p>
+                    </div>
+                    <div>
+                        <h4>CPU (Cores)</h4>
+                        <p>Min: 2 Cores. Rec: 4 Cores.</p>
+                    </div>
+                </div>
+                <h4 style="margin-top: 1rem;">Storage (vDisk)</h4>
+                <p>80GB, Dynamically Allocated, VDI format.</p>
+                <h4 style="margin-top: 1rem;">Attach IO</h4>
+                <p>Settings → Storage → Empty Install CD → Select Windows 11 ISO.</p>
+            </div>
+
+            <!-- TPM HACK -->
+            <div class="glass-card vertical-section hack-alert">
+                <h3 style="color: var(--accent);">⚠️ Step 7-8: The "Can't Run" Error & TPM Hack</h3>
+                <p>Windows 11 requires a TPM 2.0 chip, which our VM lacks. We will bypass this.</p>
+                <div class="cmd-box">
+                    1. At the "Install Now" screen (or error screen), press <span class="highlight-yellow">Shift +
+                        F10</span><br>
+                    2. Type <span class="highlight-green">regedit</span> and hit Enter.<br>
+                    3. Navigate to: <code>HKEY_LOCAL_MACHINE\SYSTEM\Setup</code><br>
+                    4. Right-click Setup → New Key → Name it <span class="highlight-yellow">LabConfig</span><br>
+                    5. Inside LabConfig, create two <strong>DWORD (32-bit) Values</strong>:<br>
+                    &nbsp;&nbsp;- Name: <code>BypassTPMCheck</code>, Value: <code>1</code><br>
+                    &nbsp;&nbsp;- Name: <code>BypassSecureBootCheck</code>, Value: <code>1</code><br>
+                    6. Close Regedit and continue installation.
+                </div>
+            </div>
+
+            <!-- Post Install -->
+            <div class="glass-card vertical-section">
+                <h3>Step 9: Guest Additions & Snapshots</h3>
+                <h4>Guest Additions (Drivers)</h4>
+                <p>Enables Full Screen, Drag & Drop, Shared Clipboard.</p>
+                <p><em>Menu → Devices → Insert Guest Additions CD Image → Run Installer.</em></p>
+
+                <h4 style="margin-top: 1rem;">Snapshots</h4>
+                <p>Crucial! Take a snapshot ("Clean Install") before experimenting.</p>
+            </div>
+        </section>
+
+        <!-- Troubleshooting & Quiz -->
+        <section id="extras" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Troubleshooting & Quiz</h2>
+
+            <div class="grid-2-col">
+                <div>
+                    <h3>Common Issues</h3>
+                    <ul style="list-style: none;">
+                        <li>🛑 <strong>Missing 64-bit:</strong> Enable VT-x in BIOS.</li>
+                        <li>⬛ <strong>Black Screen:</strong> Increase Video Memory.</li>
+                        <li>🐢 <strong>Slow VM:</strong> Give more Cores/RAM.</li>
+                        <li>🌐 <strong>No Internet:</strong> Switch to NAT adapter.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Quick Quiz</h3>
+                    <div class="glass-card vertical-section"
+                        style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--glass-border);">
+                        <strong>Q: What manages VMs?</strong><br>
+                        A: Hypervisor (e.g., VirtualBox).
+                    </div>
+                    <div class="glass-card vertical-section"
+                        style="margin-bottom: 1rem; padding: 1rem; border: 1px solid var(--glass-border);">
+                        <strong>Q: Where do apps run?</strong><br>
+                        A: User Mode (Safe). Kernel Mode is for OS core.
+                    </div>
+                    <div class="glass-card vertical-section"
+                        style="padding: 1rem; border: 1px solid var(--glass-border);">
+                        <strong>Q: Why use Snapshots?</strong><br>
+                        A: To save the exact system state (Undo button).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Day 2 Module. Built for Hands-on Learning.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

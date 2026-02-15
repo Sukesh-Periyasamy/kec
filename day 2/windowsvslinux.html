@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows vs Linux | OS Comparison</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Windows <span class="highlight">vs</span> <span class="gradient-text">Linux</span>
+            </h1>
+            <p class="hero-subtitle">In-Depth Comparison of the World's Leading Operating Systems</p>
+            <a href="#comparison" class="btn btn-primary">Start Comparing</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 1. Quick Comparison Table -->
+        <section id="comparison" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. Quick Comparison</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; color: var(--text-muted); min-width: 600px;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--glass-border); text-align: left;">
+                            <th style="padding: 1rem; color: var(--primary);">Category</th>
+                            <th style="padding: 1rem; color: var(--text-main);">Windows</th>
+                            <th style="padding: 1rem; color: var(--secondary);">Linux</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem; font-weight: 600;">Cost</td>
+                            <td style="padding: 1rem;">Paid (OEM / Retail)</td>
+                            <td style="padding: 1rem;">Mostly Free & Open Source</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem; font-weight: 600;">Customization</td>
+                            <td style="padding: 1rem;">Limited (Settings)</td>
+                            <td style="padding: 1rem;">High (Kernel to UI)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem; font-weight: 600;">Security</td>
+                            <td style="padding: 1rem;">Good but targeted</td>
+                            <td style="padding: 1rem;">Strong permission model</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem; font-weight: 600;">Usage</td>
+                            <td style="padding: 1rem;">Desktop, Gaming, Corp</td>
+                            <td style="padding: 1rem;">Servers, Cloud, Dev</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 2. Cost Model -->
+        <section id="cost" class="section" data-aos="fade-up">
+            <h2 class="section-title">2. Cost Models</h2>
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>Windows (Commercial)</h3>
+                    <p>Developed by Microsoft. Costs money because:</p>
+                    <ul>
+                        <li>Proprietary, Closed-Source</li>
+                        <li>R&D, Support, Updates included</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Note:</strong> When you buy a laptop, the Windows license cost is included in the
+                            price.</p>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <h3>Linux (Open Source)</h3>
+                    <p>Community developed (Ubuntu, Fedora). Free because:</p>
+                    <ul>
+                        <li>Open-source Kernel</li>
+                        <li>Community driven</li>
+                    </ul>
+                    <div class="highlight-box">
+                        <p><strong>Fact:</strong> Companies run thousands of servers for free on Linux.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Customization -->
+        <section id="customization" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">3. Customization & Control</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>Windows</h3>
+                    <ul>
+                        <li>Themes & Registry tweaks</li>
+                        <li>Core kernel is locked</li>
+                        <li>Locked for stability & security</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Linux</h3>
+                    <ul>
+                        <li>Change Desktop Environment (GNOME, KDE)</li>
+                        <li>Modify Kernel & Modules</li>
+                        <li>Like a structured "LEGO" PC</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Security -->
+        <section id="security" class="section" data-aos="fade-up">
+            <h2 class="section-title">4. Security Architecture</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-target="sec-win">Windows Security</button>
+                <button class="tab-btn" data-target="sec-lin">Linux Security</button>
+            </div>
+
+            <div id="sec-win" class="tab-content active glass-card">
+                <h3>Windows Security</h3>
+                <p>Depends on <strong>Defender, UAC, Secure Boot</strong>.</p>
+                <p><strong>Why Targeted?</strong> Hugely popular on desktops, attracts malware developers.</p>
+            </div>
+
+            <div id="sec-lin" class="tab-content glass-card">
+                <h3>Linux Security</h3>
+                <p>Uses <strong>Strict Permissions (rwx)</strong> & Root/User separation.</p>
+                <p><strong>Advantage:</strong> Users cannot modify system files without Root password. Viruses can't
+                    easily damage the core system.</p>
+            </div>
+        </section>
+
+        <!-- 5. Usage -->
+        <section id="usage" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">5. Where Each Dominates</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3 style="color: var(--primary);">Windows Usage</h3>
+                    <ul>
+                        <li><strong>Desktop & Office:</strong> Standard for business.</li>
+                        <li><strong>Gaming:</strong> DirectX support.</li>
+                        <li><strong>Enterprise:</strong> Active Directory.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: var(--secondary);">Linux Usage</h3>
+                    <ul>
+                        <li><strong>Servers:</strong> Web hosting, Cloud.</li>
+                        <li><strong>Development:</strong> Coding, AI/ML.</li>
+                        <li><strong>Cybersecurity:</strong> Pen-testing tools.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Analogy -->
+        <section id="analogy" class="section" data-aos="fade-up">
+            <h2 class="section-title">6. The Ultimate Analogy</h2>
+            <div class="grid-2-col">
+                <div class="glass-card" style="text-align: center;">
+                    <span style="font-size: 3rem;">📱</span>
+                    <h3>Windows = Smartphone</h3>
+                    <p>Ready-made, easy to use, fixed structure. Best for general users.</p>
+                </div>
+                <div class="glass-card" style="text-align: center;">
+                    <span style="font-size: 3rem;">🛠️</span>
+                    <h3>Linux = DIY Workstation</h3>
+                    <p>Requires learning, full control, powerful. Best for technical builders.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Summary & Decision -->
+        <section id="summary" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">7. Summary & Decision</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">When to choose Windows?</button>
+                    <div class="accordion-body">
+                        <p>Choose Windows if you need commercial software (Adobe, Office), user-friendly GUI, or are a
+                            gamer.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">When to choose Linux?</button>
+                    <div class="accordion-body">
+                        <p>Choose Linux for servers, automation, development, high security, and performance efficiency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Comparison Guide. Knowledge is Power.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

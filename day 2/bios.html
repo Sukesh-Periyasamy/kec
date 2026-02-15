@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOS Guide | Basic Input/Output System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Mastering <span class="gradient-text">BIOS</span></h1>
+            <p class="hero-subtitle">The Basic Input/Output System that starts your computer. Learn how to access and
+                configure it.</p>
+            <a href="#intro" class="btn btn-primary">Start Learning</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 1. What is BIOS? -->
+        <section id="intro" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">What is BIOS?</h2>
+            <div class="section-content">
+                <p><strong>BIOS (Basic Input/Output System)</strong> is firmware stored on the motherboard that starts
+                    your computer and initializes hardware before loading the operating system.</p>
+                <div class="highlight-box">
+                    <p>On newer systems, BIOS is technically replaced by <strong>UEFI</strong> (Unified Extensible
+                        Firmware Interface), but people still commonly call it “BIOS”.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Method 1: Keyboard -->
+        <section id="method1" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Method 1: Enter BIOS Using Keyboard</h2>
+            <p class="section-subtitle">The most common way to access BIOS.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Shut Down</h3>
+                    <p>Completely shut down your PC or laptop.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Power On</h3>
+                    <p>Press the Power button to turn it on.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Tap Key</h3>
+                    <p>Immediately start pressing the BIOS key repeatedly (don’t hold, tap continuously).</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Success</h3>
+                    <p>The BIOS screen regarding your system will open.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BIOS Keys Table -->
+        <section id="keys" class="section" data-aos="fade-up">
+            <h2 class="section-title">Common BIOS Keys by Brand</h2>
+            <div class="glass-card">
+                <table style="width: 100%; border-collapse: collapse; color: var(--text-muted);">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--glass-border); text-align: left;">
+                            <th style="padding: 1rem; color: var(--primary);">Brand</th>
+                            <th style="padding: 1rem; color: var(--primary);">BIOS Key</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">Dell</td>
+                            <td style="padding: 1rem;">F2</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">HP</td>
+                            <td style="padding: 1rem;">F10 / Esc</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">Lenovo</td>
+                            <td style="padding: 1rem;">F2 / Fn+F2</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">Asus</td>
+                            <td style="padding: 1rem;">F2 / Del</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">Acer</td>
+                            <td style="padding: 1rem;">F2</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 1rem;">MSI</td>
+                            <td style="padding: 1rem;">Del</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 1rem;">Gigabyte</td>
+                            <td style="padding: 1rem;">Del</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 4. Method 2: Windows -->
+        <section id="method2" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Method 2: Enter from Windows</h2>
+            <p>If your PC boots too fast (Fast Boot enabled), use this method.</p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Windows 10 / 11 Steps</button>
+                    <div class="accordion-body">
+                        <ol style="padding-left: 1.5rem; margin-top: 1rem;">
+                            <li>Open <strong>Settings</strong>.</li>
+                            <li>Go to <strong>System → Recovery</strong>.</li>
+                            <li>Click <strong>Restart Now</strong> (under Advanced Startup).</li>
+                            <li>Choose: <strong>Troubleshoot</strong> → <strong>Advanced Options</strong> → <strong>UEFI
+                                    Firmware Settings</strong>.</li>
+                            <li>Click <strong>Restart</strong>. The system will direct you to BIOS.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Laptop Specifics & Troubleshooting -->
+        <section id="troubleshooting" class="section" data-aos="fade-up">
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>Laptop Specifics</h3>
+                    <p>Some laptops have special buttons:</p>
+                    <ul>
+                        <li><strong>Lenovo:</strong> Novo Button (small pinhole near power).</li>
+                        <li><strong>HP:</strong> May use Esc first, then F10.</li>
+                        <li><strong>Sony:</strong> Assist button.</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>BIOS Not Opening?</h3>
+                    <ul>
+                        <li>Are you pressing the correct key?</li>
+                        <li>Are you tapping immediately after power ON?</li>
+                        <li>Is Fast Boot enabled? (Use Method 2)</li>
+                        <li>Try an external keyboard if on laptop.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Quick Version -->
+        <section id="quick" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Quick Version</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>To Enter BIOS:</h3>
+                    <ol>
+                        <li>Shut down PC</li>
+                        <li>Power ON</li>
+                        <li>Press <strong>F2 / Del</strong> repeatedly</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>If that fails:</h3>
+                    <p>Settings → Recovery → Advanced Startup → UEFI Firmware Settings</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Troubleshooting Guide. Designed for Learning.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

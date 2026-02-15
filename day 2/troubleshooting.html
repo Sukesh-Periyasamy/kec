@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Guide | Master the Art of Solving Problems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Master the Art of <span class="gradient-text">Troubleshooting</span></h1>
+            <p class="hero-subtitle">A systematic approach to diagnosing and resolving computer hardware and software
+                problems. Stop guessing, start solving.</p>
+            <a href="#intro" class="btn btn-primary">Start Learning</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 1. Introduction -->
+        <section id="intro" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. Introduction to Troubleshooting</h2>
+            <div class="section-content">
+                <h3>1.1 What is Troubleshooting?</h3>
+                <p>Troubleshooting is a systematic process of identifying, diagnosing, and resolving computer hardware
+                    or software problems.</p>
+                <div class="highlight-box">
+                    <p><strong>Key Takeaway:</strong> It is not guessing. It is a logical problem-solving approach.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Methodology -->
+        <section id="methodology" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">2. Standard Troubleshooting Methodology</h2>
+            <p class="section-subtitle">The Industry Approach - Memorize this structured method.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Identify the Problem</h3>
+                    <ul>
+                        <li>Ask the user what happened</li>
+                        <li>Observe symptoms</li>
+                        <li>Check error messages</li>
+                        <li>Note recent changes (updates, installations, power cuts)</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Establish a Theory</h3>
+                    <ul>
+                        <li>What could cause this issue?</li>
+                        <li>Hardware or software?</li>
+                        <li>Recent driver update?</li>
+                        <li>Overheating? Virus?</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Test the Theory</h3>
+                    <ul>
+                        <li>Run diagnostics</li>
+                        <li>Boot into Safe Mode</li>
+                        <li>Check Device Manager</li>
+                        <li>Try known working components</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Establish Plan & Fix</h3>
+                    <ul>
+                        <li>Repair, replace, reinstall, update, rollback</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">05</div>
+                    <h3>Verify Functionality</h3>
+                    <ul>
+                        <li>Restart</li>
+                        <li>Test application & internet</li>
+                        <li>Stress test if required</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">06</div>
+                    <h3>Document Solution</h3>
+                    <ul>
+                        <li>Write problem, cause, fix</li>
+                        <li>Provide preventive advice</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Components -->
+        <section id="components" class="section" data-aos="fade-up">
+            <h2 class="section-title">3. Understanding Computer Components</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-target="hardware">3.1 Hardware</button>
+                <button class="tab-btn" data-target="software">3.2 Software</button>
+            </div>
+
+            <div class="tab-content active" id="hardware">
+                <div class="component-grid">
+                    <article class="component-card">
+                        <h3>CPU (Processor)</h3>
+                        <p class="role">Brain of the computer</p>
+                        <p>Executes instructions.</p>
+                        <p class="issue">⚠ Overheating causes shutdown</p>
+                    </article>
+                    <article class="component-card">
+                        <h3>RAM</h3>
+                        <p class="role">Temporary memory</p>
+                        <p class="issue">⚠ Faulty RAM causes crashes & blue screens</p>
+                    </article>
+                    <article class="component-card">
+                        <h3>Storage (HDD / SSD)</h3>
+                        <p class="role">Stores OS and files</p>
+                        <p class="issue">⚠ Bad sectors cause slow boot</p>
+                    </article>
+                    <article class="component-card">
+                        <h3>Power Supply (SMPS)</h3>
+                        <p class="role">Provides power</p>
+                        <p class="issue">⚠ Fault causes no boot</p>
+                    </article>
+                    <article class="component-card">
+                        <h3>Motherboard</h3>
+                        <p class="role">Connects all components</p>
+                        <p class="issue">⚠ Failure causes no display or random shutdown</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="tab-content" id="software">
+                <ul class="software-list glass-card">
+                    <li><strong>Operating System</strong> (Windows / Linux)</li>
+                    <li><strong>Drivers</strong> (Crucial for hardware communication)</li>
+                    <li><strong>Applications</strong> (User software)</li>
+                    <li><strong>System Services</strong> (Background processes)</li>
+                    <li><strong>Antivirus</strong> (Security software)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 4. Drivers -->
+        <section id="drivers" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">4. Drivers – Complete Teaching Section</h2>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">4.1 What is a Driver?</button>
+                    <div class="accordion-body">
+                        <p>A driver is a software program that allows the OS to communicate with hardware devices.
+                            Without a driver, hardware does not function properly.</p>
+                        <ul>
+                            <li>Wi-Fi driver → enables internet</li>
+                            <li>Display driver → enables graphics</li>
+                            <li>Audio driver → enables sound</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">4.2 How problems occur</button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>OS update incompatible with driver</li>
+                            <li>Driver corrupted or missing</li>
+                            <li>Wrong driver installed</li>
+                            <li>Hardware replaced without installing driver</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">4.3 Symptoms</button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Wi-Fi not showing</li>
+                            <li>No sound or low display resolution</li>
+                            <li>USB not detected</li>
+                            <li>Device showing yellow warning in Device Manager</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">4.4 Troubleshooting Steps</button>
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Open Device Manager (Check for yellow warning).</li>
+                            <li>Identify Problem Device (Network, Display, Audio).</li>
+                            <li>Solutions: Update, Rollback, Reinstall, or Download from manufacturer website.</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="accordion-item highlight-scenario">
+                    <button class="accordion-header">4.5 Classroom Scenario</button>
+                    <div class="accordion-body">
+                        <p><strong>Problem:</strong> Wi-Fi not working after Windows installation.</p>
+                        <p><strong>Diagnosis:</strong> Network driver missing.</p>
+                        <p><strong>Fix:</strong> Download correct driver from laptop manufacturer site -> Install ->
+                            Restart -> Verify.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">4.6 Prevention</button>
+                    <div class="accordion-body">
+                        <ul>
+                            <li>Always install drivers from official website.</li>
+                            <li>Avoid random driver update software.</li>
+                            <li>Create restore point before updating drivers.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Boot Problems -->
+        <section id="boot" class="section" data-aos="fade-up">
+            <h2 class="section-title">5. Boot Problems</h2>
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>5.1 Types of Boot Problems</h3>
+                    <ul>
+                        <li>No power</li>
+                        <li>No display</li>
+                        <li>Stuck on logo</li>
+                        <li>Automatic restart</li>
+                        <li>"No bootable device found"</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>5.2 No Power Troubleshooting</h3>
+                    <ul>
+                        <li>Check Power cable, Adapter, Power button</li>
+                        <li>Check SMPS, RAM seating</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>5.3 No Display Troubleshooting</h3>
+                    <ul>
+                        <li>Check monitor</li>
+                        <li>Remove and reseat RAM</li>
+                        <li>Reset BIOS (remove CMOS battery)</li>
+                        <li>Test external display (for laptop)</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>5.4 No Bootable Device Error</h3>
+                    <p><strong>Causes:</strong> HDD failure, OS corruption, Wrong BIOS boot order.</p>
+                    <p><strong>Fix:</strong> Check BIOS boot order, Run disk diagnostics, Reinstall OS.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Slow Performance -->
+        <section id="performance" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">6. Slow Performance Issues</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>6.1 Common Causes</h3>
+                    <ul class="tag-list">
+                        <li>Low RAM</li>
+                        <li>Full Storage</li>
+                        <li>Virus</li>
+                        <li>Startup Apps</li>
+                        <li>Old HDD</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>6.2 Troubleshooting</h3>
+                    <ul>
+                        <li>Check Task Manager (CPU, RAM, Disk)</li>
+                        <li>Disable unnecessary startup apps</li>
+                        <li>Scan for malware</li>
+                        <li>Upgrade to SSD & Increase RAM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="scenario-box">
+                <h4>Classroom Scenario</h4>
+                <p><strong>Student complains laptop is slow.</strong> Observation: 100% Disk usage. Cause: Old HDD +
+                    Updates. <strong>Solution:</strong> Upgrade to SSD + Clean install.</p>
+            </div>
+        </section>
+
+        <!-- 7-14 Quick Reference Sections -->
+        <section id="quick-reference" class="section" data-aos="fade-up">
+            <h2 class="section-title">Quick Reference Guides</h2>
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3>7. Overheating</h3>
+                    <p><strong>Causes:</strong> Dust, dried thermal paste, blocked vents.</p>
+                    <p><strong>Fix:</strong> Clean fan, replace thermal paste, cooling pad.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>8. Blue Screen (BSOD)</h3>
+                    <p>Windows crash screen.</p>
+                    <p><strong>Fix:</strong> Note error code, Safe Mode, Memory test, Update drivers, SFC scan.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>9. Network Issues</h3>
+                    <p>Wi-Fi not detected, Slow internet.</p>
+                    <p><strong>Fix:</strong> Check router, Restart modem, Drivers, Flush DNS, Reset network.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>10. Virus & Malware</h3>
+                    <p>Slow system, Popups.</p>
+                    <p><strong>Fix:</strong> Antivirus scan, Remove suspicious software, Reset browser.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>11. BIOS Issues</h3>
+                    <p>Wrong boot order, Date reset.</p>
+                    <p><strong>Fix:</strong> Reset BIOS, Update BIOS, Replace CMOS battery.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>12. Hardware Failure</h3>
+                    <p>Clicking sound, Beeps, Burning smell.</p>
+                    <p><strong>Tools:</strong> Memory Diagnostic, SMART check, BIOS test.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 13 & 14 Advanced & Prevention -->
+        <section id="advanced" class="section glass-card" data-aos="fade-up">
+            <div class="grid-2-col">
+                <div>
+                    <h3>13. Advanced Techniques</h3>
+                    <ul>
+                        <li>Safe Mode boot</li>
+                        <li>System Restore</li>
+                        <li>Event Viewer logs</li>
+                        <li>Command Prompt / Chkdsk</li>
+                        <li>Clean OS installation</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>14. Preventive Maintenance</h3>
+                    <ul>
+                        <li>Regular dust cleaning</li>
+                        <li>Genuine Antivirus</li>
+                        <li>Keep drivers updated</li>
+                        <li>Backup important data</li>
+                        <li>Monitor temperature</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Troubleshooting Guide. Designed for Learning.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

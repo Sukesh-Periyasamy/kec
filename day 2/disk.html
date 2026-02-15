@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Management | Partitions & Volumes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Mastering <span class="gradient-text">Disk Management</span></h1>
+            <p class="hero-subtitle">Partitions, Volumes, and Taking Control of Your Storage.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#basics" class="btn btn-primary">Start Managing 💾</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. Basics -->
+        <section id="basics" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. Seeing Your Drives</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>Method 1: This PC (Basic)</h3>
+                    <p>Press <strong>Win + E</strong> and click "This PC".</p>
+                    <p>You see <strong>Logical Partitions</strong> (C:, D:), not physical disks.</p>
+                </div>
+                <div>
+                    <h3>Method 2: Disk Management (Pro)</h3>
+                    <p>This shows the <strong>Real Structure</strong>.</p>
+                    <p>Right-click Start → <strong>Disk Management</strong>.</p>
+                    <p><em>Or Run (Win+R) → <code>diskmgmt.msc</code></em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Interface -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. Interpreting the Interface</h2>
+
+            <div class="glass-card">
+                <h3>Top Section: Volume List</h3>
+                <p>Shows Drive Letters, File System (NTFS), and Health Status.</p>
+            </div>
+
+            <div class="glass-card" style="margin-top: 2rem;">
+                <h3>Bottom Section: Physical Map (Important)</h3>
+                <div class="grid-2-col">
+                    <div class="highlight-box">
+                        <h4>Disk 0 (SSD) - 512GB</h4>
+                        <ul>
+                            <li>EFI System (Boot)</li>
+                            <li>C: Drive (Windows)</li>
+                            <li>Recovery Partition</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-box" style="border-color: var(--secondary);">
+                        <h4>Disk 1 (HDD) - 1TB</h4>
+                        <ul>
+                            <li>New Volume (D:)</li>
+                            <li>Unallocated Space</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="margin-top: 1rem;"><strong>Unallocated Space:</strong> Empty raw storage waiting to be used.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. SSD vs HDD -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">3. Is it SSD or HDD?</h2>
+            <p>Don't guess. Check it instantly.</p>
+
+            <div class="grid-2-col">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Open Task Manager</h3>
+                    <p>Press <strong>Ctrl + Shift + Esc</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Performance Tab</h3>
+                    <p>Click "Performance" -> "Disk".</p>
+                    <p>It explicitly says <strong>SSD</strong> or <strong>HDD</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Operations -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Managing Partitions</h2>
+
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3 style="color: var(--primary);">Create New</h3>
+                    <p>1. Find <strong>Unallocated Space</strong> (Black).</p>
+                    <p>2. Right-click -> <strong>New Simple Volume</strong>.</p>
+                    <p>3. Follow Wizard -> Finish.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--secondary);">Shrink Volume</h3>
+                    <p>1. Right-click existing drive (e.g., C:).</p>
+                    <p>2. Click <strong>Shrink Volume</strong>.</p>
+                    <p>3. Enter MB (e.g., 50000 = 50GB).</p>
+                    <p>4. Result: New <strong>Unallocated Space</strong>.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--accent);">Extend Volume</h3>
+                    <p>1. Right-click drive to grow.</p>
+                    <p>2. Click <strong>Extend Volume</strong>.</p>
+                    <p>3. Select Unallocated Space.</p>
+                    <p><em>Note: Space must be right next to it!</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Real World Scenario -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">5. Real-World Scenario</h2>
+            <h3>Goal: Split a 512GB C: Drive</h3>
+
+            <div class="cmd-box">
+                1. Open Disk Management.
+                2. Right-click C: (475GB) -> Shrink.
+                3. Enter 102400 (100GB) -> Shrink.
+                -----------------------------------
+                Result:
+                [ C: Windows (375GB) ] [ Unallocated (100GB) ]
+                -----------------------------------
+                4. Right-click Unallocated -> New Simple Volume.
+                5. Assign letter D: -> Finish.
+            </div>
+        </section>
+
+        <!-- 6. Safety -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">⚠️ Critical Safety Rules</h2>
+            <div class="grid-2-col">
+                <div class="glass-card" style="border-color: var(--accent);">
+                    <h3>DO NOT DELETE:</h3>
+                    <ul style="color: var(--accent); font-weight: bold;">
+                        <li>EFI System Partition</li>
+                        <li>Recovery Partition</li>
+                        <li>System Reserved</li>
+                    </ul>
+                    <p>Deleting these will <strong>BREAK WINDOWS BOOT</strong>.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Pro Tip: CMD Mode</h3>
+                    <p>For advanced users, use Command Prompt:</p>
+                    <div class="cmd-box">
+                        diskpart
+                        list disk
+                        list volume
+                        select disk 0
+                        detail disk
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Disk Management Guide. Control your storage.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

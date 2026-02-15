@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering Linux | The Power of Open Source</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .terminal-block {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Fira Code', monospace;
+            color: #d4d4d4;
+            border: 1px solid var(--glass-border);
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        .cmd {
+            color: #ce9178;
+        }
+
+        .arg {
+            color: #9cdcfe;
+        }
+
+        .opt {
+            color: #569cd6;
+        }
+
+        .comment {
+            color: #6a9955;
+        }
+
+        .prompt {
+            color: #4ec9b0;
+        }
+
+        .output {
+            color: #a0a0a0;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .tree-structure {
+            font-family: 'Fira Code', monospace;
+            line-height: 1.8;
+            color: var(--primary);
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Mastering <span class="gradient-text">Linux</span></h1>
+            <p class="hero-subtitle">The Open-Source Operating System that powers the modern web, cloud, and
+                supercomputers.</p>
+            <a href="#intro" class="btn btn-primary">Start Terminal</a>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <!-- 1. What is Linux? -->
+        <section id="intro" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">What is Linux?</h2>
+            <div class="section-content">
+                <p>Linux is an open-source operating system built around a core component called the
+                    <strong>kernel</strong>. It acts as a bridge between the user, software applications, and computer
+                    hardware.
+                </p>
+
+                <h3 style="margin-top: 2rem;">Core Architecture</h3>
+                <div class="grid-3-col">
+                    <div class="glass-card">
+                        <h4 style="color: var(--primary);">1. Kernel</h4>
+                        <p>The heart of Linux. Manages CPU, Memory, Devices, File Systems. Works behind the scenes.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4 style="color: var(--secondary);">2. User Space</h4>
+                        <p>Where programs run: Terminal, File Manager, Browser, Editors.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4 style="color: var(--accent);">3. Distributions</h4>
+                        <p>Kernel + Tools + Desktop. Examples: Ubuntu, Kali, Red Hat.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Terminal & Shell -->
+        <section id="terminal" class="section" data-aos="fade-up">
+            <h2 class="section-title">The Terminal & Shell</h2>
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>What is Terminal?</h3>
+                    <p>A text-based interface to communicate with the OS. Instead of clicking icons, you type
+                        instructions.</p>
+                    <div class="terminal-block">
+                        <span class="prompt">user@system:~$</span> <span class="cmd">whoami</span>
+                    </div>
+                    <ul>
+                        <li><strong style="color: var(--primary);">Faster</strong> and precise.</li>
+                        <li><strong style="color: var(--primary);">Deeper system control</strong>.</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h3>What is a Shell?</h3>
+                    <p>The command interpreter (e.g., <strong>Bash</strong>). It reads commands, executes them, and
+                        displays output.</p>
+                    <div class="highlight-box">
+                        <p>Flow: User types → Shell interprets → Kernel executes → Output displayed.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. File System -->
+        <section id="filesystem" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Linux File System</h2>
+            <p>Linux uses a single tree structure starting from root <code>/</code>.</p>
+            <div class="tree-structure"
+                style="background: rgba(0,0,0,0.3); padding: 2rem; border-radius: 12px; margin-top: 1rem;">
+                /<br>
+                ├── home (User files)<br>
+                ├── bin (Essential commands)<br>
+                ├── etc (Configuration files)<br>
+                ├── var (Logs and data)<br>
+                └── tmp (Temporary files)
+            </div>
+        </section>
+
+        <!-- 4. Commands -->
+        <section id="commands" class="section" data-aos="fade-up">
+            <h2 class="section-title">Command Categories</h2>
+
+            <div class="tabs">
+                <button class="tab-btn active" data-target="cmd-nav">Navigation</button>
+                <button class="tab-btn" data-target="cmd-file">File Mgmt</button>
+                <button class="tab-btn" data-target="cmd-sys">System Info</button>
+            </div>
+
+            <div id="cmd-nav" class="tab-content active glass-card">
+                <h3>Navigation Commands</h3>
+                <div class="terminal-block">
+                    <span class="prompt">user@system:~$</span> <span class="cmd">pwd</span> &nbsp;&nbsp;&nbsp;<span
+                        class="comment"># Print Working Directory</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">ls</span> &nbsp;&nbsp;&nbsp;&nbsp;<span
+                        class="comment"># List files</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">cd</span> <span class="arg">Docs</span>
+                    <span class="comment"># Change Directory</span>
+                </div>
+            </div>
+
+            <div id="cmd-file" class="tab-content glass-card">
+                <h3>File Management</h3>
+                <div class="terminal-block">
+                    <span class="prompt">user@system:~$</span> <span class="cmd">mkdir</span> <span
+                        class="arg">NewFolder</span> <span class="comment"># Make Directory</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">touch</span> <span
+                        class="arg">file.txt</span> &nbsp;<span class="comment"># Create empty file</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">cp</span> <span
+                        class="arg">file.txt</span> <span class="arg">file2.txt</span> <span class="comment">#
+                        Copy</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">rm</span> <span
+                        class="arg">file.txt</span> &nbsp;&nbsp;&nbsp;<span class="comment"># Remove (Delete)</span>
+                </div>
+            </div>
+
+            <div id="cmd-sys" class="tab-content glass-card">
+                <h3>System Info</h3>
+                <div class="terminal-block">
+                    <span class="prompt">user@system:~$</span> <span class="cmd">uname</span> <span
+                        class="opt">-a</span> &nbsp;&nbsp;<span class="comment"># Kernel info</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">top</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Process monitor</span><br>
+                    <span class="prompt">user@system:~$</span> <span class="cmd">df</span> <span class="opt">-h</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment"># Disk space</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Hands-On Tasks -->
+        <section id="tasks" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">🧪 Hands-On Tasks</h2>
+            <p class="section-subtitle">Execute these tasks step-by-step in your terminal.</p>
+
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-header">Task 1: Navigation Practice</button>
+                    <div class="accordion-body">
+                        <div class="terminal-block">
+                            <span class="cmd">pwd</span><br>
+                            <span class="cmd">ls</span><br>
+                            <span class="cmd">cd</span> <span class="arg">Documents</span><br>
+                            <span class="cmd">cd</span> <span class="arg">..</span><br>
+                            <span class="cmd">clear</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Task 2: Create & Manage Files</button>
+                    <div class="accordion-body">
+                        <div class="terminal-block">
+                            <span class="cmd">mkdir</span> <span class="arg">Workshop</span><br>
+                            <span class="cmd">cd</span> <span class="arg">Workshop</span><br>
+                            <span class="cmd">touch</span> <span class="arg">file1.txt file2.txt file3.txt</span><br>
+                            <span class="cmd">ls</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Task 3: Copy & Rename</button>
+                    <div class="accordion-body">
+                        <div class="terminal-block">
+                            <span class="cmd">cp</span> <span class="arg">file1.txt backup.txt</span><br>
+                            <span class="cmd">mv</span> <span class="arg">file2.txt renamed.txt</span><br>
+                            <span class="cmd">ls</span> <span class="opt">-l</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Linux Guide. Validating the core.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

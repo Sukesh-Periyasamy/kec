@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shell Scripting | Automate Linux</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <style>
+        .cmd-box {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            border: 1px solid var(--glass-border);
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        .highlight-green {
+            color: #50fa7b;
+            font-weight: bold;
+        }
+
+        .highlight-blue {
+            color: #8be9fd;
+            font-weight: bold;
+        }
+
+        .highlight-comment {
+            color: #6272a4;
+            font-style: italic;
+        }
+
+        .vertical-section {
+            display: block;
+            margin-bottom: 3rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Shell <span class="gradient-text">Scripting</span></h1>
+            <p class="hero-subtitle">Automate loops, backups, and tasks with simple text files.</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. What is a Shell Script? -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">1. What is a Shell Script?</h2>
+            <p>A shell script is simply a <strong>text file</strong> containing a list of Linux commands.</p>
+            <p>Instead of typing commands one by one, we write them into a file and run everything at once.</p>
+
+            <div class="glass-card" style="margin-top: 2rem;">
+                <h3>Key Features:</h3>
+                <ul>
+                    <li>📄 Usually ends with <code>.sh</code></li>
+                    <li>🤖 Executed by a shell like <strong>Bash</strong></li>
+                    <li>⚡ Used for <strong>Automation</strong> (backups, installs, monitoring)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. The Structure -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. Understanding the Structure</h2>
+            <p>Every script starts with a special line called the <strong>Shebang</strong>.</p>
+
+            <div class="cmd-box">
+                <span class="highlight-comment">#!/bin/bash</span>
+                <span class="highlight-blue">echo</span> "Hello Workshop"
+            </div>
+
+            <h3>Breakdown:</h3>
+            <ul>
+                <li><code>#!/bin/bash</code> → Tells Linux to use the <strong>Bash</strong> interpreter.</li>
+                <li><code>echo "..."</code> → Prints text to the terminal screen.</li>
+            </ul>
+        </section>
+
+        <!-- 3. Permissions -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">3. Making it Executable</h2>
+            <p>By default, Linux prevents files from running as programs for security.</p>
+            <p>You MUST give <strong>Execute Permission</strong> before running a script.</p>
+
+            <div class="cmd-box">
+                chmod +x script.sh
+            </div>
+            <p><code>chmod</code> = Change Mode<br><code>+x</code> = Add Execute permission</p>
+        </section>
+
+        <!-- 4. Hands-On Activity -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Step-by-Step Activity</h2>
+
+            <h3>Step 1: Create the File</h3>
+            <p>Open your terminal editor:</p>
+            <div class="cmd-box">nano script.sh</div>
+
+            <h3>Step 2: Add Content</h3>
+            <p>Type this inside the editor:</p>
+            <div class="cmd-box">
+                #!/bin/bash
+                echo "Hello Workshop"
+            </div>
+            <p>Save & Exit: Press <strong>CTRL+O</strong> (Enter) then <strong>CTRL+X</strong>.</p>
+
+            <h3>Step 3: Make Executable</h3>
+            <div class="cmd-box">chmod +x script.sh</div>
+
+            <h3>Step 4: Run It</h3>
+            <p>Use <code>./</code> to run from current directory:</p>
+            <div class="cmd-box">./script.sh</div>
+
+            <p><strong>Output:</strong></p>
+            <div class="highlight-box">Hello Workshop</div>
+        </section>
+
+        <!-- 5. Real World Example -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">5. Real-World Power</h2>
+            <p>Scripts can combine multiple commands to give you instant system reports.</p>
+
+            <div class="cmd-box">
+                <span class="highlight-comment">#!/bin/bash</span>
+                echo "User: $USER"
+                date
+                uptime
+            </div>
+            <p>This single script prints who you are, the current time, and how long the computer has been on.</p>
+        </section>
+
+        <!-- 6. Student Tasks -->
+        <section class="vertical-section" data-aos="fade-up">
+            <h2 class="section-title">🧪 Student Tasks</h2>
+
+            <div class="glass-card" style="margin-bottom: 2rem;">
+                <h3>Task 1: Personal Greeting</h3>
+                <p>Modify <code>script.sh</code> to print:</p>
+                <div class="cmd-box">
+                    #!/bin/bash
+                    echo "Welcome to Linux Workshop"
+                    echo "Today we learn Shell Scripting"
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3>Task 2: System Info Script</h3>
+                <p>1. Create <code>info.sh</code><br>2. Add the following code:</p>
+                <div class="cmd-box">
+                    #!/bin/bash
+                    echo "Current User:"
+                    whoami
+
+                    echo "Current Directory:"
+                    pwd
+
+                    echo "Current Date:"
+                    date
+                </div>
+                <p>3. Remember to <code>chmod +x info.sh</code> before running!</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Shell Scripting. Automate everything.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

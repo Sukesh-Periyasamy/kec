@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS Installation | Flashing & Setup</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">OS Installation <span class="gradient-text">Masterclass</span></h1>
+            <p class="hero-subtitle">Flashing, Booting, and Installing from Scratch. The ultimate skill for any
+                technician.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#requirements" class="btn btn-primary">Start Guide 🚀</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. What is OS Installation? -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. What is OS Installation?</h2>
+            <p>Installing or <strong>flashing</strong> an Operating System (OS) means replacing the main software that
+                controls the computer hardware.</p>
+            <div class="grid-2-col">
+                <div>
+                    <h3>Why Reinstall?</h3>
+                    <ul style="list-style: none;">
+                        <li>🚀 <strong>Performance:</strong> Fix sluggishness.</li>
+                        <li>🦠 <strong>Security:</strong> Remove deep malware.</li>
+                        <li>🆕 <strong>Upgrade:</strong> Move from Win10 to Win11.</li>
+                        <li>🐧 <strong>Learning:</strong> Switch to Linux.</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Common Scenarios</h3>
+                    <ul style="list-style: none;">
+                        <li>💻 Buying a DOS/No-OS Laptop.</li>
+                        <li>☠️ Recovering from a crashed system.</li>
+                        <li>🛠️ Repurposing old hardware for servers.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Types of OS -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. Types of Operating Systems</h2>
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3 style="color: var(--primary);">Windows</h3>
+                    <p><strong>Versions:</strong> 10, 11, Server.</p>
+                    <p><strong>Best for:</strong> Gaming, MS Office, Adobe, General Use.</p>
+                    <p><em>Download from Microsoft Official Site.</em></p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--secondary);">Linux</h3>
+                    <p><strong>Distros:</strong> Ubuntu, Kali, Mint, Fedora.</p>
+                    <p><strong>Best for:</strong> Coding, Hacking, Servers, Old PCs.</p>
+                    <p><em>Download from Official Distro Sites.</em></p>
+                </div>
+                <div class="glass-card">
+                    <h3 style="color: var(--accent);">Others</h3>
+                    <p><strong>ChromeOS Flex:</strong> Cloud-based.</p>
+                    <p><strong>Hackintosh:</strong> macOS on non-Apple PC (Hard).</p>
+                    <p><strong>BSD:</strong> Advanced networking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Requirements -->
+        <section id="requirements" class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">3. Prerequisites</h2>
+            <div class="grid-2-col">
+                <div>
+                    <h3>Hardware</h3>
+                    <ul>
+                        <li><strong>USB Drive:</strong> 8GB+ (Linux), 16GB+ (Windows).</li>
+                        <li><strong>Working PC:</strong> To download files.</li>
+                        <li><strong>Power:</strong> Plug in laptop charger!</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Data</h3>
+                    <ul>
+                        <li><strong>⚠️ BACKUP:</strong> Installation can wipe drives.</li>
+                        <li><strong>Internet:</strong> Stable connection for 5GB+ downloads.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 & 5. ISO & Downloading -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Downloading the ISO</h2>
+            <p>An <strong>ISO file</strong> is a digital image of the installation disk. You don't just copy it to USB;
+                you must <strong>flash</strong> it.</p>
+
+            <div class="grid-2-col" style="margin-top: 2rem;">
+                <div class="glass-card">
+                    <h3>For Windows</h3>
+                    <p>1. Go to Microsoft Download page.</p>
+                    <p>2. Download <strong>Media Creation Tool</strong>.</p>
+                    <p>3. It automatically downloads & flashes USB.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>For Linux</h3>
+                    <p>1. Go to Ubuntu/Kali website.</p>
+                    <p>2. Download the <strong>.ISO file</strong>.</p>
+                    <p>3. Use <strong>Rufus</strong> to flash it.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Flashing with Rufus -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">5. Flashing with Rufus (The Tool)</h2>
+            <p>Rufus is the industry standard for creating bootable USBs.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Select Device</h3>
+                    <p>Plug in your USB and select it in Rufus.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Select Boot</h3>
+                    <p>Click "SELECT" and find your downloaded .ISO file.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Partition Scheme</h3>
+                    <p><strong>GPT</strong> for UEFI (Modern).</p>
+                    <p><strong>MBR</strong> for Legacy BIOS (Old).</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">4</span>
+                    <h3>Start</h3>
+                    <p>Click START. Warning: USB data will be erased.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Booting -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">6. Booting from USB</h2>
+            <p>Computers boot from Hard Disk by default. We must change this.</p>
+
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>Method A: Boot Menu</h3>
+                    <p>Tap <strong>F12 / ESC / F10 / F9</strong> immediately after power on.</p>
+                    <p>Select your USB Name from the list.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Method B: BIOS Setup</h3>
+                    <p>Enter BIOS (F2/Del). Go to <strong>Boot</strong> tab.</p>
+                    <p>Move USB to <strong>Priority #1</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Installation Process -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">7. The Installation 🛠️</h2>
+
+            <div class="grid-2-col">
+                <div>
+                    <h3>Windows Steps</h3>
+                    <ol style="padding-left: 1.5rem; line-height: 2;">
+                        <li>Click "Install Now".</li>
+                        <li>Select "I don't have a product key".</li>
+                        <li>Choose Edition (e.g., Win 11 Pro).</li>
+                        <li><strong>Select Custom Install.</strong></li>
+                        <li>Delete old partitions (Clean Install).</li>
+                        <li>Select Unallocated Space -> Next.</li>
+                    </ol>
+                </div>
+                <div>
+                    <h3>Linux Steps</h3>
+                    <ol style="padding-left: 1.5rem; line-height: 2;">
+                        <li>Select "Try or Install".</li>
+                        <li>Choose "Erase disk" (Clean) OR "Install alongside" (Dual Boot).</li>
+                        <li>Create Username/Password.</li>
+                        <li>Wait for file copying.</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Post Install -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">8. Essential Post-Install Tasks</h2>
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3>1. Drivers</h3>
+                    <p>Video, WiFi, Audio. Download from Laptop Manufacturer site.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>2. Updates</h3>
+                    <p>Run Windows Update or <code>sudo apt update</code>.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>3. Ninite</h3>
+                    <p>Use Ninite.com to install Chrome, VLC, Zoom in one go.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Advanced -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">Advanced Concepts</h2>
+            <div class="grid-2-col">
+                <div class="highlight-box">
+                    <h3>BIOS vs UEFI</h3>
+                    <p><strong>BIOS (Legacy):</strong> Old, uses MBR. 2TB limit.</p>
+                    <p><strong>UEFI:</strong> Modern, uses GPT. Secure Boot. Faster.</p>
+                </div>
+                <div class="highlight-box">
+                    <h3>Partitions</h3>
+                    <p><strong>EFI:</strong> Boot files.</p>
+                    <p><strong>Recovery:</strong> Repair tools.</p>
+                    <p><strong>Primary:</strong> Your C: Drive.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 OS Installation Guide. Build it from scratch.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,530 @@
+--- SLIDE 1 ---
+Operating Systems & Virtualization
+Install, Understand & Control Your OS
+Day 2: Hands-on Windows 11 Installation in Virtual Machine
+🖥️
+Understand OS
+🏗️
+Architecture
+☁️
+Virtualization
+💿
+Install Win11
+🔧
+Troubleshoot
+Goal:
+50% Concept + 50% Practical
+
+==============================
+
+--- SLIDE 2 ---
+Learning Objectives
+By the end of today, you will:
+✅ Understand what an Operating System does
+✅ Understand OS architecture (Kernel vs User)
+✅ Learn virtualization concepts (Hypervisors)
+✅ Install Windows 11 in VirtualBox (Hands-on)
+✅ Configure & troubleshoot a Virtual Machine
+
+==============================
+
+--- SLIDE 3 ---
+What Happens When You Press Power?
+1
+BIOS/UEFI
+➡️
+2
+Bootloader
+➡️
+3
+Kernel
+➡️
+4
+Drivers
+➡️
+5
+Login
+🤔 Think:
+Does Windows load first or BIOS?
+
+==============================
+
+--- SLIDE 4 ---
+What is an Operating System?
+OS
+= Bridge between User & Hardware
+👉 Manages hardware & software resources
+👉 Provides User Interface (UI) for you
+Examples:
+Windows, Linux, macOS, Android, iOS
+
+==============================
+
+--- SLIDE 5 ---
+Core Responsibilities of OS
+Process Management:
+Running and scheduling programs
+Memory Management:
+Allocating and managing RAM
+File System:
+Organizing and storing data
+Device Drivers:
+Communicating with hardware
+Security:
+Managing user accounts and permissions
+
+==============================
+
+--- SLIDE 6 ---
+Without an OS?
+❌ No application can run
+❌ No memory management possible
+❌ No file access or storage
+❌ No intuitive user interface
+OS is
+mandatory
+for system
+operation.
+
+==============================
+
+--- SLIDE 7 ---
+OS Architecture Overview
+👤 User
+⬇️
+📱 Applications (Browser, Games)
+⬇️
+📞 System Calls (API)
+⬇️
+🧠 Kernel (The Core)
+⬇️
+💻 Hardware (CPU, RAM)
+
+==============================
+
+--- SLIDE 8 ---
+Kernel vs User Mode
+User Mode
+Applications run here
+Limited hardware access
+Safe:
+Crash = App closes
+VS
+Kernel Mode
+Full hardware access
+Core system control
+Critical:
+Crash = Blue Screen
+Why separation?
+→ To ensure Security & Stability.
+
+==============================
+
+--- SLIDE 9 ---
+What is Virtualization?
+Virtualization
+= Running multiple Operating Systems on one
+physical machine simultaneously.
+Example setup:
+One Physical Laptop →
+Windows (Host)
++
+Linux (Guest)
++
+Kali (Guest)
+
+==============================
+
+--- SLIDE 10 ---
+What is a Hypervisor?
+Hypervisor
+= Software that creates & manages Virtual
+Machines.
+Allocates CPU, RAM, & Disk space
+Controls VM execution like a conductor
+Type 1 (Bare Metal)
+Runs directly on hardware.
+Used in Enterprise Severs.
+Type 2 (Hosted)
+Runs as an app on OS.
+VirtualBox
+, VMware Workstation.
+
+==============================
+
+--- SLIDE 11 ---
+Why Industry Uses Virtualization
+☁️ Cloud Computing
+Powering AWS, Azure, GCP
+🧪 Safe Testing
+Sandbox for new apps
+🚀 DevOps
+Consistent CI/CD pipelines
+🔒 Cybersecurity
+Malware analysis labs
+📉 Efficiency
+Run 10 servers on 1 machine
+
+==============================
+
+--- SLIDE 12 ---
+Virtual Machine Components
+A VM is made of software-emulated hardware:
+🧠
+vCPU
+Virtual Processor
+💾
+vRAM
+Virtual Memory
+💿
+vDisk
+Virtual Hard Drive
+🌐
+vNIC
+Virtual Network Card
+
+==============================
+
+--- SLIDE 13 ---
+System Requirements for Lab
+Minimum
+8GB RAM
+100GB Free Storage
+Two-Core CPU
+Virtualization Enabled
+Recommended
+16GB RAM
+SSD Storage (Faster)
+Quad-Core CPU
+Dedicated Graphics
+
+==============================
+
+--- SLIDE 14 ---
+Step 0: Enable Virtualization
+1️⃣ Check Task Manager
+Performance → CPU → "Virtualization: Enabled"
+2️⃣ If Disabled: Enter BIOS
+Intel:
+Enable "Intel VT-x"
+AMD:
+Enable "SVM Mode"
+Restart your computer to access BIOS (usually F2, F10, or Del key).
+
+==============================
+
+--- SLIDE 15 ---
+Step 1: Install VirtualBox
+Download
+➡️
+Run Installer
+➡️
+Allow Drivers
+➡️
+Finish
+Keep default settings. Say "Yes" to network interfaces warning.
+
+==============================
+
+--- SLIDE 16 ---
+VirtualBox Interface Overview
+✨
+New:
+Create a fresh VM
+⚙️
+Settings:
+Configure Hardware
+💾
+Storage:
+Manage ISO/Disks
+▶️
+Start:
+Power on the VM
+
+==============================
+
+--- SLIDE 17 ---
+Step 2: Create New VM
+Click "New" and configure:
+Name:
+Windows 11 Lab
+Type:
+Microsoft Windows
+Version:
+Windows 11 (64-bit)
+If "64-bit" is missing, your BIOS Virtualization is OFF.
+
+==============================
+
+--- SLIDE 18 ---
+Step 3: Allocating RAM
+Minimum Safe
+4096 MB (4 GB)
+Recommended
+8192 MB (8 GB)
+Golden Rule:
+Never allocate more than 50% of your host PC's total RAM. Green zone
+only!
+
+==============================
+
+--- SLIDE 19 ---
+Step 4: Allocating CPU
+Minimum
+2 Cores
+Smoother
+4 Cores
+More cores = Faster installation and smoother performance.
+
+==============================
+
+--- SLIDE 20 ---
+Step 5: Virtual Disk
+File Type:
+VDI (VirtualBox Disk Image)
+Storage Strategy:
+Dynamically Allocated
+Size:
+80 GB (Don't worry, it grows as needed)
+Dynamic vs Fixed:
+Dynamic starts small and grows. Fixed takes all space immediately
+but is slightly faster. We use Dynamic.
+
+==============================
+
+--- SLIDE 21 ---
+Step 6: Attach ISO File
+Settings
+➡️
+Storage
+➡️
+Empty Install CD
+➡️
+Select ISO File
+Think of the ISO as a digital DVD you are
+inserting into the VM.
+
+==============================
+
+--- SLIDE 22 ---
+Step 7: Installation
+Start VM
+➡️
+Press Key
+➡️
+Language
+➡️
+Install Now
+➡️
+Custom Install
+Select "Custom: Install Windows Only" when asked.
+
+==============================
+
+--- SLIDE 23 ---
+⚠️ The "Can't Run Windows 11" Error
+"This PC can’t run Windows 11"
+The Reason:
+Windows 11 requires a security chip called
+TPM 2.0
+and
+Secure Boot
+, which our generic VM doesn't have yet.
+Don't panic! We will bypass this like hackers. 🕵️‍♂️
+
+==============================
+
+--- SLIDE 24 ---
+Step 8: TPM Bypass (The Hack)
+Press
+Shift + F10
+to open CMD
+⬇️
+Type
+regedit
+and hit Enter
+⬇️
+Go to:
+HKEY_LOCAL_MACHINE\SYSTEM\Setup
+⬇️
+New Key: Name it
+LabConfig
+⬇️
+New DWORDs:
+BypassTPMCheck=1
+BypassSecureBootCheck=1
+
+==============================
+
+--- SLIDE 25 ---
+Installation Complete! 🎉
+After restarts, you will setup:
+🌍
+Region & Keyboard
+👤
+User Account
+🖼️
+Welcome Desktop
+
+==============================
+
+--- SLIDE 26 ---
+Step 9: Guest Additions
+Crucial Step!
+This installs the drivers for the VM.
+✅ Full Screen Resolution
+✅ Drag & Drop Files
+✅ Shared Clipboard (Copy/Paste)
+✅ Smooth Mouse Movement
+Menu → Devices → "Insert Guest Additions CD Image" → Run installer in VM.
+
+==============================
+
+--- SLIDE 27 ---
+Network Modes Explained
+NAT
+Default & Safe.
+VM shares host's IP address. Good for browsing.
+Bridged Adapter
+Advanced.
+VM gets its own IP from router. Best for servers.
+Host-Only
+Isolated.
+Only talks to Host. No Internet. For analysis.
+
+==============================
+
+--- SLIDE 28 ---
+📸 Snapshot Feature
+Snapshot
+= A "Save Game" for your Computer.
+It records the exact state of the VM (Disk + RAM).
+When to use Snapshots?
+⚠️ Before installing unknown software
+⚠️ Before editing system registry
+⚠️ To create a clean "base state" for labs
+
+==============================
+
+--- SLIDE 29 ---
+Common Errors & Fixes
+⚠️ Missing 64-bit
+Cause:
+Virtualization disabled in BIOS.
+Fix: Enable VT-x / SVM
+⛔ Black Screen
+Cause:
+Low video memory or 3D acceleration bug.
+Fix: Increase Video Memory
+🐢 Slow VM
+Cause:
+1 Core / Low RAM assigned.
+Fix: Give 2+ Cores & 8GB RAM
+🌐 No Internet
+Cause:
+Network adapter misconfigured.
+Fix: Switch to NAT or Bridged
+
+==============================
+
+--- SLIDE 30 ---
+Troubleshooting Cheat Sheet
+Problem
+Missing 64-bit option
+Black Screen on boot
+Extremely Slow UI
+No network connection
+Solution
+Enable BIOS Virtualization
+Increase Video Memory
+Increase RAM & Cores
+Switch Network to NAT
+
+==============================
+
+--- SLIDE 31 ---
+Industry Connection
+Virtualization is the backbone of the Internet.
+☁️
+AWS EC2
+Cloud Servers
+🟦
+Azure VMs
+Enterprise Cloud
+🐳
+Docker
+Containerization
+🛠️
+CI/CD
+Automated Testing
+
+==============================
+
+--- SLIDE 32 ---
+End of Day Recap
+✅
+OS Fundamentals
+✅
+Hypervisors
+✅
+Installed Win11
+✅
+Troubleshooting
+Ready for the Quiz?
+
+==============================
+
+--- SLIDE 33 ---
+🧠 Quick Quiz: Hypervisor
+What software manages and runs Virtual Machines?
+A) Kernel
+B) Hypervisor
+C) Bootloader
+D) Device Driver
+Reveal Answer
+✅ (B) Hypervisor
+A hypervisor (like VirtualBox) acts as the platform that creates and
+runs virtual machines on top of the physical hardware.
+
+==============================
+
+--- SLIDE 34 ---
+🧠 Quick Quiz: Kernel Mode
+Which mode provides full, unrestricted access to hardware?
+A) User Mode
+B) Safe Mode
+C) Kernel Mode
+D) Dark Mode
+Reveal Answer
+✅ (C) Kernel Mode
+Kernel Mode is the privileged ring of the CPU where the OS core runs.
+Restricting apps to User Mode prevents them from crashing the whole system.
+
+==============================
+
+--- SLIDE 35 ---
+🧠 Quick Quiz: Snapshots
+Why is taking a Snapshot important?
+A) Takes a photo of you
+B) Speeds up the Internet
+C) Saves exact system state
+Reveal Answer
+✅ (C) Saves exact system state
+Snapshots are your "Undo" button. They allow you to revert the VM back
+to a previous healthy state if an installation fails.
+
+==============================
+
+--- SLIDE 36 ---
+🧠 Quick Quiz: Network Modes
+Which network mode gives the VM its own unique IP from the router?
+A) NAT
+B) Bridged Adapter
+C) Host-Only
+Reveal Answer
+✅ (B) Bridged Adapter
+Bridged mode connects the VM directly to your physical network, making
+it look like a distinct device separate from your host computer.
+
+==============================
+

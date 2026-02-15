@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Lab | KEC Workshop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Ambient Background -->
+    <div class="bg-blur-container">
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+        <div class="bg-shape shape-3"></div>
+    </div>
+
+    <!-- Back to Dashboard -->
+    <nav class="top-nav">
+        <a href="day2.html" class="about-btn-modern" style="padding-left: 1.2rem;">
+            <i class="fas fa-arrow-left"></i>
+            <span>Back to Dashboard</span>
+        </a>
+    </nav>
+
+    <div class="dashboard-container">
+        <header class="dashboard-header reveal">
+            <span class="badge">Module 02</span>
+            <h1 class="dashboard-title">Troubleshooting Lab</h1>
+            <p class="dashboard-subtitle">Master the art of diagnosing and fixing hardware & software issues.</p>
+        </header>
+
+        <!-- 1. Introduction & Methodology -->
+        <section class="reveal" style="margin-bottom: 4rem;">
+            <div class="content-card">
+                <h2 style="color: var(--primary);"><i class="fas fa-stethoscope"></i> What is Troubleshooting?</h2>
+                <p>Troubleshooting is a <strong>systematic process</strong> of identifying, diagnosing, and resolving
+                    computer problems. It is NOT guessing. It is a logical approach.</p>
+
+                <h3 style="margin-top: 2rem;">The 6-Step Methodology (Memorize This!)</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>1. Identify</h4>
+                        <p>Ask user, Observe symptoms, Check errors.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>2. Theory</h4>
+                        <p>Hardware or Software? Recent changes? Overheating?</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>3. Test</h4>
+                        <p>Diagnostics, Safe Mode, Swamp components.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>4. Plan & Fix</h4>
+                        <p>Repair, Replace, Update, Reinstall.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>5. Verify</h4>
+                        <p>Restart, Test app, Stress test.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>6. Document</h4>
+                        <p>Write down the problem, cause, and fix.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Hardware Components Recap -->
+        <section class="reveal" style="margin-bottom: 4rem;">
+            <div class="section-header">
+                <h2 class="section-title">Hardware Failure Symptoms</h2>
+            </div>
+            <div class="comparison-grid">
+                <div class="comparison-card" style="border-top: 3px solid #ef4444;">
+                    <h3>CPU</h3>
+                    <p>Overheating causes random shutdowns.</p>
+                </div>
+                <div class="comparison-card" style="border-top: 3px solid #f093fb;">
+                    <h3>RAM</h3>
+                    <p>Faulty RAM causes Blue Screens (BSOD) & Crashes.</p>
+                </div>
+                <div class="comparison-card" style="border-top: 3px solid #3b82f6;">
+                    <h3>Storage</h3>
+                    <p>Bad sectors cause slow boot & freezing.</p>
+                </div>
+                <div class="comparison-card" style="border-top: 3px solid #f59e0b;">
+                    <h3>PSU</h3>
+                    <p>Fault causes No Power or Random Restarts.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Drivers: The Bridge -->
+        <section class="reveal" style="margin-bottom: 4rem;">
+            <div class="content-card">
+                <h2 style="color: #10b981;"><i class="fas fa-id-card"></i> Drivers: The Hidden Culprit</h2>
+                <p>A driver is software that lets the OS talk to Hardware. Without it, hardware is useless.</p>
+
+                <div class="comparison-grid" style="margin-top: 2rem;">
+                    <div class="comparison-card">
+                        <h3>Symptoms</h3>
+                        <ul class="big-list">
+                            <li>Wi-Fi not showing</li>
+                            <li>No Sound</li>
+                            <li>Low Res Display</li>
+                            <li>⚠️ Yellow Bang in Device Manager</li>
+                        </ul>
+                    </div>
+                    <div class="comparison-card">
+                        <h3>The Fix</h3>
+                        <ol class="big-list" style="list-style-type: decimal; padding-left: 1.5rem;">
+                            <li>Open <strong>Device Manager</strong></li>
+                            <li>Find device with ⚠️ warning</li>
+                            <li>Right click -> Update / Rollback</li>
+                            <li><strong>Best:</strong> Download from Manufacturer Site</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="callout tip" style="margin-top: 1rem;">
+                    <strong>Scenario:</strong> Wi-Fi missing after format? -> Download Network Driver from laptop
+                    support page on another PC and install via USB.
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Common Problems Grid -->
+        <section class="reveal">
+            <div class="section-header">
+                <h2 class="section-title">Common Problems & Solutions</h2>
+            </div>
+
+            <!-- Boot Problems -->
+            <div class="content-card" style="margin-bottom: 2rem;">
+                <h3><i class="fas fa-power-off"></i> Boot Problems</h3>
+                <ul class="big-list">
+                    <li><strong>No Power:</strong> Check Cable, Adapter, RAM seating.</li>
+                    <li><strong>No Display:</strong> Check Monitor, Reseat RAM, Reset BIOS (CMOS Battery).</li>
+                    <li><strong>No Boot Device:</strong> Hard disk fail, OS Corrupt, Wrong Boot Order in BIOS.</li>
+                </ul>
+            </div>
+
+            <!-- Slow Performance -->
+            <div class="content-card" style="margin-bottom: 2rem;">
+                <h3><i class="fas fa-tachometer-alt"></i> Slow Performance</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>Causes</h4>
+                        <p>HDD (Old), Low RAM, Startup Apps, Malware.</p>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>Fixes</h4>
+                        <p>Upgrade to SSD (Best fix), Add RAM, Disable Startup Apps, Clean Install Windows.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Overheating -->
+            <div class="content-card" style="margin-bottom: 2rem;">
+                <h3><i class="fas fa-thermometer-half"></i> Overheating</h3>
+                <p><strong>Symptoms:</strong> Fan noise, Lag, Shutdown.</p>
+                <p><strong>Fix:</strong> Clean dust in fans, Replace Thermal Paste, Use Cooling Pad.</p>
+            </div>
+
+            <!-- BSOD -->
+            <div class="content-card" style="margin-bottom: 2rem; border-left: 4px solid #3b82f6;">
+                <h3><i class="fas fa-desktop"></i> Blue Screen of Death (BSOD)</h3>
+                <p>Windows crash screen. <strong>Common Causes:</strong> RAM fault, Driver conflict, Corrupt OS.</p>
+                <p><strong>Fix:</strong> Note Error Code -> Safe Mode -> SFC Scan -> Driver Rollback.</p>
+            </div>
+
+            <!-- Network & Virus -->
+            <div class="comparison-grid">
+                <div class="content-card">
+                    <h3><i class="fas fa-wifi"></i> Network Issues</h3>
+                    <ul class="big-list">
+                        <li>Restart Modem</li>
+                        <li>Check Drivers</li>
+                        <li>Flush DNS</li>
+                    </ul>
+                </div>
+                <div class="content-card">
+                    <h3><i class="fas fa-bug"></i> Virus / Malware</h3>
+                    <ul class="big-list">
+                        <li>Popups? Slow?</li>
+                        <li>Run Antivirus</li>
+                        <li>Reset Browser</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Advanced & Preventive -->
+        <section class="reveal" style="margin-top: 4rem;">
+            <div class="content-card">
+                <h2 style="color: #f59e0b;"><i class="fas fa-tools"></i> Advanced & Preventive</h2>
+
+                <h3 style="margin-top: 1.5rem;">Advanced Tools</h3>
+                <ul class="big-list">
+                    <li><strong>Safe Mode:</strong> Loads OS with minimal drivers.</li>
+                    <li><strong>Event Viewer:</strong> System logs for errors.</li>
+                    <li><strong>CHKDSK:</strong> Checks disk health.</li>
+                </ul>
+
+                <h3 style="margin-top: 1.5rem;">Preventive Maintenance (Best Practices)</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <p>✅ Regular Dust Cleaning</p>
+                    </div>
+                    <div class="comparison-card">
+                        <p>✅ Keep Drivers Updated</p>
+                    </div>
+                    <div class="comparison-card">
+                        <p>✅ Backup Important Data</p>
+                    </div>
+                    <div class="comparison-card">
+                        <p>✅ Monitor Temperatures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 4rem;">
+            <a href="day2.html" class="btn-main primary">
+                Back to Dashboard <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <script src="js/home.js"></script>
+</body>
+
+</html>

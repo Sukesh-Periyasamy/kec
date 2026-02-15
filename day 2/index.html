@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC Workshop Day 2 | Index</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg-dark: #f8f9fa;
+            --glass-bg: rgba(255, 255, 255, 0.9);
+            --glass-border: rgba(0, 0, 0, 0.1);
+            --text-main: #212529;
+            --text-muted: #6c757d;
+            --card-hover: rgba(0, 0, 0, 0.05);
+            --primary: #0d6efd;
+            --secondary: #6610f2;
+            --accent: #d63384;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+        }
+
+        .background-globes {
+            opacity: 0.1;
+            filter: invert(1);
+        }
+
+        .hero-title {
+            color: #212529;
+            text-shadow: none;
+        }
+
+        .hero-subtitle {
+            color: #6c757d;
+        }
+
+        .index-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .index-table th,
+        .index-table td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .index-table th {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(255, 255, 255, 0.03);
+            font-size: 1.1rem;
+        }
+
+        .index-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .index-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .index-link {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .index-link:hover {
+            color: var(--primary);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .tag-blue {
+            background: rgba(0, 242, 255, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(0, 242, 255, 0.2);
+        }
+
+        .tag-purple {
+            background: rgba(112, 0, 255, 0.1);
+            color: var(--secondary);
+            border: 1px solid rgba(112, 0, 255, 0.2);
+        }
+
+        .tag-pink {
+            background: rgba(255, 0, 85, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(255, 0, 85, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <header class="hero" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="container hero-content">
+            <h1 class="hero-title">KEC Workshop <span class="gradient-text">Day 2</span></h1>
+            <p class="hero-subtitle">Central Navigation Hub for all workshop materials.</p>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <table class="index-table">
+            <thead>
+                <tr>
+                    <th>Page Name</th>
+                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="troubleshooting.html" class="index-link">Troubleshooting Guide</a></td>
+                    <td>Methodology, Hardware components, and Drivers.</td>
+                    <td><span class="tag tag-blue">Basics</span></td>
+                    <td><a href="troubleshooting.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="bios.html" class="index-link">BIOS & Boot</a></td>
+                    <td>BIOS vs UEFI, Boot Keys, and CMOS Battery.</td>
+                    <td><span class="tag tag-blue">Hardware</span></td>
+                    <td><a href="bios.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="windowsvslinux.html" class="index-link">Windows vs Linux</a></td>
+                    <td>Comparison of architecture, kernel, and use cases.</td>
+                    <td><span class="tag tag-purple">OS</span></td>
+                    <td><a href="windowsvslinux.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="linux.html" class="index-link">Linux Fundamentals</a></td>
+                    <td>Architecture, Terminal, File System, and Commands.</td>
+                    <td><span class="tag tag-purple">Linux</span></td>
+                    <td><a href="linux.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="day2.html" class="index-link">Day 2: OS & Virt</a></td>
+                    <td>OS Concepts, Virtualization, and Lab Setup.</td>
+                    <td><span class="tag tag-blue">Workshop</span></td>
+                    <td><a href="day2.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="chmod.html" class="index-link">File Permissions (chmod)</a></td>
+                    <td>Understanding Read, Write, Execute permissions.</td>
+                    <td><span class="tag tag-purple">Linux</span></td>
+                    <td><a href="chmod.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="script.html" class="index-link">Shell Scripting</a></td>
+                    <td>Basics of Bash scripting and automation.</td>
+                    <td><span class="tag tag-purple">Coding</span></td>
+                    <td><a href="script.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="winos.html" class="index-link">Win OS Installation</a></td>
+                    <td>Flashing ISOs, Rufus, and Installing Windows/Linux.</td>
+                    <td><span class="tag tag-pink">Practical</span></td>
+                    <td><a href="winos.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="disk.html" class="index-link">Disk Management</a></td>
+                    <td>Partitions, shrinking volumes, and SSD identification.</td>
+                    <td><span class="tag tag-pink">Practical</span></td>
+                    <td><a href="disk.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="virtualization.html" class="index-link">Virtualization</a></td>
+                    <td>Hypervisors, VMs, and VirtualBox setup.</td>
+                    <td><span class="tag tag-pink">Practical</span></td>
+                    <td><a href="virtualization.html" class="btn-text">Open →</a></td>
+                </tr>
+                <tr>
+                    <td><a href="vmkali.html" class="index-link">Kali Pre-Built VM</a></td>
+                    <td>Specific guide for importing Kali Linux VMs.</td>
+                    <td><span class="tag tag-pink">Hacking</span></td>
+                    <td><a href="vmkali.html" class="btn-text">Open →</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 KEC Workshop Day 2. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

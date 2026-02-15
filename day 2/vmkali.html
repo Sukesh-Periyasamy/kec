@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kali Pre-Built VM | Instant Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div style="position: absolute; top: 20px; left: 20px; z-index: 1000;">
+        <a href="index.html" class="btn btn-primary"
+            style="padding: 0.5rem 1rem; font-size: 0.9rem; text-decoration: none;">← Back to Index</a>
+    </div>
+
+    <header class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Kali Pre-Built <span class="gradient-text">Instant Lab</span></h1>
+            <p class="hero-subtitle">Download. Import. Hack. The fastest way to start with Kali Linux.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
+                <a href="#download" class="btn btn-primary">Get Started ⚡</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container main-content">
+
+        <!-- 1. What is Pre-Built? -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">1. What is a Pre-Built VM?</h2>
+            <p>It's a fully installed Kali Linux system packaged into a single file. No installation required.</p>
+            <div class="grid-2-col">
+                <div class="highlight-box">
+                    <h3>Old Way (ISO)</h3>
+                    <p>Create VM -> Install OS -> Partition Disk -> Wait 40 mins -> Install Tools.</p>
+                </div>
+                <div class="highlight-box" style="border-color: var(--primary);">
+                    <h3>New Way (Pre-Built)</h3>
+                    <p>Download -> Import -> <strong>Ready in 5 mins</strong>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Download -->
+        <section id="download" class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">2. Downloading the Image</h2>
+
+            <div class="grid-2-col">
+                <div class="glass-card">
+                    <h3>Step 1: Official Site</h3>
+                    <p>Go to <a href="https://www.kali.org/get-kali/" target="_blank"
+                            style="color: var(--primary);">kali.org/get-kali/</a>.</p>
+                    <p>Scroll to <strong>"Virtual Machines"</strong> (Wait for it to load).</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Step 2: Choose Platform</h3>
+                    <p><strong>VirtualBox:</strong> If using Oracle VirtualBox.</p>
+                    <p><strong>VMware:</strong> If using VMware Workstation.</p>
+                    <p><em>Always select 64-bit! (~4GB file)</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Extract & Import -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">3. Import to VirtualBox</h2>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Extract .7z</h3>
+                    <p>Right-click the downloaded file.</p>
+                    <p>Use <strong>7-Zip</strong> -> "Extract Here".</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Add Machine</h3>
+                    <p>Open VirtualBox.</p>
+                    <p>Menu: <strong>Machine -> Add</strong>.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Select File</h3>
+                    <p>Browse extracted folder.</p>
+                    <p>Select the <strong>.vbox</strong> file.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">4</span>
+                    <h3>Start</h3>
+                    <p>Click Start.</p>
+                    <p>Login: <strong>kali</strong> / <strong>kali</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Critical Settings -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">4. Optimize Performance 🚀</h2>
+            <p>Before deep work, configure these settings (Settings button):</p>
+
+            <div class="grid-3-col">
+                <div class="glass-card">
+                    <h3>System</h3>
+                    <p><strong>RAM:</strong> 4GB (4096MB) minimum.</p>
+                    <p><strong>Processor:</strong> 2 CPUs.</p>
+                    <p><em>Ensure "Enable PAE/NX" is on.</em></p>
+                </div>
+                <div class="glass-card">
+                    <h3>Display</h3>
+                    <p><strong>Video Memory:</strong> 128 MB (Max).</p>
+                    <p><strong>Controller:</strong> VMSVGA.</p>
+                    <p><strong>3D Acceleration:</strong> Enable it.</p>
+                </div>
+                <div class="glass-card">
+                    <h3>Network</h3>
+                    <p><strong>Adapter 1:</strong> NAT.</p>
+                    <p><em>Ensures VM gets internet from Host.</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Guest Additions -->
+        <section class="section glass-card" data-aos="fade-up">
+            <h2 class="section-title">5. Guest Additions (Full Screen)</h2>
+            <p>Fixes small screen and enables copy-paste.</p>
+
+            <div class="cmd-box">
+                1. In VM Menu: Devices -> Insert Guest Additions CD Image.
+                2. Open Terminal.
+                3. sudo apt update
+                4. sudo apt install -y dkms linux-headers-$(uname -r)
+                5. Open CD in File Manager -> Run 'autorun.sh' or double click.
+                6. Reboot VM.
+            </div>
+        </section>
+
+        <!-- 6. Troubleshooting -->
+        <section class="section vertical-section" data-aos="fade-up">
+            <h2 class="section-title">Common Issues</h2>
+            <div class="grid-2-col">
+                <div class="glass-card" style="border-color: var(--accent);">
+                    <h3>Black Screen?</h3>
+                    <p>Go to Settings -> Display.</p>
+                    <p>Change Controller to <strong>VMSVGA</strong>.</p>
+                    <p>Uncheck 3D Acceleration (if it persists).</p>
+                </div>
+                <div class="glass-card">
+                    <h3>VM is Slow?</h3>
+                    <p>Check Task Manager (Host).</p>
+                    <p>Ensure <strong>Virtualization (VT-x)</strong> is Enabled.</p>
+                    <p>Give more RAM (but not >50% of Host).</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Kali Pre-Built Guide. Hack the planet.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
