@@ -922,11 +922,8 @@
         let activeCardId = null;
 
         function openPanel(url, cardId) {
-            // Popup blockers can block window.open on GitHub Pages, so fall back to same-tab navigation.
-            const popup = window.open(url, '_blank', 'noopener');
-            if (!popup) {
-                window.location.href = url;
-            }
+            // Open each topic in a new browser tab.
+            window.open(url, '_blank', 'noopener,noreferrer');
 
             // Briefly highlight the clicked card as visual feedback
             if (activeCardId) {
