@@ -609,6 +609,12 @@
         style="width:7px;height:7px;background:var(--accent2);left:50%;animation-duration:20s;animation-delay:2s;">
     </div>
 
+    <!-- Back to Home -->
+    <a href="../index.html"
+        style="position:fixed;top:1rem;left:1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45rem;padding:.45rem 1rem;background:rgba(7,9,26,.9);border:1px solid rgba(99,102,241,.4);border-radius:999px;color:#a78bfa;font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;text-decoration:none;backdrop-filter:blur(10px);transition:all .2s;"
+        onmouseover="this.style.background='rgba(99,102,241,.25)';this.style.borderColor='#6366f1'"
+        onmouseout="this.style.background='rgba(7,9,26,.9)';this.style.borderColor='rgba(99,102,241,.4)'">← Home</a>
+
     <!-- HEADER -->
     <header>
         <div class="logo">
@@ -657,7 +663,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnInternet"
-                            onclick="openPanel('internet-basics.html')">&#9658; Open</button>
+                            onclick="openPanel('internet-basics.html')">&#9658; Open &#8599;</button>
                     </div>
 
                     <!-- 2. What is a Website? -->
@@ -711,7 +717,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnAntigravity"
-                            onclick="openPanel('antigravity.html')">&#9658; Open</button>
+                            onclick="openPanel('antigravity.html')">&#9658; Open &#8599;</button>
                     </div>
 
                     <!-- 5. Developer Tools Reference -->
@@ -784,7 +790,8 @@
                                 <span class="tc-tag g">Assignment</span>
                             </div>
                         </div>
-                        <button class="open-topic-btn" id="btnGit" onclick="openPanel('git.html')">&#9658; Open</button>
+                        <button class="open-topic-btn" id="btnGit" onclick="openPanel('git.html')">&#9658; Open
+                            &#8599;</button>
                     </div>
 
                     <!-- 9. DNS, Hosting & Infrastructure -->
@@ -839,7 +846,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnDeploy"
-                            onclick="openPanel('deployment-optimization.html')">&#9658; Open</button>
+                            onclick="openPanel('deployment-optimization.html')">&#9658; Open &#8599;</button>
                     </div>
 
                     <!-- 12. Professional Skills -->
@@ -857,7 +864,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnProfskills"
-                            onclick="openPanel('professional-skills.html')">&#9658; Open</button>
+                            onclick="openPanel('professional-skills.html')">&#9658; Open &#8599;</button>
                     </div>
 
                     <!-- 13. Project Ideas Roadmap -->
@@ -875,7 +882,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnProjects"
-                            onclick="openPanel('project-ideas.html')">&#9658; Open</button>
+                            onclick="openPanel('project-ideas.html')">&#9658; Open &#8599;</button>
                     </div>
 
                     <!-- 14. Freelancing & AI -->
@@ -893,7 +900,7 @@
                             </div>
                         </div>
                         <button class="open-topic-btn" id="btnFreelancing"
-                            onclick="openPanel('freelancing.html')">&#9658; Open</button>
+                            onclick="openPanel('freelancing.html')">&#9658; Open &#8599;</button>
                     </div>
 
 
@@ -902,24 +909,7 @@
 
         </div><!-- /left-panel -->
 
-        <!-- RIGHT PANEL -->
-        <aside class="right-panel" id="rightPanel">
-            <div class="panel-loader" id="panelLoader">
-                <div class="spinner"></div>
-                <span id="panelLoaderText">Loading…</span>
-            </div>
-            <iframe id="showcaseFrame" src="" title="Topic Showcase" allowfullscreen></iframe>
-        </aside>
-
     </div><!-- /layout -->
-
-    <!-- Floating side tab (shows when panel is hidden) -->
-    <div class="side-tab hidden" id="sideTab">
-        <button class="side-tab-btn active" onclick="closePanel()" id="sideTabBtn">
-            <span class="arr">◀</span>
-            Close
-        </button>
-    </div>
 
     <!-- FOOTER -->
     <footer>
@@ -929,48 +919,27 @@
     </footer>
 
     <script>
-        const leftPanel = document.getElementById('leftPanel');
-        const rightPanel = document.getElementById('rightPanel');
-        const frame = document.getElementById('showcaseFrame');
-        const sideTab = document.getElementById('sideTab');
-        const sideTabBtn = document.getElementById('sideTabBtn');
         let activeCardId = null;
 
         function openPanel(url, cardId) {
-            // Update iframe src
-            frame.style.opacity = '0';
-            frame.src = url;
-            frame.onload = () => { frame.style.opacity = '1'; };
+            // Popup blockers can block window.open on GitHub Pages, so fall back to same-tab navigation.
+            const popup = window.open(url, '_blank', 'noopener');
+            if (!popup) {
+                window.location.href = url;
+            }
 
-            // Expand right panel, shrink left
-            rightPanel.classList.add('open');
-            leftPanel.classList.add('shrunk');
-
-            // Show floating close tab
-            sideTab.classList.remove('hidden');
-
-            // Highlight active card
+            // Briefly highlight the clicked card as visual feedback
             if (activeCardId) {
                 const prev = document.getElementById(activeCardId);
                 if (prev) prev.classList.remove('active');
             }
             if (cardId) {
                 const cur = document.getElementById(cardId);
-                if (cur) cur.classList.add('active');
+                if (cur) {
+                    cur.classList.add('active');
+                    setTimeout(() => cur.classList.remove('active'), 1200);
+                }
                 activeCardId = cardId;
-            }
-        }
-
-        function closePanel() {
-            rightPanel.classList.remove('open');
-            leftPanel.classList.remove('shrunk');
-            sideTab.classList.add('hidden');
-            frame.src = '';
-
-            if (activeCardId) {
-                const card = document.getElementById(activeCardId);
-                if (card) card.classList.remove('active');
-                activeCardId = null;
             }
         }
 
